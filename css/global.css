@@ -3,3 +3,71 @@
      padding: 0;
      box-sizing: border-box;
 }
+
+@font-face {
+     font-family: 'MyCustomFont';
+     src: url('/font/Manrope-Light.ttf') format('ttf'),
+          url('/font/Manrope-ExtraLight.ttf') format('ttf1'),
+          url('/font/Manrope-Medium.ttf') format('ttf2'),
+          url('/font/Manrope-Regular.ttf') format('ttf3'),
+          url('/font/Manrope-SemiBold.ttf') format('ttf4'),
+          url('/font/Manrope-ExtraBold.ttf') format('ttf5'),
+          url('/font/Manrope-Bold.ttf') format('ttf6'),
+     ;
+     /* Thêm các định dạng khác nếu cần thiết */
+     font-weight: normal;
+     font-style: normal;
+}
+
+body {
+     font-family: 'MyCustomFont', Arial, sans-serif;
+     /* Sử dụng font đã khai báo */
+}
+
+:root {
+     --background-color: #15292B;
+     --white: #fff;
+     --box-shadow: 0 0 10px rgb(0 0 0/15%);
+}
+
+html {
+     font-size: 16px;
+     -ms-overflow-style: scrollbar;
+     -webkit-tap-highlight-color: transparent;
+     font-family: 'MyCustomFont', Arial, sans-serif;
+     --ms-text-size-adjust: 100%;
+     -webkit-text-size-adjust: 100%;
+}
+
+a {
+     text-decoration: none;
+}
+
+li {
+     list-style: none;
+}
+
+.flex {
+     display: flex;
+}
+
+.align-center {
+     align-items: center;
+}
+
+.flex-center {
+     display: flex;
+     justify-content: center;
+}
+
+.flex-between {
+     display: flex;
+     justify-content: space-between;
+}
+
+.flex-around {
+     display: flex;
+     justify-content: space-around;
+}
+
+/* ------------------------------------css global-------------------------- */
