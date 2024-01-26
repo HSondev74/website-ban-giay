@@ -7,11 +7,12 @@
      <link rel="stylesheet" href="css/global.css">
      <title>Trang chủ</title>
 </head>
+<style>
+</style>
 
 <body>
      <section id="container">
-
-          <div id="scrollToTop">Top</div>;
+          <div id="scrollToTop">Top</div>
      </section>
 </body>
 <script src="/JS/scrollTop.js"></script>
