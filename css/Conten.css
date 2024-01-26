@@ -1,0 +1,115 @@
+/* .gallery{
+    height: 85%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.control{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+}
+
+.gallery-inner{
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-inner img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.prev{
+    left: 15px;
+    font-size: 30px;
+}
+
+.next{
+    right: 15px;
+    font-size: 30px;
+}
+
+.list div {
+	cursor: pointer;
+	padding: 5px;
+	background-color: #bbb;
+	flex: 1;
+}
+
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+} */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.list-show{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.list-image{
+    display: flex;
+    transform: translateX();
+    transition: 0.5s;
+}
+
+img{
+    width: 100%;
+}
+
+.btn:hover{
+    color: #ffffff;
+}
+
+.btn{
+    font-size: 40px;
+    color: #ececec;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.btn-left{
+    left: 0;
+}
+
+.btn-right{
+    right: 0;
+}
+
+.index-images{
+    position: absolute;
+    display: flex;
+    bottom: 10px;
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.index-item{
+    background-color: transparent;
+    border: 2px solid #999;
+    padding: 5px;
+    margin: 3px;
+    border-radius: 50%;
+}
+
+.active{
+    background-color: #999;
+}
