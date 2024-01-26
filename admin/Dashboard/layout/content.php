@@ -1,6 +1,7 @@
-<main>
+<section id="content">
      <?php
      include('article.php');
+     include('header.php');
      ?>
      <aside>
           <?php
@@ -36,4 +37,4 @@
           }
           ?>
      </aside>
-</main>
+</section>
