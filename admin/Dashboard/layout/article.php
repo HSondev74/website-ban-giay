@@ -3,14 +3,14 @@
           <li class="active">
                <a href="index.php?action=sanpham"><i class="fa-solid fa-shoe-prints"></i> Sản Phẩm</a>
           </li>
-          <li><a href="index.php?action=danhmuc">
+          <li><a href="index.php?action=danhmuc&query=them">
                     <i class="fa-solid fa-layer-group"></i> Danh Mục
                </a></li>
-          <li><a href="index.php?action=khachhang">
+          <li><a href="index.php?action=khachhang&query=them">
                     <i class="fa-solid fa-user-secret"></i> Khách Hàng
                </a></li>
           <li><a href="
-          index.php?action=donhang">
+          index.php?action=donhang&query=them">
                     <i class="fa-solid fa-money-bill-transfer"></i> Thông tin đơn hàng
                </a></li>
           <li><a href="

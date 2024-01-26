@@ -20,5 +20,6 @@
           ?>
      </section>
 </body>
+<script src="../admin/JS/activeSidebar.js"></script>
 
 </html>

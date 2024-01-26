@@ -4,24 +4,34 @@
      ?>
      <aside>
           <?php
-          if (isset($_GET['action'])) {
+          if (isset($_GET['action']) && $_GET['query']) {
                $khoitao = $_GET['action'];
+               $query = $_GET['query'];
           } else {
                $khoitao = null;
+               $query = '';
           }
-          if ($khoitao == 'sanpham') {
-               include("quanlysanpham/add.php");
-          } elseif ($khoitao == 'danhmuc') {
+          // if ($khoitao == 'sanpham' && $query = 'them') {
+          //      include("quanlysanpham/add.php");
+          // } else
+
+          if ($khoitao == 'danhmuc' && $query == 'them') {
                include("quanlydanhmuc/add.php");
-          } elseif ($khoitao == "khachhang") {
-               include("quanlysanpham/add.php");
-          } elseif ($khoitao == "donhang") {
-               include("quanlysanpham/add.php");
-          } elseif ($khoitao == "thongke") {
-               include("quanlysanpham/add.php");
-          } elseif ($khoitao == "logout") {
-               include("quanlysanpham/add.php");
-          } else {
+               include("quanlydanhmuc/lietkedanhmuc.php");
+          } elseif ($khoitao == 'danhmuc' && $query == 'edit') {
+               include("quanlydanhmuc/edit.php");
+          }
+
+          //elseif ($khoitao == "khachhang") {
+          //      include("quanlysanpham/add.php");
+          // } elseif ($khoitao == "donhang") {
+          //      include("quanlysanpham/add.php");
+          // } elseif ($khoitao == "thongke") {
+          //      include("quanlysanpham/add.php");
+          // } elseif ($khoitao == "logout") {
+          //      include("quanlysanpham/add.php");
+          // } 
+          else {
                include("aside.php");
           }
           ?>
