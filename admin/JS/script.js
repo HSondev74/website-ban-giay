@@ -1,17 +1,26 @@
+// Lưu trạng thái active vào Local Storage khi người dùng chọn
 const allSideMenu = document.querySelectorAll("#sidebar .side-menu.top li a");
-
 allSideMenu.forEach((item) => {
-     const li = item.parentElement;
-
      item.addEventListener("click", function () {
-          allSideMenu.forEach((i) => {
-               i.parentElement.classList.remove("active");
-          });
-          li.classList.add("active");
+          const li = item.parentElement;
+          const id = li.getAttribute("id");
+          localStorage.setItem("activeMenuItem", id);
      });
 });
 
-// TOGGLE SIDEBAR
+// Khôi phục trạng thái active từ Local Storage khi trang được tải lại
+window.addEventListener("load", function () {
+     const activeMenuItemId = localStorage.getItem("activeMenuItem");
+     console.log(activeMenuItemId);
+     if (activeMenuItemId) {
+          const activeMenuItem = document.getElementById(activeMenuItemId);
+          if (activeMenuItem) {
+               activeMenuItem.classList.add("active");
+          }
+     }
+});
+
+// Bat tat sidebar
 const menuBar = document.querySelector("#content nav .bx.bx-menu");
 const sidebar = document.getElementById("sidebar");
 
@@ -19,6 +28,29 @@ menuBar.addEventListener("click", function () {
      sidebar.classList.toggle("hide");
 });
 
+// Lưu trạng thái chế độ tối vào Local Storage
+const switchMode = document.getElementById("switch-mode");
+switchMode.addEventListener("change", function () {
+     if (this.checked) {
+          document.body.classList.add("dark");
+          localStorage.setItem("darkMode", "enabled"); // Lưu trạng thái vào Local Storage
+     } else {
+          document.body.classList.remove("dark");
+          localStorage.setItem("darkMode", "disabled"); // Lưu trạng thái vào Local Storage
+     }
+});
+
+// Khôi phục trạng thái chế độ tối từ Local Storage khi trang được tải lại
+const darkMode = localStorage.getItem("darkMode");
+if (darkMode === "enabled") {
+     document.body.classList.add("dark");
+     switchMode.checked = true;
+} else {
+     document.body.classList.remove("dark");
+     switchMode.checked = false;
+}
+
+// Search Form
 const searchButton = document.querySelector(
      "#content nav form .form-input button"
 );
@@ -50,15 +82,5 @@ window.addEventListener("resize", function () {
      if (this.innerWidth > 576) {
           searchButtonIcon.classList.replace("bx-x", "bx-search");
           searchForm.classList.remove("show");
-     }
-});
-
-const switchMode = document.getElementById("switch-mode");
-
-switchMode.addEventListener("change", function () {
-     if (this.checked) {
-          document.body.classList.add("dark");
-     } else {
-          document.body.classList.remove("dark");
      }
 });

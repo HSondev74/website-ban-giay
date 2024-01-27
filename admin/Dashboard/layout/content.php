@@ -12,15 +12,18 @@
                $khoitao = null;
                $query = '';
           }
-          // if ($khoitao == 'sanpham' && $query = 'them') {
-          //      include("quanlysanpham/add.php");
-          // } else
+
 
           if ($khoitao == 'danhmuc' && $query == 'them') {
                include("quanlydanhmuc/add.php");
                include("quanlydanhmuc/lietkedanhmuc.php");
           } elseif ($khoitao == 'danhmuc' && $query == 'edit') {
                include("quanlydanhmuc/edit.php");
+          } elseif ($khoitao == 'sanpham' && $query == 'them') {
+               include("quanlysanpham/add.php");
+               include("quanlysanpham/lietkesanpham.php");
+          } elseif ($khoitao == 'sanpham' && $query == 'sua') {
+               include("quanlysanpham/editsanpham.php");
           }
 
           //elseif ($khoitao == "khachhang") {

@@ -34,7 +34,7 @@
      </a>
      <ul class="side-menu top">
           <li class="active">
-               <a href="#">
+               <a href="index.php">
                     <i class='bx bxs-dashboard'></i>
                     <span class="text">Dashboard</span>
                </a>
@@ -47,6 +47,12 @@
           </li>
           <li>
                <a href="index.php?action=danhmuc&query=them">
+                    <i class='bx bxs-doughnut-chart'></i>
+                    <span class="text">Danh mục</span>
+               </a>
+          </li>
+          <li>
+               <a href="index.php?action=user&query=them">
                     <i class='bx bxs-doughnut-chart'></i>
                     <span class="text">Khách hàng</span>
                </a>
