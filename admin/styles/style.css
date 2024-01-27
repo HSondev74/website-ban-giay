@@ -367,6 +367,14 @@
      grid-gap: 24px;
 }
 
+.divider:after,
+.divider:before {
+     content: "";
+     flex: 1;
+     height: 1px;
+     background: #eee;
+}
+
 #content main .box-info li .bx {
      width: 80px;
      height: 80px;

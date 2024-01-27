@@ -28,8 +28,9 @@ if (isset($_POST['addSanpham'])) {
   mysqli_query($conn, $sql);
   // Xử lý và lưu trữ tệp
   move_uploaded_file($hinhanh_tmp, 'uploads/' . $hinhanh);
-  echo '<script type="text/javascript">alert("Bạn đã thêm thành công") </script>';
-  header('Location: ../../../index.php?action=sanpham&query=them');
+  echo "<script>alert('Bạn đã thêm thành công!')
+  window.location.href='../../../index.php?action=sanpham&query=them'
+  </script>";
 } elseif (isset($_POST['editsp'])) {
   // Kiểm tra xem có dữ liệu hình ảnh từ form không
   if ($_FILES['hinhanh']['name']) {
@@ -58,8 +59,10 @@ if (isset($_POST['addSanpham'])) {
   }
 
   mysqli_query($conn, $sql_sua);
-  header('location: ../../../index.php?action=sanpham&query=them');
-  exit; // Kết thúc kịch bản
+  echo "<script>alert('Bạn đã sửa thành công!')
+      window.location.href='../../../index.php?action=sanpham&query=them'
+      </script>";
+  exit;
 } else {
   $id = $_GET['id'];
   $sql = "select * from sanpham where sanpham_id = '$id' Limit 1";
@@ -69,5 +72,7 @@ if (isset($_POST['addSanpham'])) {
   }
   $sql_xoa = " Delete from sanpham where sanpham_id = '" . $id . "' ";
   mysqli_query($conn, $sql_xoa);
-  header('location: ../../../index.php?action=sanpham&query=them');
+  echo "<script>alert('Bạn đã xóa thành công!')
+      window.location.href='../../../index.php?action=sanpham&query=them'
+      </script>";
 }

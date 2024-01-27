@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+     const input = document.querySelectorAll('input');
+     const button = document.querySelector('button');
+     const p = document.querySelector('p');
+
+     function charString() {
+          let charStr = '';
+
+          for (let i = 97; i <= 122; i++) {
+               charStr += String.fromCharCode(i);
+          }
+
+          for (let i = 65; i <= 90; i++) {
+               charStr += String.fromCharCode(i);
+          }
+
+          for (let i = 48; i <= 57; i++) {
+               charStr += String.fromCharCode(i);
+          }
+
+          return charStr;
+     }
+
+     function generateRandomArray() {
+          const str = charString();
+          const arrStr = str.split('');
+          let randomArray = [];
+
+          for (let i = 0; i < 5; i++) {
+               randomArray.push(randomChar(arrStr));
+          }
+
+          return randomArray;
+     }
+
+     function randomChar(arr) {
+          p.innerText += "   " + arr[Math.floor(Math.random() * arr.length)]
+          return arr[Math.floor(Math.random() * arr.length)];
+     }
+
+     let currentArray = generateRandomArray();
+
+     button.onclick = () => {
+          let str = '';
+          input.forEach(item => {
+               str += item.value
+          })
+          if (str.value == currentArray.join('')) {
+               console.log(currentArray.join(''));
+          } else {
+               currentArray = generateRandomArray();
+               p.innerText = currentArray.join('');
+          }
+     }
+
+
+
+</script>
+
+</html>
