@@ -12,7 +12,7 @@
           <li class="active">
                <a href="index.php">
                     <i class='bx bxs-dashboard'></i>
-                    <span class="text">Dashboard</span>
+                    <span class="text">Trang Chủ</span>
                </a>
           </li>
           <li>

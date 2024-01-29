@@ -13,13 +13,36 @@ if (!$conn) {
 }
 
 $sql = "SELECT COUNT(*) AS totalUsers from nguoidung where kieunguoidung='customer'";
+$sqlOrders = "SELECT COUNT(*) AS new_orders FROM donhang WHERE DATE(ngaydat) >= CURDATE() - INTERVAL 3 DAY";
+$sqlTotalOrders = "SELECT SUM(gia) AS doanh_so_trong_7_ngay
+FROM donhang
+WHERE ngaydat BETWEEN DATE_SUB(NOW(), INTERVAL 7 DAY) AND NOW();
+";
+// query
 $result = $conn->query($sql);
+$result_orders = $conn->query($sqlOrders);
+$result_total_orders = $conn->query($sqlTotalOrders);
+// check counts
 if ($result->num_rows > 0) {
      $row = $result->fetch_assoc();
      $totalUsers = $row['totalUsers'];
 } else {
      $totalUsers = 0;
 }
+
+// Kiểm tra và hiển thị kết quả
+if (mysqli_num_rows($result_orders) > 0) {
+     $row = mysqli_fetch_assoc($result_orders);
+     $total_orders = $row['new_orders'];
+} else {
+     echo "Không có đơn hàng nào trong cơ sở dữ liệu.";
+}
+
+if (mysqli_num_rows($result_total_orders) > 0) {
+     $row = mysqli_fetch_assoc($result_total_orders);
+     $total_7days_orders = number_format($row['doanh_so_trong_7_ngay'], 0, ',', '.');
+}
+
 
 
 $conn->close();
@@ -29,10 +52,13 @@ $conn->close();
 <main>
      <div class="head-title">
           <div class="left">
-               <h1>Dashboard</h1>
-               <ul class="breadcrumb">
+               <h1>Trang Chủ</h1>
+               <ul class="breadcrumb" style="display: flex;
+     align-items: center;
+     grid-gap: 16px;
+     margin: 20px 30px;">
                     <li>
-                         <a href="#">Dashboard</a>
+                         <a href="#">Trang Chủ</a>
                     </li>
                     <li><i class='bx bx-chevron-right'></i></li>
                     <li>
@@ -50,8 +76,8 @@ $conn->close();
           <li>
                <i class='bx bxs-calendar-check'></i>
                <span class="text">
-                    <h3>1020</h3>
-                    <p>New Order</p>
+                    <h3><?php echo $total_orders; ?></h3>
+                    <p>Đơn mới</p>
                </span>
           </li>
           <li>
@@ -64,8 +90,8 @@ $conn->close();
           <li>
                <i class='bx bxs-dollar-circle'></i>
                <span class="text">
-                    <h3>$2543</h3>
-                    <p>Total Sales</p>
+                    <h3><?php echo $total_7days_orders; ?> VNĐ</h3>
+                    <p>Tổng tiền đã bán trong 7 ngày gần nhất</p>
                </span>
           </li>
      </ul>
@@ -74,59 +100,87 @@ $conn->close();
      <div class="table-data">
           <div class="order">
                <div class="head">
-                    <h3>Recent Orders</h3>
-                    <i class='bx bx-search'></i>
-                    <i class='bx bx-filter'></i>
+                    <h3>Các Đơn Hàng</h3>
+               </div>
+               <div class="filter">
+                    <input type="text" id="userFilter" placeholder="Tìm theo tên người dùng">
+                    <select id="statusFilter" style="padding: 10px 50px; margin: 30px 0; border-radius: 10px;">
+                         <option value="">Tất cả trạng thái</option>
+                         <option value="chưa xác nhận">Chưa xác nhận</option>
+                         <option value="đã xác nhận">Đã xác nhận</option>
+                         <option value="đang giao hàng">Đang giao hàng</option>
+                    </select>
+                    <button class="btn btn-primary" onclick="filterOrders()">Lọc</button>
                </div>
                <table>
                     <thead>
                          <tr>
-                              <th>User</th>
-                              <th>Date Order</th>
-                              <th>Status</th>
+                              <th>Người Dùng</th>
+                              <th>Ngày Đặt Hàng</th>
+                              <th>Trạng Thái</th>
                          </tr>
                     </thead>
                     <tbody>
-                         <tr>
-                              <td>
-                                   <img src="../images/h1.jpg" alt="image" class="image">
-                                   <p>John Doe</p>
-                              </td>
-                              <td>01-10-2021</td>
-                              <td><span class="status completed">Completed</span></td>
-                         </tr>
-                         <tr>
-                              <td>
-                                   <img src="../images/h1.jpg" alt="image" class="image">
-                                   <p>John Doe</p>
-                              </td>
-                              <td>01-10-2021</td>
-                              <td><span class="status pending">Pending</span></td>
-                         </tr>
-                         <tr>
-                              <td>
-                                   <img src="../images/h1.jpg" alt="image" class="image">
-                                   <p>John Doe</p>
-                              </td>
-                              <td>01-10-2021</td>
-                              <td><span class="status process">Process</span></td>
-                         </tr>
-                         <tr>
-                              <td>
-                                   <img src="../images/h1.jpg" alt="image" class="image">
-                                   <p>John Doe</p>
-                              </td>
-                              <td>01-10-2021</td>
-                              <td><span class="status pending">Pending</span></td>
-                         </tr>
-                         <tr>
-                              <td>
-                                   <img src="../images/h1.jpg" alt="image" class="image">
-                                   <p>John Doe</p>
-                              </td>
-                              <td>01-10-2021</td>
-                              <td><span class="status completed">Completed</span></td>
-                         </tr>
+                         <?php
+                         // Kết nối đến cơ sở dữ liệu
+                         $servername = "localhost";
+                         $username = "root";
+                         $password = "";
+                         $database = "websitebangiay";
+                         $conn = mysqli_connect($servername, $username, $password, $database);
+
+                         // Kiểm tra kết nối
+                         if (!$conn) {
+                              die("Connection failed: " . mysqli_connect_error());
+                         }
+
+                         // Truy vấn SQL để lấy thông tin của tất cả người đặt hàng
+                         $sql = "SELECT nguoidung.*, donhang.* FROM nguoidung
+        INNER JOIN donhang ON nguoidung.user_id = donhang.user_id";
+
+                         $result = mysqli_query($conn, $sql);
+
+                         if ($result) {
+                              if (mysqli_num_rows($result) > 0) {
+                                   // Hiển thị thông tin của tất cả người đặt hàng
+                                   while ($row = mysqli_fetch_assoc($result)) {
+                                        $formatted_date = date('d-m-Y', strtotime($row['ngaydat']));
+                                        $status_class = '';
+                                        switch ($row['trangthai']) {
+                                             case 'chưa xác nhận':
+                                                  $status_class = 'chưa xác nhận';
+                                                  break;
+                                             case 'đã xác nhận':
+                                                  $status_class = 'đã xác nhận';
+                                                  break;
+                                             case 'đang giao hàng':
+                                                  $status_class = 'đang giao hàng';
+                                                  break;
+                                             default:
+                                                  $status_class = 'chưa xác nhận';
+                                        }
+                         ?>
+                                        <tr>
+                                             <td>
+                                                  <img src="http://localhost/BanGiay/admin/images/<?php echo $row['hinhanh'] ?>" alt="image" class="image">
+                                                  <p><?php echo $row['ten']; ?></p>
+                                             </td>
+                                             <td><?php echo $formatted_date; ?></td>
+                                             <td><span class="status completed"><?php echo $status_class; ?></span></td>
+                                        </tr>
+                         <?php
+                                   }
+                              } else {
+                                   echo "<tr><td>Chưa có đơn hàng nào</td></tr>";
+                              }
+                         } else {
+                              echo "Error: " . mysqli_error($conn);
+                         }
+
+                         // Đóng kết nối
+                         mysqli_close($conn);
+                         ?>
+
                     </tbody>
                </table>
           </div>

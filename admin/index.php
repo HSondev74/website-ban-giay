@@ -67,5 +67,30 @@ function updateTime() {
 
 setInterval(updateTime, 1000);
 </script>
+<script>
+function filterOrders() {
+     var userFilter = document.getElementById("userFilter").value.toLowerCase();
+     var statusFilter = document.getElementById("statusFilter").value.toLowerCase();
+
+     var rows = document.querySelectorAll(".order tbody tr");
+     rows.forEach(function(row) {
+          var user = row.querySelector("td:nth-child(1) p").textContent.toLowerCase();
+          var status = row.querySelector("td:nth-child(3) span").textContent.toLowerCase();
+
+          if ((user.includes(userFilter) || !userFilter) && (status.includes(statusFilter) || !
+               statusFilter)) {
+               row.style.display = "";
+          } else {
+               row.style.display = "none";
+          }
+     });
+
+     // Xóa giá trị trong trường nhập người dùng
+     document.getElementById("userFilter").value = "";
+
+     // Đặt trỏ chuột vào trường nhập người dùng
+     document.getElementById("userFilter").focus();
+}
+</script>
 
 </html>
