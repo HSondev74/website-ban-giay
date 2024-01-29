@@ -89,8 +89,8 @@ if (isset($_POST['login'])) {
 
                               <span class="text-center fw-bold mx-3 mb-0 text-muted">OR</span>
 
-                              <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!"
-                                   role="button">
+                              <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998"
+                                   href="/BanGiay/admin/register.php" role="button">
                                    <i class="fab fa-twitter me-2"></i>Đăng kí ngay </a>
 
                          </form>

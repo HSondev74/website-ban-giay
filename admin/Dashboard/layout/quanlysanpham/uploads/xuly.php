@@ -17,7 +17,6 @@ $gia = $_POST['gia'];
 $gia_bien_doi = str_replace(".", "", $gia);
 $tonkho = $_POST['tonkho'];
 $mota = $_POST['mota'];
-$size = $_POST['size'];
 $danhmuc_id = $_POST['danhmuc_id'];
 // xử lý hình ảnh
 $hinhanh = $_FILES['hinhanh']['name'];
@@ -25,7 +24,7 @@ $hinhanh_tmp = $_FILES['hinhanh']['tmp_name'];
 $hinhanh = time() . '_' . $hinhanh;
 // Xử lý dữ liệu từ form
 if (isset($_POST['addSanpham'])) {
-  $sql = "INSERT INTO sanpham (tensanpham,size,gia,hinhanh,tonkho,danhmuc_id,mota) VALUE ('" . $tensp . "','" . $size . "','" . $gia_bien_doi . "','" . $hinhanh . "','" . $tonkho . "','" . $danhmuc_id . "','" . $mota . "')";
+  $sql = "INSERT INTO sanpham (tensanpham,gia,hinhanh,tonkho,danhmuc_id,mota) VALUE ('" . $tensp . "','" . $gia_bien_doi . "','" . $hinhanh . "','" . $tonkho . "','" . $danhmuc_id . "','" . $mota . "')";
   mysqli_query($conn, $sql);
   // Xử lý và lưu trữ tệp
   move_uploaded_file($hinhanh_tmp, 'uploads/' . $hinhanh);
@@ -42,7 +41,6 @@ if (isset($_POST['addSanpham'])) {
 
     $sql_sua = "UPDATE sanpham 
                   SET tensanpham = '" . $tensp . "',
-                      size = '" . $size . "',
                       gia = '" . $gia_bien_doi . "',
                       hinhanh = '" . $hinhanh . "',
                       tonkho = '" . $tonkho . "',
@@ -53,7 +51,6 @@ if (isset($_POST['addSanpham'])) {
     // Nếu không có hình ảnh từ form
     $sql_sua = "UPDATE sanpham 
                   SET tensanpham = '" . $tensp . "',
-                      size = '" . $size . "',
                       gia = '" . $gia_bien_doi . "',
                       tonkho = '" . $tonkho . "',
                       danhmuc_id = '" . $danhmuc_id . "',

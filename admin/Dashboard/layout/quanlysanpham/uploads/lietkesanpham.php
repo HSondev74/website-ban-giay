@@ -9,7 +9,6 @@
           <tr>
                <th>ID Sản Phẩm</th>
                <th>Tên Sản Phẩm</th>
-               <th>Kích cỡ</th>
                <th>Giá</th>
                <th>Hình Ảnh</th>
                <th>Tồn Kho</th>
@@ -30,15 +29,6 @@
                     echo "<tr>";
                     echo "<td>" . $row["sanpham_id"] . "</td>";
                     echo "<td>" . $row["tensanpham"] . "</td>";
-                    // Thêm dropdown select cho kích thước (size)
-                    echo "<td>";
-                    echo "<select name='size'>";
-                    $sizes = explode(',', $row['size']); // Phân tách các giá trị ENUM
-                    foreach ($sizes as $size) {
-                         echo "<option value='$size'>$size</option>"; // Tạo các tùy chọn từ các giá trị ENUM
-                    }
-                    echo "</select>";
-                    echo "</td>";
                     echo "<td>" . $gia_co_dau . "</td>";
                     echo "<td><img src='http://localhost/BanGiay/admin/Dashboard/layout/quanlysanpham/uploads/" . $row["hinhanh"] . "' alt='Product Image' class='product-image'></td>";
                     echo "<td>" . $row["tonkho"] . "</td>";

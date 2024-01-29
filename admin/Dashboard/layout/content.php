@@ -24,6 +24,9 @@
                include("quanlysanpham/lietkesanpham.php");
           } elseif ($khoitao == 'sanpham' && $query == 'sua') {
                include("quanlysanpham/editsanpham.php");
+          } elseif (isset($_GET['action']) == 'logout' && $query == "") {
+               unset($_SESSION['login']);
+               echo "<script>alert('Đăng xuất thành công!'); window.location.href='login.php';</script>";
           }
 
           //elseif ($khoitao == "khachhang") {
@@ -34,8 +37,10 @@
           //      include("quanlysanpham/add.php");
           // } elseif ($khoitao == "logout") {
           //      include("quanlysanpham/add.php");
-          // } 
-          else {
+          // }
+          elseif ($khoitao == 'setting' && $query == 'them') {
+               include("settings/lietke.php");
+          } else {
                include("aside.php");
           }
           ?>

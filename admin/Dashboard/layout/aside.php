@@ -1,3 +1,31 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "websitebangiay";
+
+// Tạo kết nối
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+// Kiểm tra
+if (!$conn) {
+     die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT COUNT(*) AS totalUsers from nguoidung where kieunguoidung='customer'";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+     $row = $result->fetch_assoc();
+     $totalUsers = $row['totalUsers'];
+} else {
+     $totalUsers = 0;
+}
+
+
+$conn->close();
+
+?>
+
 <main>
      <div class="head-title">
           <div class="left">
@@ -29,8 +57,8 @@
           <li>
                <i class='bx bxs-group'></i>
                <span class="text">
-                    <h3>2834</h3>
-                    <p>Visitors</p>
+                    <h3> <?php echo $totalUsers ?> </h3>
+                    <p>Số người đã đăng kí</p>
                </span>
           </li>
           <li>
