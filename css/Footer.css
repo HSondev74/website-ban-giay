@@ -10,17 +10,24 @@ body {
 }
 
 footer {
-    width: 100%;
+    /* width: 100%; */
 }
 .column-ft1 {
     display: flex;
-    width: 85%;
+    width: 80%;
     height: 200px;
     justify-content: space-evenly;
     /* align-items: center; */
     margin: 0 auto;
     gap: 1rem;
+    font-size: 14px;
 }
+.ft-cl {
+    gap: 2;
+}
+/* .footer-column1 .footer-column2 .footer-column3 .footer-column4 {
+    width: 30%;
+} */
 
 .footer-heading {
     margin-bottom: 20px;
@@ -32,11 +39,68 @@ footer {
     text-align: center;
     border-top: 1px solid rgb(174, 174, 174);
     color: rgb(123, 123, 123);
-    margin-top: 35px;
+    margin-top: 20px;
     padding: 10px 0px;
 }
 .img-footer {
     width: 278px;
     height: 130px;
     object-fit: cover;
+}
+
+/*==================   Repon  ===================*/
+@media screen and (max-width: 900px) and (min-width: 750px) {
+    .column-ft1 {
+        width: 100%;
+        display: grid;
+        grid-template-areas:
+            "cl1 cl2"
+            "cl3 cl4";
+        grid-row-gap: 60px;
+        font-size: 14px;
+    }
+    .footer-column1 {
+        grid-area: cl1;
+    }
+    .footer-column2 {
+        grid-area: cl2;
+    }
+    .footer-column3 {
+        grid-area: cl3;
+    }
+    .footer-column4 {
+        grid-area: cl4;
+    }
+    .column-ft2 > p {
+        margin-top: 150px;
+    }
+}
+
+@media screen and (max-width: 450px) and (min-width: 300px) {
+    .column-ft1 {
+        width: 95%;
+        display: grid;
+        grid-template-areas:
+            "cl1"
+            "cl2"
+            "cl3"
+            "cl4";
+        grid-row-gap: 50px;
+        font-size: 14px;
+    }
+    .footer-column1 {
+        grid-area: cl1;
+    }
+    .footer-column2 {
+        grid-area: cl2;
+    }
+    .footer-column3 {
+        grid-area: cl3;
+    }
+    .footer-column4 {
+        grid-area: cl4;
+    }
+    .column-ft2 > p {
+        margin-top: 410px;
+    }
 }
