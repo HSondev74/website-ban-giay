@@ -17,8 +17,9 @@ if (isset($_POST['btnSave'])) {
    $sql = "INSERT INTO danhmuc (tendanhmuc) VALUES ('$tendanhmuc')";
 
    if (mysqli_query($conn, $sql)) {
-      echo '<script type="text/javascript">alert("Bạn đã thêm thành công") </script>';
-      header('Location: ../../../index.php?action=danhmuc&query=them');
+      echo "<script>alert('Bạn đã thêm thành công!')
+      window.location.href='../../../index.php?action=danhmuc&query=them'
+      </script>";
       exit;
    }
 } elseif (isset($_POST['btnLuu'])) {
@@ -26,11 +27,15 @@ if (isset($_POST['btnSave'])) {
    $id = $_POST['category_id'];
    $sql_sua = "UPDATE danhmuc set tendanhmuc ='" . $tendanhmuc . "',danhmuc_id='" . $id . "' WHERE danhmuc_id='$_GET[id]' ";
    mysqli_query($conn, $sql_sua);
-   header('location: ../../../index.php?action=danhmuc&query=them');
+   echo "<script>alert('Bạn đã lưu thành công!')
+      window.location.href='../../../index.php?action=danhmuc&query=them'
+      </script>";
 } else {
    $id = $_GET['id'];
 
    $sql_xoa = " Delete from danhmuc where danhmuc_id = '" . $id . "' ";
    mysqli_query($conn, $sql_xoa);
-   header('location: ../../../index.php?action=danhmuc&query=them');
+   echo "<script>alert('Bạn đã xóa thành công!')
+      window.location.href='../../../index.php?action=danhmuc&query=them'
+      </script>";
 }
