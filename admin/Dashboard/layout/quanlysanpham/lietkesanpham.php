@@ -30,12 +30,11 @@
                     echo "<tr>";
                     echo "<td>" . $row["sanpham_id"] . "</td>";
                     echo "<td>" . $row["tensanpham"] . "</td>";
-                    // Thêm dropdown select cho kích thước (size)
                     echo "<td>";
                     echo "<select name='size'>";
-                    $sizes = explode(',', $row['size']); // Phân tách các giá trị ENUM
+                    $sizes = explode(',', $row['size']);
                     foreach ($sizes as $size) {
-                         echo "<option value='$size'>$size</option>"; // Tạo các tùy chọn từ các giá trị ENUM
+                         echo "<option value='$size'>$size</option>";
                     }
                     echo "</select>";
                     echo "</td>";

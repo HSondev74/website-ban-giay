@@ -28,13 +28,13 @@
                </a>
           </li>
           <li>
-               <a href="index.php?action=user&query=them">
+               <a href="index.php?action=khachhang&query=them">
                     <i class='bx bxs-doughnut-chart'></i>
                     <span class="text">Khách hàng</span>
                </a>
           </li>
           <li>
-               <a href="index.php?action=khachhang&query=them">
+               <a href="index.php?action=donhang&query=them">
                     <i class='bx bxs-message-dots'></i>
                     <span class="text">Đơn hàng</span>
                </a>

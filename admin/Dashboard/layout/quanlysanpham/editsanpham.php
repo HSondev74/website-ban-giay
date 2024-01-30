@@ -32,8 +32,8 @@ color: var(--blue);">Sửa sản phẩm</a>
      <form action="Dashboard/layout/quanlysanpham/xuly.php?id=<?php echo $_GET['id'] ?>" method="post"
           enctype="multipart/form-data">
           <?php while ($row = mysqli_fetch_array($row_sua)) {
-                  $gia_co_dau = number_format($row['gia'], 0, ',', '.');
-            ?>
+      $gia_co_dau = number_format($row['gia'], 0, ',', '.');
+    ?>
           <label for="tensanpham" style="display: block;
             margin-bottom: 10px;">Tên Sản Phẩm:</label>
           <input style=" width: 100%;
@@ -44,23 +44,16 @@ color: var(--blue);">Sửa sản phẩm</a>
             box-sizing: border-box;" type="text" id="tensanpham" name="tensanpham" required
                value="<?php echo $row['tensanpham']; ?>">
           <!-- size -->
-          <select id="size" name="size" style=" width: 100%;
-        padding: 8px;
-        margin-bottom: 20px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;" required>
-               <option selected>Chọn Kích Thước</option>
+          <select id="size" name="size[]"
+               style="width: 100%; padding: 8px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;"
+               required multiple>
                <?php
-                        // Mảng các kích thước
-                        $sizes = array("35", "36", "37", "38", "39", "40", "41", "42", "43", "44");
-                        // Lặp qua mỗi kích thước và tạo tùy chọn
-                        foreach ($sizes as $size) {
-                              // Kiểm tra nếu kích thước hiện tại trùng với kích thước của sản phẩm
-                              // $selected = ($size == $row['size']) ? 'selected' : '';
-                        ?>
-               <option value="<?php echo $size ?>"><?php echo $size ?></option>
-               <?php } ?>
+            $sizes = array("35", "36", "37", "38", "39", "40", "41", "42", "43", "44");
+            foreach ($sizes as $size) {
+                $selected = (is_array($row['size']) && in_array($size, $row['size'])) ? 'selected' : '';
+                echo "<option value=\"$size\" $selected>$size</option>";
+            }
+            ?>
           </select>
 
           <!-- end size -->
