@@ -15,11 +15,11 @@ footer {
 .column-ft1 {
     display: flex;
     width: 85%;
-    height: 200px;
     justify-content: space-evenly;
     /* align-items: center; */
     margin: 0 auto;
     gap: 1rem;
+    padding: 20px;
 }
 
 .footer-heading {
@@ -32,7 +32,6 @@ footer {
     text-align: center;
     border-top: 1px solid rgb(174, 174, 174);
     color: rgb(123, 123, 123);
-    margin-top: 35px;
     padding: 10px 0px;
 }
 .img-footer {
