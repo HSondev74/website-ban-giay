@@ -12,6 +12,7 @@ body {
 footer {
     /* width: 100%; */
 }
+
 .column-ft1 {
     display: flex;
     width: 80%;
@@ -22,9 +23,11 @@ footer {
     gap: 1rem;
     font-size: 14px;
 }
+
 .ft-cl {
     gap: 2;
 }
+
 /* .footer-column1 .footer-column2 .footer-column3 .footer-column4 {
     width: 30%;
 } */
@@ -32,20 +35,28 @@ footer {
 .footer-heading {
     margin-bottom: 20px;
 }
-.footer-links > li > a {
+
+.footer-links>li>a {
     color: black;
 }
-.column-ft2 > p {
+
+.column-ft2>p {
     text-align: center;
     border-top: 1px solid rgb(174, 174, 174);
     color: rgb(123, 123, 123);
     margin-top: 20px;
     padding: 10px 0px;
 }
+
 .img-footer {
     width: 278px;
     height: 130px;
     object-fit: cover;
+}
+
+/* test */
+section {
+    height: 200vh;
 }
 
 /*==================   Repon  ===================*/
@@ -59,19 +70,24 @@ footer {
         grid-row-gap: 60px;
         font-size: 14px;
     }
+
     .footer-column1 {
         grid-area: cl1;
     }
+
     .footer-column2 {
         grid-area: cl2;
     }
+
     .footer-column3 {
         grid-area: cl3;
     }
+
     .footer-column4 {
         grid-area: cl4;
     }
-    .column-ft2 > p {
+
+    .column-ft2>p {
         margin-top: 150px;
     }
 }
@@ -88,19 +104,24 @@ footer {
         grid-row-gap: 50px;
         font-size: 14px;
     }
+
     .footer-column1 {
         grid-area: cl1;
     }
+
     .footer-column2 {
         grid-area: cl2;
     }
+
     .footer-column3 {
         grid-area: cl3;
     }
+
     .footer-column4 {
         grid-area: cl4;
     }
-    .column-ft2 > p {
+
+    .column-ft2>p {
         margin-top: 410px;
     }
 }

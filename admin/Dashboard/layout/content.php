@@ -31,6 +31,10 @@
                include("quanlykhachhang/edit.php");
           } elseif ($khoitao == 'setting' && $query == 'them') {
                include("settings/lietke.php");
+          } elseif ($khoitao == 'donhang' && $query == 'them') {
+               include("quanlydonhang/lietke.php");
+          } elseif ($khoitao == 'thongke' && $query == 'them') {
+               include("quanlythongke/lietke.php");
           } else {
                include("aside.php");
           }

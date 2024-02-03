@@ -11,10 +11,11 @@
 </style>
 
 <body>
+     <h1>abc</h1>
      <section id="container">
           <div id="scrollToTop">Top</div>
      </section>
 </body>
-<script src="/JS/scrollTop.js"></script>
+<script src="./JS/scrollTop.js"></script>
 
 </html>
