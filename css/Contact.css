@@ -12,7 +12,7 @@
     height: 700px;
 }
 .contact-in4 {
-    width: 40%;
+    width: 45%;
     height: 700px;
     background-image: linear-gradient(
         180deg,
@@ -70,4 +70,80 @@ p {
     color: aliceblue;
     font-size: 15px;
     margin-top: 20px;
+}
+
+.contact-text {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 5% 0px;
+}
+.ct-t-c {
+    border-right: 1px solid;
+}
+.ct-t-r > p > a {
+    text-decoration: none;
+    color: black;
+}
+
+@media screen and (max-width: 900px) {
+    .attach {
+        width: 90% !important;
+    }
+    .contact-in4 {
+        width: 0%;
+    }
+    .imga {
+        width: 100%;
+    }
+    .contact-text {
+        width: 100%;
+    }
+    .ct-t-l,
+    .ct-t-r {
+        width: 45%;
+    }
+}
+@media screen and (max-width: 440px) {
+    .ct-t-l,
+    .ct-t-r {
+        width: 100%;
+    }
+    h2 {
+        margin-left: 0px;
+    }
+    p {
+        width: 95%;
+        margin: 0px;
+    }
+    .cnt-in4 {
+        font-size: 14px;
+        width: 100%;
+        top: 0%;
+        left: 5%;
+    }
+    .ct-in4-r1 {
+        display: block;
+    }
+    .ct-in4-r2 {
+        margin: 0px;
+    }
+    .ct-in4-r1-l > input,
+    .ct-in4-r1-r > input {
+        width: 90%;
+        margin-bottom: 30px;
+    }
+    .input01 {
+        width: 90%;
+    }
+    .contact-text {
+        display: block;
+    }
+    .ct-t-l {
+        margin-bottom: 60px;
+    }
+    .btn-cnt {
+        background-color: black;
+    }
 }
