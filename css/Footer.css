@@ -13,7 +13,52 @@ footer {
     /* width: 100%; */
 }
 
+.send-mail {
+    padding: 20px 0px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    color: #fff;
+    align-items: center;
+}
+
+.send-mail>h4 {
+    font-size: 18px;
+}
+
+.input {
+    min-width: 400px;
+    padding: 10px;
+    font-size: 17px;
+    color: black;
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    border: none;
+    margin-right: -10px;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.button {
+    border: none;
+    background-color: #1363df;
+    text-decoration: none;
+    padding: 10px;
+    /* padding-bottom: 17px; */
+    font-size: 17px;
+    color: #fff;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    cursor: pointer;
+}
+
+.map {}
+
 .column-ft1 {
+    padding: 40px 0 20px;
     display: flex;
     width: 85%;
     justify-content: space-evenly;
