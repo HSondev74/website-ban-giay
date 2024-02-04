@@ -36,3 +36,23 @@
     color: aliceblue;
     cursor: pointer;
 }
+@media screen and (max-width: 900px) {
+    .inf-commodity {
+        padding-top: 40px;
+        width: 80%;
+    }
+}
+@media screen and (max-width: 440px) {
+    .inf-commodity {
+        padding-top: 20px;
+        width: 90%;
+    }
+    label {
+        font-size: 16px;
+    }
+    .text-hed {
+        width: 100%;
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
