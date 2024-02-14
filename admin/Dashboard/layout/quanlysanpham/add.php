@@ -33,8 +33,23 @@ color: var(--blue);">Sản phẩm</a>
                <input type="text" id="tensanpham" name="tensanpham" required>
           </div>
           <div class="form-group">
+               <label for="size">Kích Thước</label>
+               <select id="size" name="size[]" required multiple>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                    <option value="43">43</option>
+                    <option value="44">44</option>
+               </select>
+          </div>
+          <div class="form-group">
                <label for="gia">Giá</label>
-               <input type="number" id="gia" name="gia" required>
+               <input type="text" id="gia" name="gia" required>
           </div>
           <div class="form-group">
                <label for="hinhanh">Hình Ảnh</label>

@@ -1,37 +1,32 @@
-<!-- <header>
-     <div class="box-logo">
-          <nav class="logo">
-               <img src="images/logo-brand.png" alt="logo-brand">
-          </nav>
-     </div>
-     <div class="box-title">
-          <nav class="title-name">
-               <h1>Welcome, <span class="title__name-user">admin</span></h1>
-          </nav>
-          <nav class="groups">
-               <div class="calender">
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "websitebangiay";
 
-               </div>
-               <div class="search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-               </div>
-               <div class="bell">
-                    <i class="fa-solid fa-bell"></i>
-               </div>
-               <div class="avatar">
-                    <img src="images/h1.jpg" alt="">
-               </div>
-          </nav>
-     </div>
-</header> -->
+// Tạo kết nối
+$conn = mysqli_connect($servername, $username, $password, $database);
 
+// Kiểm tra
+if (!$conn) {
+     die("Connection failed: " . mysqli_connect_error());
+}
+$emailIsLogin = $_SESSION['login'];
+$sql = "select * from nguoidung where email = '" . $emailIsLogin . "' LIMIT 1";
+$query = mysqli_query($conn, $sql);
+$count = mysqli_num_rows($query);
+if ($count > 0) {
+     $row = mysqli_fetch_array($query);
+     // print_r($row);
+}
+?>
 <!-- Header -->
 <nav>
      <i class='bx bx-menu'></i>
      <a href="#" class="nav-link">Danh mục</a>
      <form action="#">
           <div class="form-input">
-               <input type="search" placeholder="Search...">
+               <input id="searchInput" type="search" placeholder='<?php echo date("d-m-Y"); ?>'>
                <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
           </div>
      </form>
@@ -42,7 +37,7 @@
           <span class="num">8</span>
      </a>
      <a href="#" class="profile">
-          <img src="images/h1.jpg" alt="avatar">
+          <img src="<?php echo $row['hinhanh'] ?>">
      </a>
 </nav>
 <!-- end Header -->

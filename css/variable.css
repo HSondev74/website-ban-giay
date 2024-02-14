@@ -1,0 +1,166 @@
+:root {
+     --nc-white: #fff;
+     --nc-primary-bg: #fef6f5;
+     --nc-secondary-blue: #0046ab;
+     --nc-secondary-green: #26aa99;
+     --nc-error-bg: #fff4f4;
+     --nc-caution: #da1e1e;
+     --nc-caution-bg: #fff8e4;
+     --nc-success: #30b566;
+     --nc-success-bg: #f7fffe;
+     --nc-text-primary: rgba(0, 0, 0, .87);
+     --nc-text-primary-o: #212121;
+     --nc-text-secondary: rgba(0, 0, 0, .65);
+     --nc-text-secondary-o: #9b9797;
+     --nc-text-tertiary: rgba(0, 0, 0, .54);
+     --nc-text-tertiary-o: #757575;
+     --nc-text-link: #0088ff;
+     --nc-util-mask: rgba(0, 0, 0, .4);
+     --nc-util-disabled: rgba(0, 0, 0, .26);
+     --nc-util-disabled-o: #bdbdbd;
+     --nc-util-line: rgba(0, 0, 0, .09);
+     --nc-util-line-o: #e8e8e8;
+     --nc-util-bg: #f5f5f5;
+     --nc-util-placeholder: #fafafa;
+     --nc-util-pressed: rgba(0, 0, 0, .05);
+     --nt-font-bold-w: 700;
+     --nt-size-foot: .625rem;
+     --nt-size-foot-l: .75rem;
+     --nt-size-foot-lp: .75rem;
+     --nt-size-foot-t: 1rem;
+     --nt-size-foot-tp: 1rem;
+     --nt-size-small: .75rem;
+     --nt-size-small-l: .875rem;
+     --nt-size-small-lp: 1.25rem;
+     --nt-size-small-t: 1.125rem;
+     --nt-size-small-tp: 1.125rem;
+     --nt-size-normal: .875rem;
+     --nt-size-normal-l: 1rem;
+     --nt-size-normal-lp: 1.25rem;
+     --nt-size-normal-t: 1.375rem;
+     --nt-size-normal-tp: 1.375rem;
+     --nt-size-large: 1rem;
+     --nt-size-large-l: 1.25rem;
+     --nt-size-large-lp: 1.375rem;
+     --nt-size-large-t: 1.5rem;
+     --nt-size-large-tp: 1.5rem;
+     --nt-size-title: 1.25rem;
+     --nt-size-title-l: 1.5rem;
+     --nt-size-title-lp: 1.5rem;
+     --nt-size-title-t: 1.875rem;
+     --nt-size-title-tp: 1.875rem;
+     --ns-a: .25rem;
+     --ns-b: .5rem;
+     --ns-c: .75rem;
+     --ns-d: 1rem;
+     --ns-e: 1.25rem;
+     --ns-f: 1.5rem;
+     --ns-g: 2.5rem;
+     --nr-normal: .125rem;
+     --nr-overlay: .25rem;
+     --nt-height: 2.125rem;
+     --percent: "80%";
+}
+
+.nt-foot {
+     font-size: var(--nt-size-foot, .625rem);
+     line-height: var(--nt-size-foot-t, 1rem)
+}
+
+.nt-foot-p {
+     font-size: var(--nt-size-foot, .625rem);
+     line-height: var(--nt-size-foot-tp, 1rem)
+}
+
+.nt-small {
+     font-size: var(--nt-size-small, .75rem);
+     line-height: var(--nt-size-small-t, 1.125rem)
+}
+
+.nt-small-p {
+     font-size: var(--nt-size-small, .75rem);
+     line-height: var(--nt-size-small-tp, 1.125rem)
+}
+
+.nt-normal {
+     font-size: var(--nt-size-normal, .875rem);
+     line-height: var(--nt-size-normal-t, 1.375rem)
+}
+
+.nt-normal-p {
+     font-size: var(--nt-size-normal, .875rem);
+     line-height: var(--nt-size-normal-tp, 1.375rem)
+}
+
+.nt-large {
+     font-size: var(--nt-size-large, 1rem);
+     line-height: var(--nt-size-large-t, 1.5rem)
+}
+
+.nt-large-p {
+     font-size: var(--nt-size-large, 1rem);
+     line-height: var(--nt-size-large-tp, 1.5rem)
+}
+
+.nt-title {
+     font-size: var(--nt-size-title, 1.25rem);
+     line-height: var(--nt-size-title-t, 1.875rem)
+}
+
+.nt-title-p {
+     font-size: var(--nt-size-title, 1.25rem);
+     line-height: var(--nt-size-title-tp, 1.875rem)
+}
+
+.nt-regular {
+     font-family: var(--nt-font-regular-f, 'HelveticaNeue', 'Helvetica Neue', 'Roboto', 'Droid Sans', Arial, sans-serif);
+     font-weight: var(--nt-font-regular-w, 400)
+}
+
+.nt-medium {
+     font-family: var(--nt-font-medium-f, 'HelveticaNeue-Medium', 'Helvetica Neue', 'Roboto', 'Droid Sans', Arial, sans-serif);
+     font-weight: var(--nt-font-medium-w, 500)
+}
+
+.nt-bold {
+     font-family: var(--nt-font-bold-f, 'HelveticaNeue-Bold', 'Helvetica Neue', 'Roboto', 'Droid Sans', 'Arial Bold', Arial, sans-serif);
+     font-weight: var(--nt-font-bold-w, 700)
+}
+
+.underline {
+     text-decoration: underline;
+     font-weight: 600;
+}
+
+.h-line {
+     border-right: 1px solid hsla(0, 6%, 29%, 0.4);
+     height: 1rem;
+}
+
+.flex {
+     display: flex;
+}
+
+.flex-between {
+     display: flex;
+     justify-content: space-between;
+}
+
+.flex-around {
+     display: flex;
+     justify-content: space-around;
+}
+
+.flex-evenly {
+     display: flex;
+     justify-content: space-evenly;
+}
+
+.center {
+     display: flex;
+     justify-content: center;
+}
+
+.v-center {
+     align-items: center;
+}

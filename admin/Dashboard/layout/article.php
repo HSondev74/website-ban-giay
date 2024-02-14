@@ -1,10 +1,3 @@
-<?php
-if (isset($_GET['action']) == 'logout') {
-     unset($_SESSION['login']);
-     echo "<script>alert('Đăng xuất thành công!'); window.location.href='login.php';</script>";
-}
-?>
-
 <!-- SIDEBAR -->
 
 
@@ -19,7 +12,7 @@ if (isset($_GET['action']) == 'logout') {
           <li class="active">
                <a href="index.php">
                     <i class='bx bxs-dashboard'></i>
-                    <span class="text">Dashboard</span>
+                    <span class="text">Trang Chủ</span>
                </a>
           </li>
           <li>
@@ -35,19 +28,19 @@ if (isset($_GET['action']) == 'logout') {
                </a>
           </li>
           <li>
-               <a href="index.php?action=user&query=them">
+               <a href="index.php?action=khachhang&query=them">
                     <i class='bx bxs-doughnut-chart'></i>
                     <span class="text">Khách hàng</span>
                </a>
           </li>
           <li>
-               <a href="index.php?action=khachhang&query=them">
+               <a href="index.php?action=donhang&query=them">
                     <i class='bx bxs-message-dots'></i>
                     <span class="text">Đơn hàng</span>
                </a>
           </li>
           <li>
-               <a href="index.php?action=thongke">
+               <a href="index.php?action=thongke&query=them">
                     <i class='bx bxs-group'></i>
                     <span class="text">Thống Kê</span>
                </a>
@@ -55,13 +48,13 @@ if (isset($_GET['action']) == 'logout') {
      </ul>
      <ul class="side-menu">
           <li>
-               <a href="#">
+               <a href="index.php?action=setting&query=them">
                     <i class='bx bxs-cog'></i>
                     <span class="text">Settings</span>
                </a>
           </li>
           <li>
-               <a href="index.php?action=logout" class="logout">
+               <a href="index.php?action=logout&query=" class="logout">
                     <i class='bx bxs-log-out-circle'></i>
                     <span class="text">Đăng Xuất</span>
                </a>
