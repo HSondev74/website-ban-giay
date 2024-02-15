@@ -18,7 +18,8 @@
     border: 1px solid rgb(197, 197, 197);
 }
 
-.hd-search-in4-item > .hidden-search-item-prd > label {
+.hd-search-in4-item > .hidden-search-item-prd,
+.hidden-search-item-prd-1 > label {
     color: rgb(125, 125, 125);
 }
 .hidden-search-item-prd-1 {
