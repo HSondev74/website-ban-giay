@@ -77,5 +77,20 @@
           </div>
      </div>
 
+     <div class="banner-only">
+          <h2>Chỉ có tại Footart</h2>
+          <div class="imgs">
+          <div class="only-img">
+               <img src="//bizweb.dktcdn.net/100/453/330/themes/859403/assets/banneronly_1.jpg?1705683863776" alt="">
+          </div>
+          <div class="only-img">
+               <img src="//bizweb.dktcdn.net/100/453/330/themes/859403/assets/banneronly_2.jpg?1705683863776" alt="">
+          </div>
+          <div class="only-img">
+               <img src="//bizweb.dktcdn.net/100/453/330/themes/859403/assets/banneronly_3.jpg?1705683863776" alt="">
+          </div>
+          </div>
+     </div>
+
 
 </main>
