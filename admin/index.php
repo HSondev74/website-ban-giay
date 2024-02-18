@@ -33,6 +33,44 @@ if (empty($_SESSION['login'])) {
           ?>
      </section>
 </body>
+<?php
+
+try {
+     $servername = "localhost";
+     $username = "root";
+     $password = "";
+     $database = "websitebangiay";
+     $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+     $start_date = date('Y-m-01');
+     $end_date = date('Y-m-t');
+
+     $sql = "SELECT 
+     ngaydat, 
+     COUNT(*) AS total_orders, 
+     SUM(gia * soluong) AS total_sales 
+ FROM 
+     donhang 
+ WHERE 
+     ngaydat BETWEEN :start_date AND :end_date 
+ GROUP BY 
+     ngaydat;
+ ";
+     $stmt = $conn->prepare($sql);
+     $stmt->bindParam(':start_date', $start_date);
+     $stmt->bindParam(':end_date', $end_date);
+     $stmt->execute();
+
+     // Lấy kết quả và đưa vào mảng
+     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+     $json_data = json_encode($result);
+} catch (PDOException $e) {
+     echo "Lỗi kết nối: " . $e->getMessage();
+}
+
+?>
 <script src="../admin/JS/script.js"></script>
 <script>
 function updateTime() {
@@ -66,6 +104,77 @@ function updateTime() {
 }
 
 setInterval(updateTime, 1000);
+</script>
+<script>
+function filterOrders() {
+     var userFilter = document.getElementById("userFilter").value.toLowerCase();
+     var statusFilter = document.getElementById("statusFilter").value.toLowerCase();
+
+     var rows = document.querySelectorAll(".order tbody tr");
+     rows.forEach(function(row) {
+          var user = row.querySelector("td:nth-child(1) p").textContent.toLowerCase();
+          var status = row.querySelector("td:nth-child(3) span").textContent.toLowerCase();
+
+          if ((user.includes(userFilter) || !userFilter) && (status.includes(statusFilter) || !
+                    statusFilter)) {
+               row.style.display = "";
+          } else {
+               row.style.display = "none";
+          }
+     });
+
+     // Xóa giá trị trong trường nhập người dùng
+     document.getElementById("userFilter").value = "";
+
+     // Đặt trỏ chuột vào trường nhập người dùng
+     document.getElementById("userFilter").focus();
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const JSON_DATA = <?php echo $json_data; ?>;
+
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+     type: 'bar',
+     data: {
+          labels: ['Đơn Hàng', 'ID Sản Phẩm', 'Tổng Tiền'],
+          datasets: [{
+                    label: 'Doanh Thu Theo Tháng',
+                    data: JSON_DATA.map(item => {
+                         console.log(item);
+                         return item.total_sales;
+                    }),
+                    borderWidth: 2,
+                    backgroundColor: 'red',
+               },
+               {
+                    label: 'Số Lượng Đơn Theo Tháng',
+                    data: JSON_DATA.map(item => {
+                         return item.total_orders;
+                    }),
+                    borderWidth: 2,
+                    backgroundColor: 'yellow',
+               }, {
+                    label: 'Các Ngày Có Đơn',
+                    data: JSON_DATA.map(item => {
+                         return item.ngaydat;
+                    }),
+                    borderWidth: 2,
+                    backgroundColor: 'green',
+               }
+          ]
+     },
+     options: {
+          scales: {
+               y: {
+                    beginAtZero: true
+               }
+          }
+     }
+});
 </script>
 
 </html>

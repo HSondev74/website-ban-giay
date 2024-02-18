@@ -1,20 +1,101 @@
+<?php
+include('./includes/config.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
      <meta charset="UTF-8">
+     <link rel="shortcut icon" type="image/png" href="./images/vibesneak.png" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="css/global.css">
+     <meta name="author" content="Le Hong Son">
+     <meta content="Le Hong Son" name="Developer">
+     <meta name="keywords"
+          content="full designer, full stack designer, lehongson, fullstack web, website, reactjs, backend developer, frontend developer">
+     <meta name="description" content="Highly accomplished programmer and Creative with 1+ years of experience">
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500;600;700&display=swap"
+          rel="stylesheet">
+     <link rel="stylesheet" href="./css/global.css">
+     <link rel="stylesheet" href="./css/variable.css">
      <title>Trang chủ</title>
 </head>
-<style>
-</style>
+
 
 <body>
-     <section id="container">
-          <div id="scrollToTop">Top</div>
-     </section>
+     <div id="main">
+          <?php
+          include('pages/Header.php');
+          include('pages/Content.php');
+          include('pages/Footer.php');
+          ?>
+     </div>
+
+
+
 </body>
-<script src="/JS/scrollTop.js"></script>
+<script src="./JS/scrollTop.js"></script>
+<script src="./JS/carasouel.js"></script>
+<script>
+function changeImage(imageSrc, productId) {
+     const product = document.querySelector(`.product[data-id="${productId}"]`);
+     if (product) {
+          const img = product.querySelector('.product-image img');
+          img.src = imageSrc;
+     }
+}
+
+
+
+const listFavorites = [];
+
+function changeFavorites(element, productId) {
+     const heartIcon = element.querySelector('i');
+     const product = element.closest('.product');
+     const productName = product.querySelector('.product-title').textContent;
+
+     const isFavorite = heartIcon.classList.toggle('red');
+
+     if (isFavorite) {
+          if (!listFavorites.includes(productId)) {
+               listFavorites.push(productId);
+          }
+          localStorage.setItem('favorites', JSON.stringify(listFavorites));
+          updateFavoritesCount();
+          alert("Đã thêm '" + productName + "' vào danh sách yêu thích.");
+     } else {
+          const index = listFavorites.indexOf(productId);
+          if (index !== -1) {
+               listFavorites.splice(index, 1);
+               localStorage.setItem('favorites', JSON.stringify(listFavorites));
+               updateFavoritesCount();
+               alert("Đã xóa sản phẩm '" + productName + "' khỏi danh sách yêu thích.");
+          }
+     }
+}
+
+function updateFavoritesCount() {
+     const favoritesCount = document.querySelector('.favorite');
+     if (favoritesCount) {
+          favoritesCount.textContent = listFavorites.length;
+     }
+}
+
+window.onload = function() {
+     const storedFavorites = JSON.parse(localStorage.getItem('favorites'));
+     if (storedFavorites) {
+          listFavorites.push(...storedFavorites);
+          const heartIcons = document.querySelectorAll('.heart-product i');
+          heartIcons.forEach(icon => {
+               const productId = parseInt(icon.closest('.product').getAttribute('data-product-id'));
+               console.log(productId);
+          });
+
+          updateFavoritesCount();
+     }
+};
+</script>
 
 </html>

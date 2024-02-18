@@ -34,8 +34,7 @@ color: var(--blue);">Sản phẩm</a>
           </div>
           <div class="form-group">
                <label for="size">Kích Thước</label>
-               <select id="size" name="size" required>
-                    <option selected>Chọn Kích Thước</option>
+               <select id="size" name="size[]" required multiple>
                     <option value="35">35</option>
                     <option value="36">36</option>
                     <option value="37">37</option>
