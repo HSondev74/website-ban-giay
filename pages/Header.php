@@ -41,9 +41,7 @@
                          </div>
                          <div class="h-line-searchbar"></div>
                          <div class="umine-searchbar__main">
-                              <div class="umine-searchbar-input"><input class="umine-searchbar-input__input"
-                                        maxlength="128" placeholder="Tìm kiếm hơn 200+ sản phẩm..." autocomplete="off"
-                                        aria-expanded="false" role="combobox" value="">
+                              <div class="umine-searchbar-input"><input class="umine-searchbar-input__input" maxlength="128" placeholder="Tìm kiếm hơn 200+ sản phẩm..." autocomplete="off" aria-expanded="false" role="combobox" value="">
                               </div>
                          </div><button type="button" class="umine-searchbar-button">
                               Tìm Kiếm
@@ -84,7 +82,7 @@
      <div class="line"></div>
 
      <ul class="container search-list-select">
-          <li><a href="">Trang Chủ</a></li>
+          <li><a href="index.php">Trang Chủ</a></li>
           <li><a href="">Cửa Hàng <i class='bx bx-chevron-down'></i></a>
                <ul class="dropmenu">
                     <li><a href="">ADIDAS</a></li>

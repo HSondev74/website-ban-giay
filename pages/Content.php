@@ -1,15 +1,14 @@
 <?php
 
-if (isset($_GET['action']) && $_GET['query']) {
+if (isset($_GET['action'])) {
   $khoitao = $_GET['action'];
-  $query = $_GET['query'];
 } else {
   $khoitao = null;
-  $query = '';
 }
 
 
-if ($khoitao == 'gioithieu') {
+if ($khoitao == 'chitietsanpham') {
+  include('./pages/chitietsanpham.php');
 } else {
   include('Home.php');
 }
