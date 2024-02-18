@@ -7,11 +7,14 @@
     font-weight: bold;
 }
 .frame-prd-cart {
-    width: 65%;
-    margin: 0 auto;
+    /* width: 65%; */
+    width: min(1350px, 100% - 3rem);
+    margin-inline: auto;
+    /* margin: 0 auto; */
     padding-top: 30px;
 }
 table {
+    width: 100%;
     border-collapse: separate;
     border-spacing: 0;
 }
@@ -40,6 +43,7 @@ td {
 }
 /*==========Tăng giảm số lượng sản phẩm==========*/
 .up-and-downproduct {
+    width: 95px;
     display: flex;
     align-items: center;
     border: 1px solid#d2cece;
@@ -115,5 +119,48 @@ td {
     .attach {
         width: 90% !important;
         border-bottom: 1px solid #d2d2d2;
+    }
+}
+@media screen and (max-width: 450px) {
+    th {
+        display: none;
+    }
+    td {
+        display: block;
+        padding: 0.75rem 1rem;
+    }
+    td::before {
+        content: attr(data-cell) " ";
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+    td:first-child {
+        padding-top: 1rem;
+    }
+    td:last-child {
+        padding-bottom: 2rem;
+    }
+    .up-and-downproduct {
+        height: 30px;
+    }
+    .quantity-decrease,
+    .quantity-increase {
+        height: 30px;
+        padding: -20px 8px;
+    }
+    .sum-price-cart {
+        font-size: 18px;
+    }
+    .sum-pay-color {
+        float: right;
+        margin-top: -6px;
+    }
+    .btn-pay-cart {
+        width: 100%;
+        float: right;
+        margin: 20px 0px 0px 20px;
+    }
+    .pay-cart {
+        margin-top: 25px;
     }
 }
