@@ -238,3 +238,81 @@
 .return-to-cart > button:hover {
     background-color: black;
 }
+
+@media screen and (max-width: 900px) {
+    .page-payment {
+        display: block;
+        width: 90%;
+    }
+    .column-left-pay {
+        margin: 0 auto;
+        width: 100%;
+        /* background-color: #b10b0b; */
+    }
+    .column-right-pay {
+        width: 95%;
+        margin: 0 auto;
+        border: none;
+        margin-bottom: 100px;
+    }
+    .discount-pay > input {
+        width: 76%;
+    }
+    .discount-pay > button {
+        width: 21%;
+    }
+    .atm > i,
+    .cod > i {
+        display: none;
+    }
+    .center-img > img {
+        width: 250px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .in4-payment {
+        display: block;
+    }
+    .receiving-in4 {
+        width: 100%;
+    }
+    .shipping-in4 {
+        width: 100%;
+    }
+    .atm,
+    .cod {
+        display: flex;
+    }
+    .atm > i,
+    .cod > i {
+        display: block;
+        margin-left: 10px !important;
+    }
+    .discount-pay > input {
+        width: 70%;
+    }
+    .discount-pay > button {
+        width: 25%;
+    }
+    .column-right-pay {
+        width: 100%;
+    }
+    .box-prd-pay {
+        margin: 20px 0px;
+    }
+    .hr {
+        margin: 0px 0px;
+    }
+    .discount-pay,
+    .provisional-fee,
+    .total-payment,
+    .return-to-cart {
+        margin: 18px 0px 0px 0px;
+    }
+    .center-img > img {
+        width: 250px;
+        height: 60px;
+    }
+}
