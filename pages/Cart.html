@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/Cart.css" />
+        <link rel="stylesheet" href="../css/global.css" />
+    </head>
+    <body>
+        <div
+            class="attach"
+            style="margin: 0 auto; width: 70%; padding: 20px 0px"
+        >
+            <span style="font-size: 12px; color: #777777; font-weight: bold"
+                >Trang Chủ /
+                <text style="color: #000000c0">Giỏ Hàng</text></span
+            >
+            <br />
+            <br /><br />
+            <span class="title-frame">Giỏ Hàng Của Bạn</span>
+        </div>
+        <br />
+        <div class="frame-prd-cart">
+            <table>
+                <tr>
+                    <th align="left">Sản Phẩm</th>
+                    <th align="left">Đơn Giá</th>
+                    <th align="left">Số Lượng</th>
+                    <th align="left">Thành Tiền</th>
+                    <th align="right"></th>
+                </tr>
+                <tr>
+                    <td data-cell="Sản Phẩm :">
+                        <div class="in4-prd-cart">
+                            <div class="img-prd-cart">
+                                <img
+                                    src="../images/img-products/1-1704299109565.webp"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="name-prd-cart">
+                                <br />
+
+                                <span
+                                    ><a href="" class="name-prd-link-cart"
+                                        >Giày Adidas D.O.N. Issue #5 'Year of
+                                        the Dragon' 2024 - IH7517</a
+                                    ></span
+                                ><br />
+                                <span>48 2/3</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td data-cell="Giá :">2.000.000đ</td>
+                    <td>
+                        <div class="up-and-downproduct">
+                            <button class="quantity-decrease">-</button>
+                            <span class="quantity-prd">1</span>
+                            <button class="quantity-increase">+</button>
+                        </div>
+                    </td>
+                    <td class="sum-price-cart" data-cell="Tổng :">
+                        2.000.000đ
+                    </td>
+                    <td>
+                        <input
+                            type="submit"
+                            value="Xóa"
+                            class="btn-del-item-cart"
+                        />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td data-cell="Sản Phẩm :">
+                        <div class="in4-prd-cart">
+                            <div class="img-prd-cart">
+                                <img
+                                    src="../images/img-products/1-1704299109565.webp"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="name-prd-cart">
+                                <br />
+
+                                <span
+                                    ><a href="" class="name-prd-link-cart"
+                                        >Giày Adidas D.O.N. Issue #5 'Year of
+                                        the Dragon' 2024 - IH7517</a
+                                    ></span
+                                ><br />
+                                <span>48 2/3</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td data-cell="Giá :">2.000.000đ</td>
+                    <td>
+                        <div class="up-and-downproduct">
+                            <button class="quantity-decrease">-</button>
+                            <span class="quantity-prd">1</span>
+                            <button class="quantity-increase">+</button>
+                        </div>
+                    </td>
+                    <td class="sum-price-cart" data-cell="Tổng :">
+                        2.000.000đ
+                    </td>
+                    <td>
+                        <input
+                            type="submit"
+                            value="Xóa"
+                            class="btn-del-item-cart"
+                        />
+                    </td>
+                </tr>
+            </table>
+            <div class="pay-cart">
+                <span class="sum-pay"
+                    >TỔNG HÓA ĐƠN:
+                    <span id="total" class="sum-pay-color"
+                        >2.000.000đ</span
+                    ></span
+                >
+                <input type="submit" value="Thanh Toán" class="btn-pay-cart" />
+            </div>
+        </div>
+    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const decreaseButton = document.querySelector(".quantity-decrease");
+            const increaseButton = document.querySelector(".quantity-increase");
+            const quantityElement = document.querySelector(".quantity-prd");
+
+            let quantity = 1;
+
+            decreaseButton.addEventListener("click", function () {
+                if (quantity > 1) {
+                    quantity--;
+                    quantityElement.textContent = quantity;
+                }
+            });
+
+            increaseButton.addEventListener("click", function () {
+                quantity++;
+                quantityElement.textContent = quantity;
+            });
+        });
+    </script>
+</html>

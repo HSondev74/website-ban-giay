@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/Payment.css" />
+        <link rel="stylesheet" href="../css/global.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body>
+        <div class="page-payment">
+            <div class="column-left-pay">
+                <div class="center-img">
+                    <img src="../images/logo-brand.png" alt="" />
+                </div>
+                <div class="in4-payment">
+                    <div class="receiving-in4">
+                        <div class="title-receiving">
+                            <h2>Thông tin nhận hàng</h2>
+                            <a href=""
+                                ><i
+                                    style="margin-right: 8px"
+                                    class="fa-solid fa-user"
+                                ></i
+                                >Đăng Nhập</a
+                            >
+                        </div>
+                        <div class="form-in4-pay">
+                            <input
+                                type="email"
+                                placeholder="Email (tùy chọn)"
+                                class="inp-pay"
+                            /><br />
+                            <input
+                                type="text"
+                                placeholder="Họ tên"
+                                class="inp-pay"
+                            /><br />
+                            <div class="tel-pay">
+                                <input
+                                    type="tel"
+                                    placeholder="Số điện thoại"
+                                    class="inp-pay inp-tel"
+                                />
+                                <div class="con">
+                                    <select>
+                                        <option value="vn">VN+84</option>
+                                        <!-- Thêm các quốc gia khác nếu cần -->
+                                    </select>
+                                </div>
+                            </div>
+
+                            <input
+                                type="text"
+                                placeholder="Tỉnh Thành"
+                                class="inp-pay"
+                            />
+                            <br />
+                            <input
+                                type="text"
+                                placeholder="Quận Huyện"
+                                class="inp-pay"
+                            /><br />
+                            <input
+                                type="text"
+                                placeholder="Phường Xã"
+                                class="inp-pay"
+                            />
+                            <textarea
+                                class="inp-pay"
+                                placeholder="Ghi chú"
+                                style="width: 100%; height: 100px"
+                            ></textarea>
+                        </div>
+                    </div>
+                    <div class="shipping-in4">
+                        <div class="ship">
+                            <h2>Vận Chuyển</h2>
+                            <p class="inp-pay span-ship">
+                                Vui lòng nhập thông tin giao hàng
+                            </p>
+                        </div>
+                        <br /><br />
+                        <div class="payment-methods">
+                            <h2>Phương Thức Thanh Toán</h2>
+                            <div class="atm">
+                                <input
+                                    type="radio"
+                                    id="bank-transfer"
+                                    name="payment-method"
+                                    value="bank-transfer"
+                                />
+                                <label for="bank-transfer"
+                                    >Chuyển khoản qua ngân hàng</label
+                                >
+                                <i
+                                    style="
+                                        margin-left: 50px;
+                                        color: rgb(114, 114, 114);
+                                    "
+                                    class="fa-solid fa-credit-card"
+                                ></i>
+                            </div>
+                            <div class="cod">
+                                <input
+                                    type="radio"
+                                    id="cash-on-delivery"
+                                    name="payment-method"
+                                    value="cash-on-delivery"
+                                />
+                                <label for="cash-on-delivery"
+                                    >Thanh toán khi nhận hàng</label
+                                >
+                                <i
+                                    style="
+                                        margin-left: 80px;
+                                        color: rgb(114, 114, 114);
+                                    "
+                                    class="fa-solid fa-money-bill"
+                                ></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column-right-pay">
+                <h2>Đơn Hàng (0 sản phẩm)</h2>
+                <div class="box-prd-pay">
+                    <div class="img-prd-pay">
+                        <img
+                            src="../images/img-products/1-1704299109565.webp"
+                            alt=""
+                        />
+                        <div class="number-prd-pay">
+                            <span>0</span>
+                        </div>
+                    </div>
+                    <div class="name-prd-pay">
+                        <span
+                            >Giày Adidas D.O.N. Issue #5 'Year of the Dragon'
+                            2024 - IH7517</span
+                        >
+                        <br />
+                        <span class="size-prd-pay">43</span>
+                    </div>
+                    <div class="price-prd-pay">
+                        <span>6.000.000đ</span>
+                    </div>
+                </div>
+
+                <div class="box-prd-pay">
+                    <div class="img-prd-pay">
+                        <img
+                            src="../images/img-products/1-1704299109565.webp"
+                            alt=""
+                        />
+                        <div class="number-prd-pay">
+                            <span>0</span>
+                        </div>
+                    </div>
+                    <div class="name-prd-pay">
+                        <span
+                            >Giày Adidas D.O.N. Issue #5 'Year of the Dragon'
+                            2024 - IH7517</span
+                        >
+                        <br />
+                        <span class="size-prd-pay">43</span>
+                    </div>
+                    <div class="price-prd-pay">
+                        <span>6.000.000đ</span>
+                    </div>
+                </div>
+                <hr class="hr" />
+                <div class="discount-pay">
+                    <input type="text" placeholder="Mã giảm giá (nếu có)" />
+                    <button>ÁP DỤNG</button>
+                </div>
+                <br />
+                <hr class="hr" />
+                <div class="provisional-fee">
+                    <p>Tạm Tính: <span>6.800.000đ</span></p>
+                    <p>Phí Vận Chuyển: <span>6.000đ</span></p>
+                </div>
+                <br />
+                <hr class="hr" />
+                <div class="total-payment">
+                    <p>Tổng Cộng: <span>6.806.000đ</span></p>
+                </div>
+                <br />
+                <hr class="hr" />
+                <div class="return-to-cart">
+                    <a href="#" class=""
+                        ><i
+                            style="margin-right: 5px"
+                            class="icon fa-solid fa-angle-left"
+                        ></i
+                        >Quay về giỏ hàng
+                    </a>
+                    <button>Đặt Hàng</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
