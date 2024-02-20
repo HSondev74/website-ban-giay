@@ -81,7 +81,7 @@ select {
 
 .container {
   margin: 0 auto;
-  width: 1500px;
+  width: 1300px;
 }
 
 .navbar {
@@ -789,7 +789,7 @@ i {
 
 @media screen and (max-width: 1280px) {
   .container {
-    max-width: 1400px;
+    max-width: 1200px;
   }
 
   .slider img {

@@ -36,6 +36,10 @@
     margin-top: 5px;
     color: rgba(0, 0, 0, 0.736);
 }
+
+.title-receiving > a > i {
+    font-size: 18px;
+}
 .form-in4-pay {
 }
 .inp-pay {
@@ -63,7 +67,7 @@
 }
 .con > select {
     margin: 2px;
-    height: 35px;
+    height: 44px;
     border: none;
     border-left: 1px solid #ccc;
     outline: none;
@@ -86,6 +90,9 @@
     font-size: 19px;
 }
 
+.pay-icon {
+    float: right;
+}
 .atm,
 .cod {
     width: 100%;
@@ -96,6 +103,11 @@
     border-style: solid;
     border-width: 1px;
     margin: 20px 0px;
+}
+
+.atm > i,
+.cod > i {
+    font-size: 22px;
 }
 .column-right-pay {
     width: 35%;
@@ -157,9 +169,11 @@
 }
 .discount-pay {
     margin: 20px 0px 0px 20px;
+    display: flex;
+    gap: 20px;
 }
 
-.discount-pay > input {
+.ds-pay-ip > input {
     width: 250px;
     height: 40px;
     padding-left: 10px;
@@ -167,7 +181,7 @@
     border: 1px solid #c6c6c6;
     border-radius: 8px;
 }
-.discount-pay > button {
+.ds-pay-btn > button {
     width: 100px;
     height: 38px;
     background-color: #787878;
@@ -177,7 +191,6 @@
     text-align: center;
     cursor: pointer;
     font-weight: 600;
-    margin-left: 10px;
 }
 .discount-pay > button:hover {
     border: solid 1px #333;
@@ -216,8 +229,11 @@
 }
 .return-to-cart > a {
     color: #333;
+    font-size: 16px;
 }
-
+.icon {
+    font-size: 16px;
+}
 .return-to-cart > a:hover {
     color: rgb(11, 11, 188);
 }
