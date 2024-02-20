@@ -1,3 +1,14 @@
+<div class="map">
+          <div class="show-map">
+               <div class="address-show">
+                    <h3>Địa chỉ cửa hàng</h3>
+                    <div class="close-map">x</div>
+               </div>
+               <div class="img-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.70066492663!2d105.7470029747149!3d21.04465988723339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454edcdbc166f%3A0xa9f96e0cf23b6dc4!2zTmcuIDE3NyDEkC4gQ-G6p3UgRGnhu4VuLCBLaeG7gXUgTWFpLCBQaMO6YyBEaeG7hW4sIELhuq9jIFThu6sgTGnDqm0sIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1708398620880!5m2!1svi!2s" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+               </div>
+          </div>
+</div>
 <footer class="footer">
      <section class="container">
           <div class="footer-top">
@@ -22,11 +33,20 @@
                <div class="links g-10">
                     <h2>Đường dẫn nhanh</h2>
                     <ul>
-                         <li><a href="">Vị trí cửa hàng</a></li>
+                         <li ><a class="address-google-map" href="">Vị trí cửa hàng</a></li>
                          <li><a href="">Theo dõi đơn hàng</a></li>
                          <li><a href="">FAQs</a></li>
                     </ul>
                </div>
+
+               
+
+
+
+
+
+               
+
                <div class="signup g-10">
                     <h2>Đăng ký nhận bản tin</h2>
                     <p class="normal">Tham gia cùng hơn 20.000 người đăng ký và nhận phiếu giảm giá mới cho
@@ -72,4 +92,8 @@
           </div>
      </section>
 </footer>
+
+     
+
+
 <div id="scrollToTop">Top</div>
