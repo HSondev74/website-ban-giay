@@ -10,7 +10,7 @@ html {
     line-height: 1.2;
     font-family: "Bai Jamjuree", sans-serif;
     color: var(--nc-text-primary);
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 a {
