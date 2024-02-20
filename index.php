@@ -7,7 +7,7 @@ session_start();
 
 <head>
      <meta charset="UTF-8">
-     <link rel="shortcut icon" type="image/png" href="./images/logo.png" />
+     <link rel="shortcut icon" type="image/png" href="./images/logo-web.jpg" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta name="author" content="Le Hong Son">
      <meta content="Le Hong Son" name="Developer">
