@@ -1,21 +1,21 @@
 <header class="umine-top">
-     <div class="navbar-wrapper contaner-wrapper">
-          <div class="container navbar">
-               <p class="navbar-left">
-                    Bạn là một Học Sinh hay Sinh Viên GIẢM GIÁ NGAY 20% ! <a href="" class="underline">xem
+     <div class="navbar-wrapper contaner-wrapper" style="background-color: #333; color: white;">
+          <div class="container navbar" style="padding-bottom: 5px;">
+               <p class="navbar-left" style=" color: white;">
+                    Bạn là một Học Sinh hay Sinh Viên GIẢM GIÁ NGAY 20% ! <a href="index.php?action=cuahang" class="underline" style=" color: white;">xem
                          thêm</a>
                </p>
                <div class="nav-space"></div>
                <ul class="navbar__links flex v-center">
                     <li>
-                         <a href="">Địa Chỉ Cửa Hàng</a>
+                         <a style=" color: white;" href="">Địa Chỉ Cửa Hàng</a>
                     </li>
                     <li>
-                         <a href="">Vấn Đề Vận Chuyển</a>
+                         <a style=" color: white;" href="https://i.ghtk.vn/">Vấn Đề Vận Chuyển</a>
                     </li>
-                    <li>
+                    <!-- <li>
                          <a href="">FAQs</a>
-                    </li>
+                    </li> -->
                </ul>
           </div>
      </div>
@@ -29,8 +29,7 @@
                     </div>
                </a>
                <div class="header-search__input-section">
-                    <form role="search" autocomplete="off" action="index.php?action=search" method="POST"
-                         class="umine-searchbar">
+                    <form role="search" autocomplete="off" action="index.php?action=search" method="POST" class="umine-searchbar">
                          <div class="umine-select-categories">
                               <select name="Categories">
                                    <option value="" selected>Toàn Bộ Hãng</option>
@@ -44,8 +43,8 @@
                                         // Duyệt qua từng danh mục và tạo các tùy chọn cho trường select
                                         while ($category = mysqli_fetch_assoc($result_categories)) {
                                    ?>
-                                   <option value="<?php echo $category['danhmuc_id']; ?>">
-                                        <?php echo $category['tendanhmuc']; ?></option>
+                                             <option value="<?php echo $category['danhmuc_id']; ?>">
+                                                  <?php echo $category['tendanhmuc']; ?></option>
                                    <?php
                                         }
                                    }
@@ -54,9 +53,7 @@
                          </div>
                          <div class="h-line-searchbar"></div>
                          <div class="umine-searchbar__main">
-                              <div class="umine-searchbar-input"><input class="umine-searchbar-input__input"
-                                        maxlength="128" placeholder="Tìm kiếm hơn 200+ sản phẩm..." autocomplete="off"
-                                        aria-expanded="false" role="combobox" value="" name="keyword">
+                              <div class="umine-searchbar-input"><input class="umine-searchbar-input__input" maxlength="128" placeholder="Tìm kiếm hơn 200+ sản phẩm..." autocomplete="off" aria-expanded="false" role="combobox" value="" name="keyword">
                               </div>
                          </div><button type="submit" name="searchHeader" class="umine-searchbar-button">
                               Tìm Kiếm
@@ -89,18 +86,18 @@
                                    $totalItems = count($_SESSION['cart']);
                                    // Tính tổng số lượng các mục trong session
                          ?>
-                         <div class="carts">
-                              <span class="cart"><?php echo $totalItems; ?></span>
-                              <i class='bx bx-cart'></i>
-                         </div>
-                         <?php
+                                   <div class="carts">
+                                        <span class="cart"><?php echo $totalItems; ?></span>
+                                        <i class='bx bx-cart'></i>
+                                   </div>
+                              <?php
                               } else {
                               ?>
-                         <div class="carts">
-                              <span class="cart">0</span>
-                              <i class='bx bx-cart'></i>
-                         </div>
-                         <?php
+                                   <div class="carts">
+                                        <span class="cart">0</span>
+                                        <i class='bx bx-cart'></i>
+                                   </div>
+                              <?php
                               }
 
                               $totalPrice = 0;
@@ -108,21 +105,21 @@
                                    $totalPrice += $item['gia'] * $item['soluong'];
                               }
                               ?>
-                         <div class="cart-price">
-                              <p>Your Cart</p>
-                              <strong><?php echo number_format($totalPrice) . " VNĐ" ?></strong>
-                         </div>
+                              <div class="cart-price">
+                                   <p>Your Cart</p>
+                                   <strong><?php echo number_format($totalPrice) . " VNĐ" ?></strong>
+                              </div>
                          <?php
                          } else {
                          ?>
-                         <div class="carts">
-                              <span class="cart">0</span>
-                              <i class='bx bx-cart'></i>
-                         </div>
-                         <div class="cart-price">
-                              <p>Your Cart</p>
-                              <strong>0 VNĐ</strong>
-                         </div>
+                              <div class="carts">
+                                   <span class="cart">0</span>
+                                   <i class='bx bx-cart'></i>
+                              </div>
+                              <div class="cart-price">
+                                   <p>Your Cart</p>
+                                   <strong>0 VNĐ</strong>
+                              </div>
                          <?php
                          }
                          ?>
@@ -138,16 +135,17 @@
 
      <ul class="container search-list-select">
           <li><a href="index.php">Trang Chủ</a></li>
-          <li><a href="index.php?action=cuahang">Cửa Hàng <i class='bx bx-chevron-down'></i></a>
-               <ul class="dropmenu">
+          <li><a href="index.php?action=cuahang">Cửa Hàng</a>
+               <!-- <i class='bx bx-chevron-down'></i> -->
+               <!-- <ul class="dropmenu">
                     <li><a href="">ADIDAS</a></li>
                     <li><a href="">NIKE</a></li>
                     <li><a href="">NEW BALANCE</a></li>
-               </ul>
+               </ul> -->
           </li>
           <li><a href="index.php?action=lienhe">Liên Hệ </a></li>
-          <li><a href="">Giới Thiệu </a></li>
-          <li><a href="">Kiểm tra đơn hàng </a></li>
+          <li><a href="index.php?action=gioithieu">Giới Thiệu </a></li>
+          <li><a href="index.php?action=kiemtradonhang">Kiểm tra đơn hàng </a></li>
           <li><a href="" class="strong">Mua ngay với những sản phẩm giảm lên đến 50%</a></li>
      </ul>
 

@@ -7,7 +7,7 @@ session_start();
 
 <head>
      <meta charset="UTF-8">
-     <link rel="shortcut icon" type="image/png" href="./images/vibesneak.png" />
+     <link rel="shortcut icon" type="image/png" href="./images/logo.png" />
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta name="author" content="Le Hong Son">
      <meta content="Le Hong Son" name="Developer">
@@ -22,6 +22,7 @@ session_start();
      <link rel="stylesheet" href="./css/Cart.css">
      <link rel="stylesheet" href="./css/Contact.css" />
      <link rel="stylesheet" href="./css/Store.css" />
+     <link rel="stylesheet" href="./css/InforCommodity.css" />
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
      <title>Trang chủ</title>
 </head>
@@ -129,7 +130,25 @@ session_start();
      };
 </script>
 
+<script>
+     function updateLabelValue(input, labelClass) {
+          // Lấy giá trị của input range và định dạng nó thành đơn vị tiền tệ
+          var value = input.value;
+          var formattedValue = formatCurrency(value);
 
+          // Tìm nhãn tương ứng bằng class name và cập nhật giá trị của nó
+          var label = document.querySelector('.' + labelClass);
+          label.textContent = formattedValue;
+     }
+
+     function formatCurrency(value) {
+          // Định dạng giá trị thành đơn vị tiền tệ, ví dụ: 10000000 sẽ thành "10.000.000đ"
+          return new Intl.NumberFormat('vi-VN', {
+               style: 'currency',
+               currency: 'VND'
+          }).format(value);
+     }
+</script>
 
 
 </html>

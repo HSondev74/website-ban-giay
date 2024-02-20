@@ -17,6 +17,8 @@ if ($khoitao == 'chitietsanpham') {
   include('./pages/Contact.php');
 } elseif ($khoitao == 'cuahang') {
   include('./pages/Store.php');
+} elseif ($khoitao == 'kiemtradonhang') {
+  include('./pages/InforCommodity.php');
 } else {
   include('Home.php');
 }
