@@ -44,20 +44,26 @@
                               $second_image = isset($images[1]) ? $images[1] : $images[0];
                          }
                ?>
+
                <div class="product"
                     onmouseover="changeImage('<?php echo $second_image; ?>', '<?php echo $product['sanpham_id']; ?>')"
                     onmouseout="changeImage('<?php echo $first_image; ?>', '<?php echo $product['sanpham_id']; ?>')"
                     data-id="<?php echo $product['sanpham_id']; ?>">
-                    <div class="discount"> -20% </div>
-                    <div class="product-image">
-                         <img src="<?php echo $first_image; ?>" alt="">
-                         <span class="cart-popup"><i class='bx bx-cart-add'></i></span>
-                    </div>
-                    <span class="heart-product" onclick="changeFavorites(this,<?php echo $product['sanpham_id']; ?>)"
-                         data-id="<?php echo $product['sanpham_id']; ?> "><i class='bx bxs-heart'></i></span>
-                    <p class=" product-title"><?php echo $product['tensanpham'] ?></p>
-                    <p class="product-price"><?php echo number_format($product['gia'], 0, ',', '.') . ' VNĐ'; ?>
-                    </p>
+                    <a href="/pages/cart.php?action=chitietsanpham&id=<?php echo $product['sanpham_id']; ?>">
+
+                         <div class="discount"> -20% </div>
+                         <div class="product-image">
+                              <img src="<?php echo $first_image; ?>" alt="">
+                              <a href="pages/addProduct.php?idsp=<?php echo $product['sanpham_id'] ?>"
+                                   class="cart-popup" name="addProduct"><i class='bx bx-cart-add'></i></a>
+                         </div>
+                         <span class="heart-product"
+                              onclick="changeFavorites(this,<?php echo $product['sanpham_id']; ?>)"
+                              data-id="<?php echo $product['sanpham_id']; ?> "><i class='bx bxs-heart'></i></span>
+                         <p class=" product-title"><?php echo $product['tensanpham'] ?></p>
+                         <p class="product-price"><?php echo number_format($product['gia'], 0, ',', '.') . ' VNĐ'; ?>
+                         </p>
+                    </a>
                </div>
                <?php
                     }
@@ -74,6 +80,63 @@
           <div class="banner-pr">
                <img src="https://bizweb.dktcdn.net/100/453/330/themes/859403/assets/banner_big.jpg?1705683863776"
                     alt="">
+          </div>
+     </div>
+
+     <div class="banner-only">
+          <div class="block-title">
+               <h2>Chỉ có tại Vibesneak</h2>
+          </div>
+          <div class="imgs">
+               <div class="only-img">
+                    <img src="//bizweb.dktcdn.net/100/453/330/themes/859403/assets/banneronly_1.jpg?1705683863776"
+                         alt="">
+               </div>
+               <div class="only-img">
+                    <img src="//bizweb.dktcdn.net/100/453/330/themes/859403/assets/banneronly_2.jpg?1705683863776"
+                         alt="">
+               </div>
+               <div class="only-img">
+                    <img src="//bizweb.dktcdn.net/100/453/330/themes/859403/assets/banneronly_3.jpg?1705683863776"
+                         alt="">
+               </div>
+          </div>
+     </div>
+
+     <div class="product-best-selling">
+          <h1 class="title-hot">Sản Phẩm Hot</h1>
+          <div class="best-selling-products">
+               <?php
+               $sql = "SELECT * FROM sanpham LIMIT 15";
+               $result = mysqli_query($conn, $sql);
+
+               if ($result->num_rows > 0) {
+                    while ($product = $result->fetch_assoc()) {
+                         $images = explode(',', $product['hinhanh']);
+                         if (!empty($images)) {
+                              $first_image = $images[0];
+                              $second_image = isset($images[1]) ? $images[1] : $images[0];
+                         }
+               ?>
+               <div class="product"
+                    onmouseover="changeImage('<?php echo $second_image; ?>', '<?php echo $product['sanpham_id']; ?>')"
+                    onmouseout="changeImage('<?php echo $first_image; ?>', '<?php echo $product['sanpham_id']; ?>')"
+                    data-id="<?php echo $product['sanpham_id']; ?>">
+                    <div class="discount"> -20% </div>
+                    <div class="product-image">
+                         <img src="<?php echo $first_image; ?>" alt="">
+                         <a href="pages/addProduct.php?action=giohang&idsp=<?php echo $product['sanpham_id'] ?>"
+                              class="cart-popup"><i class='bx bx-cart-add'></i></a>
+                    </div>
+                    <span class="heart-product" onclick="changeFavorites(this,<?php echo $product['sanpham_id']; ?>)"
+                         data-id="<?php echo $product['sanpham_id']; ?> "><i class='bx bxs-heart'></i></span>
+                    <p class=" product-title"><?php echo $product['tensanpham'] ?></p>
+                    <p class="product-price"><?php echo number_format($product['gia'], 0, ',', '.') . ' VNĐ'; ?>
+                    </p>
+               </div>
+               <?php
+                    }
+               } ?>
           </div>
      </div>
 

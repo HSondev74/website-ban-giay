@@ -1,15 +1,24 @@
 <?php
 
-if (isset($_GET['action']) && $_GET['query']) {
+if (isset($_GET['action'])) {
   $khoitao = $_GET['action'];
-  $query = $_GET['query'];
 } else {
   $khoitao = null;
-  $query = '';
 }
 
 
-if ($khoitao == 'gioithieu') {
+if ($khoitao == 'chitietsanpham') {
+  include('./pages/chitietsanpham.php');
+} elseif ($khoitao == 'giohang') {
+  include('./pages/Cart.php');
+} elseif ($khoitao == 'search') {
+  include('./pages/searchProduct.php');
+} elseif ($khoitao == 'lienhe') {
+  include('./pages/Contact.php');
+} elseif ($khoitao == 'cuahang') {
+  include('./pages/Store.php');
+} elseif ($khoitao == 'kiemtradonhang') {
+  include('./pages/InforCommodity.php');
 } else {
   include('Home.php');
 }

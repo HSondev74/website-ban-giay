@@ -72,4 +72,4 @@
           </div>
      </section>
 </footer>
-<div id="scrollToTop">Top</div>
+<div id="scrollToTop"><i class='bx bxs-arrow-to-top'></i></div>

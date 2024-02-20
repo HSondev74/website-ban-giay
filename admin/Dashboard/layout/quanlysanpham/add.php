@@ -27,7 +27,8 @@ color: var(--blue);">Sản phẩm</a>
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
      <h2>Thêm Sản Phẩm</h2>
-     <form action="Dashboard/layout/quanlysanpham/xuly.php" method="post" class="form-sanpham" enctype="multipart/form-data">
+     <form action="Dashboard/layout/quanlysanpham/xuly.php" method="post" class="form-sanpham"
+          enctype="multipart/form-data">
           <div class="form-group">
                <label for="tensanpham">Tên Sản Phẩm</label>
                <input type="text" id="tensanpham" name="tensanpham" required>
@@ -53,7 +54,7 @@ color: var(--blue);">Sản phẩm</a>
           </div>
           <div class="form-group">
                <label for="hinhanh">Hình Ảnh</label>
-               <input type="file" id="hinhanh" name="hinhanh" multiple required>
+               <input type="text" id="hinhanh" name="hinhanh" multiple required>
           </div>
           <div class="form-group">
                <label for="tonkho">Số Lượng</label>
@@ -75,7 +76,7 @@ color: var(--blue);">Sản phẩm</a>
                     while ($row = mysqli_fetch_array($row_lietke)) {
                          $i++;
                     ?>
-                         <option value="<?php echo $row['danhmuc_id'] ?>"><?php echo $row['tendanhmuc'] ?></option>
+                    <option value="<?php echo $row['danhmuc_id'] ?>"><?php echo $row['tendanhmuc'] ?></option>
                     <?php } ?>
                </select>
           </div>
