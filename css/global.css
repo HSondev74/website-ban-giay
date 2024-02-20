@@ -374,7 +374,7 @@ i {
   content: "";
   display: block;
   width: 100px;
-  height: 2px;
+  height: 1px;
   background-color: var(--nc-text-primary);
   position: absolute;
   right: 34%;
@@ -385,7 +385,7 @@ i {
   content: "";
   display: block;
   width: 100px;
-  height: 2px;
+  height: 1px;
   background-color: var(--nc-text-primary);
   position: absolute;
   left: 34%;
@@ -435,7 +435,7 @@ i {
   padding: 50px 100px;
 }
 
-.block-title{
+.block-title {
   margin-bottom: 20px;
   position: relative;
 }
@@ -455,14 +455,14 @@ i {
   background-color: black;
   display: block;
   position: absolute;
-  top: 50%; 
-  transform: translateY(-50%); 
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .imgs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px; 
+  gap: 20px;
 }
 
 .only-img {
@@ -475,10 +475,36 @@ i {
   height: auto;
 }
 
-.best-selling-products{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+.title-selling h1 {
+  display: inline;
+  position: relative;
+}
+
+.title-selling {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.title-selling h1::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 1px;
+  background-color: var(--nc-text-primary);
+  position: absolute;
+  right: 120%;
+  top: 19px;
+}
+
+.title-selling h1::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 1px;
+  background-color: var(--nc-text-primary);
+  position: absolute;
+  left: 120%;
+  top: 19px;
 }
 
 .heart-product,
