@@ -49,7 +49,7 @@
     border: none;
     padding-left: 10px;
     font-size: 16px;
-    width: 80%;
+    width: 85%;
 }
 input:focus {
     outline: none; /* Loại bỏ border khi input được focus */
@@ -93,9 +93,6 @@ input:focus {
 @media screen and (max-width: 440px) {
     .form {
         width: 90%;
-    }
-    .form > img {
-        width: 100%;
     }
     .form-control {
         width: 70%;

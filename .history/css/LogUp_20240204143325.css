@@ -1,0 +1,13 @@
+.wrapper {
+    border-top: 03px solid rgb(0, 0, 0);
+}
+
+.wrapper a {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 450px) and (min-width: 300px) {
+    .img > img {
+        width: 80%;
+    }
+}

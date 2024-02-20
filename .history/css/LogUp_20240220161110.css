@@ -1,3 +1,7 @@
+.container1f {
+    display: none;
+}
+
 .container {
     width: min(100%);
     margin-inline: auto;
@@ -11,6 +15,7 @@
     border-spacing: 0;
     margin: 0 auto;
     text-align: center;
+    display: none;
 }
 .form > img {
     width: 350px;
@@ -49,7 +54,7 @@
     border: none;
     padding-left: 10px;
     font-size: 16px;
-    width: 80%;
+    width: 85%;
 }
 input:focus {
     outline: none; /* Loại bỏ border khi input được focus */
