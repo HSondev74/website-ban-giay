@@ -161,6 +161,11 @@
      justify-content: center;
 }
 
+.center-center {
+     margin: 0 auto;
+     justify-content: center;
+}
+
 .v-center {
      align-items: center;
 }

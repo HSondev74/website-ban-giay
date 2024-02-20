@@ -22,9 +22,10 @@ $size = $_POST['size'];
 $all_sizes = implode(',', $_POST['size']);
 $danhmuc_id = $_POST['danhmuc_id'];
 // xử lý hình ảnh
-$hinhanh = $_FILES['hinhanh']['name'];
-$hinhanh_tmp = $_FILES['hinhanh']['tmp_name'];
-$hinhanh = time() . '_' . $hinhanh;
+$hinhanh = $_POST['hinhanh'];
+// $hinhanh = $_FILES['hinhanh']['name'];
+// $hinhanh_tmp = $_FILES['hinhanh']['tmp_name'];
+// $hinhanh = time() . '_' . $hinhanh;
 // Xử lý dữ liệu từ form
 if (isset($_POST['addSanpham'])) {
   // Làm sạch dữ liệu trước khi chèn vào câu truy vấn SQL
@@ -44,7 +45,7 @@ if (isset($_POST['addSanpham'])) {
   mysqli_query($conn, $sql);
 
   // Xử lý và lưu trữ tệp
-  move_uploaded_file($hinhanh_tmp, 'uploads/' . $hinhanh);
+  // move_uploaded_file($hinhanh_tmp, 'uploads/' . $hinhanh);
 
   // Thông báo thành công và chuyển hướng
   echo "<script>alert('Bạn đã thêm thành công!');
@@ -52,12 +53,12 @@ if (isset($_POST['addSanpham'])) {
       </script>";
 } elseif (isset($_POST['editsp'])) {
   // Xử lý hình ảnh
-  if ($_FILES['hinhanh']['name']) {
-    $hinhanh = time() . '_' . $_FILES['hinhanh']['name'];
-    $hinhanh_tmp = $_FILES['hinhanh']['tmp_name'];
-    move_uploaded_file($hinhanh_tmp, 'uploads/' . $hinhanh);
-  }
-
+  // if ($_FILES['hinhanh']['name']) {
+  //   $hinhanh = time() . '_' . $_FILES['hinhanh']['name'];
+  //   $hinhanh_tmp = $_FILES['hinhanh']['tmp_name'];
+  //   move_uploaded_file($hinhanh_tmp, 'uploads/' . $hinhanh);
+  // }
+  $hinhanh = $_POST['hinhanh'];
   // Xử lý dữ liệu trường size[] từ form
   $size_safe = '';
   if (!empty($_POST['size'])) {
@@ -74,7 +75,7 @@ if (isset($_POST['addSanpham'])) {
                     mota = '$mota'";
 
   // Nếu có hình ảnh từ form, thêm cập nhật cột hinhanh vào câu truy vấn
-  if ($_FILES['hinhanh']['name']) {
+  if ($_POST['hinhanh']) {
     $sql_sua .= ", hinhanh = '$hinhanh'";
   }
 
