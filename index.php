@@ -39,7 +39,8 @@ include('./includes/config.php');
 </body>
 <script src="./JS/scrollTop.js"></script>
 <script src="./JS/carasouel.js"></script>
-<script src="./JS/map.js"></script>
+<!-- <script src="./JS/map.js"></script> -->
+<script src="./JS/slideShowDetail.js"></script>
 <script>
 function changeImage(imageSrc, productId) {
      const product = document.querySelector(`.product[data-id="${productId}"]`);
