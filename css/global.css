@@ -374,7 +374,7 @@ i {
   content: "";
   display: block;
   width: 100px;
-  height: 2px;
+  height: 1px;
   background-color: var(--nc-text-primary);
   position: absolute;
   right: 34%;
@@ -385,7 +385,7 @@ i {
   content: "";
   display: block;
   width: 100px;
-  height: 2px;
+  height: 1px;
   background-color: var(--nc-text-primary);
   position: absolute;
   left: 34%;
@@ -479,10 +479,43 @@ i {
   height: auto;
 }
 
+<<<<<<< HEAD
 .best-selling-products {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+=======
+.title-selling h1 {
+  display: inline;
+  position: relative;
+}
+
+.title-selling {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.title-selling h1::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 1px;
+  background-color: var(--nc-text-primary);
+  position: absolute;
+  right: 120%;
+  top: 19px;
+}
+
+.title-selling h1::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 1px;
+  background-color: var(--nc-text-primary);
+  position: absolute;
+  left: 120%;
+  top: 19px;
+>>>>>>> origin/hieu
 }
 
 .heart-product,
@@ -785,6 +818,56 @@ i {
 .product-image img {
   width: 100%;
   transition: transform 0.3s ease;
+}
+
+.address{
+  position: relative;
+}
+
+.address-show{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.address-show h3{
+  padding: 0 15px;
+  color: black;
+}
+
+.map {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  color: #fff;
+}
+
+.show-map{
+  overflow: hidden;
+  background-color: #d3d3d3;
+  width: 1000px; 
+  height: 600px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.close-map{
+  text-align: right;
+  font-size: 20px;
+  padding: 5px 10px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.img-map{
+  width: 100%;
 }
 
 @media screen and (max-width: 1280px) {
