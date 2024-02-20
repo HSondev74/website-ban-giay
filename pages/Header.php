@@ -1,5 +1,5 @@
 <header class="umine-top">
-     <div class="navbar-wrapper contaner-wrapper" style="background-color: #333; color: white;">
+     <div class="navbar-wrapper contaner-wrapper container" style="background-color: #333; color: white;">
           <div class="container navbar" style="padding-bottom: 5px;">
                <p class="navbar-left" style=" color: white;">
                     Bạn là một Học Sinh hay Sinh Viên GIẢM GIÁ NGAY 20% ! <a href="index.php?action=cuahang"
@@ -67,14 +67,28 @@
                </div>
                <div class="header-search-cart flex v-center">
                     <div class="header-search-cart-account flex">
+                         <?php if (isset($_SESSION['dangnhap']) && !empty($_SESSION['dangnhap'])) : ?>
+                         <div class="account-icon" style="display: flex;">
+                              <a class="info-login" href="/bangiay/pages/logout.php">
+                                   <i class='bx bx-user'></i>
+                                   <p>Đăng xuất</p>
+                              </a>
+                              <nav>
+                                   <p><?php echo $_SESSION['dangnhap']['ten']; ?></p>
+                                   <p><?php echo $_SESSION['dangnhap']['email']; ?></p>
+                              </nav>
+                         </div>
+                         <?php else : ?>
                          <div class="account-icon">
-                              <i class='bx bx-user'></i>
+                              <a href="index.php?action=login"><i class='bx bx-user'></i></a>
                          </div>
                          <div class="account-title">
                               <a class="account-title-login" href="index.php?action=login">Đăng nhập</a>
                               <p class="account-title-acc">Tài khoản</p>
                          </div>
+                         <?php endif; ?>
                     </div>
+
 
                     <div class="header-favorites">
                          <span class="favorite">0</span>

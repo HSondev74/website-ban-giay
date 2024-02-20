@@ -10,7 +10,7 @@ html {
     line-height: 1.2;
     font-family: "Bai Jamjuree", sans-serif;
     color: var(--nc-text-primary);
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
 }
 
 a {
@@ -50,20 +50,23 @@ select {
 /* header */
 
 .navbar-wrapper {
-    height: var(--nt-height);
     z-index: 2;
     background: transparent;
     position: relative;
-    padding: 14px 0;
+    padding: 15px 0;
 }
 
 .container-wrapper {
     /* min-height: 1200px; */
 }
 
+.navbar-left {
+    /* margin-top: -50px */
+}
+
 .umine-top .navbar.container {
     width: inherit;
-    max-width: 1400px;
+    max-width: 1200px;
 }
 
 .navbar-wrapper .navbar {
@@ -81,8 +84,7 @@ select {
 
 .container {
     margin: 0 auto;
-    width: 1300px;
-    width: 1500px;
+    width: 1200px;
 }
 
 .navbar {
@@ -378,18 +380,18 @@ i {
     height: 1px;
     background-color: var(--nc-text-primary);
     position: absolute;
-    right: 34%;
+    right: 32%;
     top: 19px;
 }
 
-.title-hot::before {
+/* .title-hot::before {
     content: "";
     display: block;
     width: 100px;
     height: 1px;
     background-color: var(--nc-text-primary);
     position: absolute;
-    left: 34%;
+    left: 32%;
     top: 19px;
     content: "";
     display: block;
@@ -397,9 +399,8 @@ i {
     height: 2px;
     background-color: var(--nc-text-primary);
     position: absolute;
-    right: 34%;
     top: 19px;
-}
+} */
 
 .title-hot::before {
     content: "";
@@ -408,7 +409,7 @@ i {
     height: 2px;
     background-color: var(--nc-text-primary);
     position: absolute;
-    left: 34%;
+    left: 32%;
     top: 19px;
 }
 
@@ -419,6 +420,7 @@ i {
     gap: 15px;
     margin: 50px 0;
 }
+
 
 .content-products-search {
     margin: 50px auto;

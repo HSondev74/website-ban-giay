@@ -23,6 +23,8 @@ if ($khoitao == 'chitietsanpham') {
   include('./pages/Payment.php');
 } elseif ($khoitao == 'login') {
   include('./pages/Login.php');
+} elseif ($khoitao == 'logup') {
+  include('./pages/LogUp.php');
 } else {
   include('Home.php');
 }
