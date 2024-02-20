@@ -5,7 +5,7 @@
                 <h2>Giới thiệu về cửa hàng</h2>
                 <p>Có câu hỏi? Gọi cho chúng tôi 24/7</p>
                 <p class="big blue">+84-982-214-276</p>
-                <p class="normal">131, Thái Thịnh, Đống Đa, Hà Nội.
+                <p class="normal">177 Cầu Diễn, Phúc Diễn, Bắc Từ Liêm
                     leson.devwork@gmail.com
                     Vibesneak@admin.com</p>
             </div>
@@ -22,17 +22,16 @@
             <div class="links g-10">
                 <h2>Thành viên nhóm</h2>
                 <ul>
-                    <li>Lê Hồng Sơn (Leader)</li>
+                    <li>Lê Hồng Sơn</li>
                     <li>Nguyễn Tiến Đạt</li>
                     <li>Nguyễn Huy Hoàng</li>
                     <li>Hà Văn Huy</li>
-                    <li>Nguyễn Đức Hiếu</li>
+                    <li>Nguyễn Đức Hiếu</li> 
                 </ul>
             </div>
             <div class="signup g-10 ">
-                <!-- <h2>Đăng ký nhận bản tin</h2> -->
-                <h2>Phân chia công việc</h2>
-                <!-- <p class="normal">Tham gia cùng hơn 20.000 người đăng ký và nhận phiếu giảm giá mới cho
+                <h2>Đăng ký nhận bản tin</h2>
+                <p class="normal">Tham gia cùng hơn 20.000 người đăng ký và nhận phiếu giảm giá mới cho
                     mỗi lần
                     Thứ bảy. Cập nhật thông tin về Bán hàng và Ưu đãi.</p>
                 <div class="signup-input">
@@ -40,14 +39,7 @@
                     <button>Đăng ký</button>
                 </div>
                 <p class="normal">Đăng ký Vibesneak và được giảm giá 20% cho lần mua hàng đầu tiên của
-                    bạn.</p> -->
-                <ul>
-                    <li>Sơn: Perform, Dashboard</li>
-                    <li>Đạt: Design the theme</li>
-                    <li>Hoàng: Add + Search Product</li>
-                    <li>Huy: Add + Search Product</li>
-                    <li>Hiếu: Design the theme</li>
-                </ul>
+                    bạn.</p>
             </div>
         </div>
         <div class="line"></div>

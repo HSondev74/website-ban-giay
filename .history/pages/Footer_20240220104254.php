@@ -30,9 +30,8 @@
                 </ul>
             </div>
             <div class="signup g-10 ">
-                <!-- <h2>Đăng ký nhận bản tin</h2> -->
-                <h2>Phân chia công việc</h2>
-                <!-- <p class="normal">Tham gia cùng hơn 20.000 người đăng ký và nhận phiếu giảm giá mới cho
+                <h2>Đăng ký nhận bản tin</h2>
+                <p class="normal">Tham gia cùng hơn 20.000 người đăng ký và nhận phiếu giảm giá mới cho
                     mỗi lần
                     Thứ bảy. Cập nhật thông tin về Bán hàng và Ưu đãi.</p>
                 <div class="signup-input">
@@ -40,14 +39,7 @@
                     <button>Đăng ký</button>
                 </div>
                 <p class="normal">Đăng ký Vibesneak và được giảm giá 20% cho lần mua hàng đầu tiên của
-                    bạn.</p> -->
-                <ul>
-                    <li>Sơn: Perform, Dashboard</li>
-                    <li>Đạt: Design the theme</li>
-                    <li>Hoàng: Add + Search Product</li>
-                    <li>Huy: Add + Search Product</li>
-                    <li>Hiếu: Design the theme</li>
-                </ul>
+                    bạn.</p>
             </div>
         </div>
         <div class="line"></div>

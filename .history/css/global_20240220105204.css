@@ -662,7 +662,7 @@ i {
 
 .footer-top {
     display: grid;
-    grid-template-columns: 375px 176px 176px 375px;
+    grid-template-columns: 375px 176px 176px 451px;
     justify-content: space-between;
     padding: 68px 0 71px 0;
 }
@@ -674,7 +674,7 @@ i {
 }
 
 .footer-end {
-    padding: 42px 0;
+    padding: 62px 0;
 }
 .links > h2,
 .info > h2,

@@ -662,7 +662,8 @@ i {
 
 .footer-top {
     display: grid;
-    grid-template-columns: 375px 176px 176px 375px;
+    /* grid-template-columns: 375px 176px 176px 451px; */
+    grid-template-columns: 375px 375px 375px 375px;
     justify-content: space-between;
     padding: 68px 0 71px 0;
 }

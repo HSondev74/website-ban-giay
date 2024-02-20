@@ -30,8 +30,7 @@
                 </ul>
             </div>
             <div class="signup g-10 ">
-                <!-- <h2>Đăng ký nhận bản tin</h2> -->
-                <h2>Phân chia công việc</h2>
+                <h2>Đăng ký nhận bản tin</h2>
                 <!-- <p class="normal">Tham gia cùng hơn 20.000 người đăng ký và nhận phiếu giảm giá mới cho
                     mỗi lần
                     Thứ bảy. Cập nhật thông tin về Bán hàng và Ưu đãi.</p>
