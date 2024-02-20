@@ -64,7 +64,7 @@ if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) { // Kiểm tra gi
                </table>
                <div class="pay-cart">
                     <span class="sum-pay">TỔNG HÓA ĐƠN: <span id="total" class="sum-pay-color"><?php echo number_format($total_price); ?>đ</span></span>
-                    <input type="submit" value="Thanh Toán" class="btn-pay-cart" />
+                    <a href="index.php?action=thanhtoan"> <input type="button" value="Thanh Toán" class="btn-pay-cart" /></a>
                </div>
           </div>
      <?php else : ?>

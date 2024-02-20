@@ -71,7 +71,7 @@
                               <i class='bx bx-user'></i>
                          </div>
                          <div class="account-title">
-                              <p class="account-title-login">Đăng nhập</p>
+                              <a class="account-title-login" href="index.php?action=login">Đăng nhập</a>
                               <p class="account-title-acc">Tài khoản</p>
                          </div>
                     </div>
@@ -84,7 +84,7 @@
                     <a href="./index.php?action=giohang" class="header-cart flex v-center">
                          <?php
                          // Kiểm tra xem session 'cart' có tồn tại không
-                         if (isset($_SESSION['cart'])) {
+                         if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
                               // Kiểm tra xem session 'cart' có rỗng không
                               if (!empty($_SESSION['cart'])) {
                                    $cart = $_SESSION['cart'];

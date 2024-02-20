@@ -19,6 +19,10 @@ if ($khoitao == 'chitietsanpham') {
   include('./pages/Store.php');
 } elseif ($khoitao == 'kiemtradonhang') {
   include('./pages/InforCommodity.php');
+} elseif ($khoitao == 'thanhtoan') {
+  include('./pages/Payment.php');
+} elseif ($khoitao == 'login') {
+  include('./pages/Login.php');
 } else {
   include('Home.php');
 }
