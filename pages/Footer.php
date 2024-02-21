@@ -5,7 +5,7 @@
                     <h2>Giới thiệu về cửa hàng</h2>
                     <p>Có câu hỏi? Gọi cho chúng tôi 24/7</p>
                     <p class="big blue">+84-982-214-276</p>
-                    <p class="normal">177 Cầu Diễn, Phúc Diễn, Bắc Từ Liêm
+                    <p class="normal">131, Thái Thịnh, Đống Đa, Hà Nội.
                          leson.devwork@gmail.com
                          Vibesneak@admin.com</p>
                </div>
@@ -20,24 +20,34 @@
                     </ul>
                </div>
                <div class="links g-10">
-                    <h2>Đường dẫn nhanh</h2>
+                    <h2>Thành viên nhóm</h2>
                     <ul>
-                         <li><a href="">Vị trí cửa hàng</a></li>
-                         <li><a href="">Theo dõi đơn hàng</a></li>
-                         <li><a href="">FAQs</a></li>
+                         <li>Lê Hồng Sơn (Leader)</li>
+                         <li>Nguyễn Tiến Đạt</li>
+                         <li>Nguyễn Huy Hoàng</li>
+                         <li>Hà Văn Huy</li>
+                         <li>Nguyễn Đức Hiếu</li>
                     </ul>
                </div>
-               <div class="signup g-10">
-                    <h2>Đăng ký nhận bản tin</h2>
-                    <p class="normal">Tham gia cùng hơn 20.000 người đăng ký và nhận phiếu giảm giá mới cho
-                         mỗi lần
-                         Thứ bảy. Cập nhật thông tin về Bán hàng và Ưu đãi.</p>
-                    <div class="signup-input">
-                         <input type="text" placeholder="Your email address...">
-                         <button>Đăng ký</button>
-                    </div>
-                    <p class="normal">Đăng ký Vibesneak và được giảm giá 20% cho lần mua hàng đầu tiên của
-                         bạn.</p>
+               <div class="signup g-10 ">
+                    <!-- <h2>Đăng ký nhận bản tin</h2> -->
+                    <h2>Phân chia công việc</h2>
+                    <!-- <p class="normal">Tham gia cùng hơn 20.000 người đăng ký và nhận phiếu giảm giá mới cho
+                    mỗi lần
+                    Thứ bảy. Cập nhật thông tin về Bán hàng và Ưu đãi.</p>
+                <div class="signup-input">
+                    <input type="text" placeholder="Your email address...">
+                    <button>Đăng ký</button>
+                </div>
+                <p class="normal">Đăng ký Vibesneak và được giảm giá 20% cho lần mua hàng đầu tiên của
+                    bạn.</p> -->
+                    <ul>
+                         <li>Sơn: Perform, Dashboard</li>
+                         <li>Đạt: Design the theme</li>
+                         <li>Hoàng: Add + Search Product</li>
+                         <li>Huy: Add + Search Product</li>
+                         <li>Hiếu: Design the theme</li>
+                    </ul>
                </div>
           </div>
           <div class="line"></div>
@@ -72,4 +82,4 @@
           </div>
      </section>
 </footer>
-<div id="scrollToTop">Top</div>
+<div id="scrollToTop"><i class='bx bxs-arrow-to-top'></i></div>

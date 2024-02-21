@@ -1,0 +1,77 @@
+.container {
+    width: min(100%);
+    margin-inline: auto;
+    /* margin: 0 auto; */
+    padding-top: 20px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.form {
+    width: 20%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+.form > img {
+    width: 350px;
+    height: 80px;
+}
+.form-logup {
+    margin-top: 50px;
+    border-top: 3px solid #2c2a2a;
+    border-radius: 5px;
+}
+.form-logup > h2 {
+    margin-top: 10px;
+    color: #2b2626;
+    font-size: 28px;
+    font-weight: 600;
+}
+.form-logup > p {
+    font-size: 18px;
+    margin-top: -20px;
+    color: #969696;
+}
+.ip-logup {
+    text-align: left;
+    border: 1px solid #d6d3d3;
+    padding: 8px 0px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.input-group-text {
+    padding: 7px 6px 7px 10px;
+    border-right: 1px solid #d6d3d3;
+    background-color: rgb(241, 248, 255);
+}
+.fa {
+}
+.fa-user {
+}
+.form-control {
+    border: none;
+    padding-left: 10px;
+    font-size: 16px;
+    width: 85%;
+}
+input:focus {
+    outline: none; /* Loại bỏ border khi input được focus */
+}
+.fa-envelope {
+}
+.fa-lock {
+}
+.btn-logup > .button {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #f2f2f2;
+    background-color: #1d1d1d;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+.ask1 {
+}
+.ask2 {
+}

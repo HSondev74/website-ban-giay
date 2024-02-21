@@ -1,0 +1,31 @@
+.container {
+    width: min(1350px, 100% - 3rem);
+    margin-inline: auto;
+    /* margin: 0 auto; */
+    padding-top: 30px;
+}
+.form-logup {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+.ip-logup {
+}
+.input-group-text {
+}
+.fa {
+}
+.fa-user {
+}
+.form-control {
+}
+.fa-envelope {
+}
+.fa-lock {
+}
+.btn-logup {
+}
+.ask1 {
+}
+.ask2 {
+}
