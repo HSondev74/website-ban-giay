@@ -112,5 +112,7 @@ if (isset($_GET['idsp'])) {
                $_SESSION['cart'][] = $new_product;
           }
      }
-     header('location: ../index.php?action=giohang');
+     // Hiển thị thông báo thông qua JavaScript
+     echo "<script>alert('Sản phẩm đã được thêm vào giỏ hàng');</script>";
+     echo "<script>window.history.back();</script>";
 }

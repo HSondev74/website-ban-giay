@@ -43,11 +43,17 @@ select {
 }
 
 .umine-top {
-    padding-bottom: 20px;
     background-color: var(--nc-white);
 }
 
 /* header */
+header {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
 
 .navbar-wrapper {
     z-index: 2;
@@ -85,6 +91,10 @@ select {
 .container {
     margin: 0 auto;
     width: 1400px;
+}
+
+#main {
+    margin-top: 220px;
 }
 
 .navbar {
@@ -471,7 +481,7 @@ i {
     background-color: #e4fbff;
     padding-right: 20px;
     display: inline-block;
-    z-index: 999;
+    z-index: 1;
 }
 
 .block-title::after {
@@ -986,12 +996,6 @@ i {
     border: 1px solid black;
 }
 
-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
 
 .list div .active {
     border: 1px solid red;
@@ -1000,6 +1004,23 @@ img {
 .product-price {
     color: #dc323c;
     font-weight: 600;
+}
+
+.btn-payment {
+    padding: 10px 30px;
+    border: none;
+    background-color: #f60d1d;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all .5s ease-in-out;
+}
+
+.btn-payment:hover {
+    background-color: #8d030c;
 }
 
 @media screen and (max-width: 1280px) {

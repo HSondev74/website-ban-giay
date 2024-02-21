@@ -8,7 +8,7 @@ if (isset($_GET['action'])) {
 
 
 if ($khoitao == 'chitietsanpham') {
-  include('./pages/chitietsanpham.php');
+  include('./pages/Detail.php');
 } elseif ($khoitao == 'giohang') {
   include('./pages/Cart.php');
 } elseif ($khoitao == 'search') {
