@@ -97,6 +97,10 @@ header {
     margin-top: 220px;
 }
 
+.space {
+    margin-top: 270px !important;
+}
+
 .navbar {
     display: flex;
     align-items: center;
@@ -954,6 +958,42 @@ i {
     gap: 20px;
 }
 
+.nav-detail {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-detail li a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #777777;
+}
+
+.name-detail {
+    font-weight: bold;
+}
+
+.container-details {
+    height: 150vh;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.all-detail {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.list {
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
 .gallery {
     height: 85%;
     position: relative;
@@ -966,7 +1006,13 @@ i {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    color: #fff;
+    color: #3c3a3a;
+    transition: all .5s ease-in;
+    cursor: pointer;
+}
+
+.control:hover {
+    color: var(--nc-caution);
 }
 
 .gallery-inner {
@@ -993,35 +1039,172 @@ i {
 
 .list div {
     cursor: pointer;
-    border: 1px solid black;
+    border: 1px solid #dadada;
 }
 
+img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+    object-position: center;
+}
 
 .list div .active {
     border: 1px solid red;
 }
 
-.product-price {
+.detail-name {
+    font-size: 25px;
+}
+
+.detail-price {
+    font-size: 30px;
     color: #dc323c;
     font-weight: 600;
 }
 
-.btn-payment {
-    padding: 10px 30px;
-    border: none;
-    background-color: #f60d1d;
-    text-align: center;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: 600;
-    transition: all .5s ease-in-out;
+.detail-brand {
+    font-weight: bold;
 }
 
-.btn-payment:hover {
-    background-color: #8d030c;
+.size {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    list-style: none;
+    text-align: center;
+    gap: 10px;
+    /* overflow: hidden; */
+    padding: 30px 0;
 }
+
+
+.size li {
+    border: 2px solid black;
+    padding: 8px 1px;
+    border-radius: 10px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.size li:hover {
+    border: 2px solid orange;
+    color: orange;
+}
+
+.parameter-detail {
+    padding: 0;
+    border-top: 1px solid rgb(221, 221, 221);
+    border-bottom: 1px solid rgb(221, 221, 221);
+    padding: 20px 0;
+}
+
+.para {
+    display: flex;
+}
+
+.para b {
+    color: gray;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.detail-ship {
+    display: grid;
+    grid-template-columns: auto auto;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    padding: 15px 0;
+    gap: 15px;
+}
+
+.detail-icon {
+    display: flex;
+    /* align-items: center; */
+}
+
+.detail-icon img {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+.detail-icon p {
+    margin: 0;
+    font-size: 14px;
+    display: inline;
+}
+
+.detail-like {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    gap: 10px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+
+/* .up-and-downproduct {
+    width: 95px;
+    display: flex;
+    align-items: center;
+    border: 1px solid#d2cece;
+  }
+  
+  .quantity-prd {
+    margin: 0 20px;
+  }
+  
+  .quantity-decrease,
+  .quantity-increase {
+    background-color: #e0dddd;
+    border: none;
+    padding: 3px 8px;
+    cursor: pointer;
+  }
+  
+  .quantity-decrease:hover,
+  .quantity-increase:hover {
+    background-color: #aaa;
+  } */
+
+.detail-pay {
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+    margin: 15px 0;
+}
+
+.detail-add-pay {
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-weight: bold;
+    /* display: block; */
+}
+
+.detail-buy {
+    padding: 10px 40px;
+    /* border: 1px solid black; */
+    background-color: red;
+    color: #fff;
+    border-radius: 5px;
+    /* margin: 15px 0; */
+    /* padding: 15px; */
+}
+
+.detail-contact {
+    display: flex;
+    gap: 20px;
+
+}
+
+.detail-contact div {
+    padding: 10px;
+    background-color: blue;
+    color: #fff;
+    border-radius: 5px;
+}
+
+
 
 @media screen and (max-width: 1280px) {
     .container {

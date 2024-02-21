@@ -3,31 +3,31 @@
 $total_price = 0;
 // Tính tổng giá trị của giỏ hàng
 if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) { // Kiểm tra giỏ hàng có tồn tại và không rỗng
-    foreach ($_SESSION['cart'] as $item) {
-        $total_price += $item['gia'] * $item['soluong'];
-    }
+     foreach ($_SESSION['cart'] as $item) {
+          $total_price += $item['gia'] * $item['soluong'];
+     }
 }
 
 $phi_van_chuyen = 0;
 // Xử lý POST Data
 if (isset($_POST['tinh_thanh'])) {
-    $tinh_thanh = $_POST['tinh_thanh'];
+     $tinh_thanh = $_POST['tinh_thanh'];
 
-    // Truy vấn cơ sở dữ liệu để lấy phí vận chuyển tương ứng
-    $sql = "SELECT phi FROM phivanchuyen WHERE thanhpho = '$tinh_thanh'";
-    $result = mysqli_query($conn, $sql);
+     // Truy vấn cơ sở dữ liệu để lấy phí vận chuyển tương ứng
+     $sql = "SELECT phi FROM phivanchuyen WHERE thanhpho = '$tinh_thanh'";
+     $result = mysqli_query($conn, $sql);
 
-    if ($result && mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $phi_van_chuyen = $row['phi'];
-    } else {
-        $phi_van_chuyen = 0; // Hoặc bất kỳ giá trị mặc định nào bạn muốn nếu không tìm thấy phí vận chuyển
-    }
+     if ($result && mysqli_num_rows($result) > 0) {
+          $row = mysqli_fetch_assoc($result);
+          $phi_van_chuyen = $row['phi'];
+     } else {
+          $phi_van_chuyen = 0; // Hoặc bất kỳ giá trị mặc định nào bạn muốn nếu không tìm thấy phí vận chuyển
+     }
 }
 
 
 ?>
-<main>
+<main id="main">
      <form action="pages/xulythanhtoan.php" method="POST" class="page-payment">
           <div class="column-left-pay">
                <div class="center-img">
@@ -55,8 +55,7 @@ if (isset($_POST['tinh_thanh'])) {
                               <br />
                               <input type="text" name="quan_huyen" placeholder="Quận Huyện" class="inp-pay" /><br />
                               <input type="text" name="phuong_xa" placeholder="Phường Xã" class="inp-pay" />
-                              <textarea class="inp-pay" name="ghi_chu" placeholder="Ghi chú"
-                                   style="width: 100%; height: 100px"></textarea>
+                              <textarea class="inp-pay" name="ghi_chu" placeholder="Ghi chú" style="width: 100%; height: 100px"></textarea>
                          </div>
                     </div>
                     <div class="shipping-in4">
@@ -75,8 +74,7 @@ if (isset($_POST['tinh_thanh'])) {
                                    <i style=" color: rgb(114, 114, 114);" class='bx bx-credit-card'></i>
                               </div>
                               <div class="cod">
-                                   <input type="radio" id="cash-on-delivery" name="payment-method"
-                                        value="thanh toán tiền mặt" />
+                                   <input type="radio" id="cash-on-delivery" name="payment-method" value="thanh toán tiền mặt" />
                                    <label for="cash-on-delivery">Thanh toán khi nhận hàng</label>
                                    <i style=" color: rgb(114, 114, 114);" class='bx bx-money'></i>
                               </div>
@@ -86,36 +84,36 @@ if (isset($_POST['tinh_thanh'])) {
           </div>
           <div class="column-right-pay">
                <?php
-            // Kiểm tra xem session cart có tồn tại không
-            if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
-                foreach ($_SESSION['cart'] as $product) {
-                    // Lặp qua mỗi sản phẩm trong session cart và hiển thị chúng
-            ?>
-               <div class="box-prd-pay">
-                    <div class="img-prd-pay">
-                         <img src="<?php echo $product['hinhanh']; ?>" alt="" />
-                         <div class="number-prd-pay">
-                              <span><?php echo $product['soluong']; ?></span>
+               // Kiểm tra xem session cart có tồn tại không
+               if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
+                    foreach ($_SESSION['cart'] as $product) {
+                         // Lặp qua mỗi sản phẩm trong session cart và hiển thị chúng
+               ?>
+                         <div class="box-prd-pay">
+                              <div class="img-prd-pay">
+                                   <img src="<?php echo $product['hinhanh']; ?>" alt="" />
+                                   <div class="number-prd-pay">
+                                        <span><?php echo $product['soluong']; ?></span>
+                                   </div>
+                              </div>
+                              <div class="name-prd-pay">
+                                   <span><?php echo $product['tensp']; ?></span>
+                                   <br />
+                              </div>
+                              <div class="price-prd-pay">
+                                   <span><?php echo number_format($product['gia'], 0, ',', '.'); ?>đ</span>
+                              </div>
                          </div>
-                    </div>
-                    <div class="name-prd-pay">
-                         <span><?php echo $product['tensp']; ?></span>
-                         <br />
-                    </div>
-                    <div class="price-prd-pay">
-                         <span><?php echo number_format($product['gia'], 0, ',', '.'); ?>đ</span>
-                    </div>
-               </div>
+                    <?php
+                    }
+               } else {
+                    // Nếu không có sản phẩm trong giỏ hàng, hiển thị thông báo
+                    ?>
+                    <h2>Đơn Hàng (0 sản phẩm)</h2>
+                    <p>Giỏ hàng của bạn đang trống.</p>
                <?php
-                }
-            } else {
-                // Nếu không có sản phẩm trong giỏ hàng, hiển thị thông báo
-                ?>
-               <h2>Đơn Hàng (0 sản phẩm)</h2>
-               <p>Giỏ hàng của bạn đang trống.</p>
-               <?php
-            }
-            ?>
+               }
+               ?>
                <hr class="hr" />
                <div class="discount-pay">
                     <input type="text" placeholder="Mã giảm giá (nếu có)" />

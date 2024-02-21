@@ -1,7 +1,6 @@
-<main>
+<main id="main">
      <div class="attach" style="margin: 0 auto; width: 70%; padding: 20px 0px">
-          <span style="font-size: 12px; color: #777777; font-weight: bold">Trang Chủ / <text
-                    style="color: #000000c0">Liên Hệ</text></span>
+          <span style="font-size: 12px; color: #777777; font-weight: bold">Trang Chủ / <text style="color: #000000c0">Liên Hệ</text></span>
      </div>
      <div class="contact-img">
           <div class="contact-in4">
@@ -28,8 +27,7 @@
                          <label>
                               Tin Nhắn *<br /><br />
 
-                              <textarea required="" rows="10" placeholder="Đừng Ngại Hỏi Về Đơn Hàng Của Bạn"
-                                   id="message" class="input01"></textarea>
+                              <textarea required="" rows="10" placeholder="Đừng Ngại Hỏi Về Đơn Hàng Của Bạn" id="message" class="input01"></textarea>
                          </label>
                          <button class="btn-cnt" onclick="sendMail()">Gửi</button>
                     </div>

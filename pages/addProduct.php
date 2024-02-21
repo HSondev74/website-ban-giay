@@ -24,7 +24,7 @@ if (isset($_GET['increase'])) {
      $_SESSION['cart'] = array_values($_SESSION['cart']);
 
      // Chuyển hướng người dùng đến trang giỏ hàng hoặc trang khác tùy thuộc vào yêu cầu của bạn
-     header("Location: ../index.php?action=giohang");
+     echo "<script>window.history.back();</script>";
      exit(); // Đảm bảo dừng kịch bản sau khi chuyển hướng
 }
 //giam so luong san pham
@@ -48,7 +48,7 @@ if (isset($_GET['decrease'])) {
      $_SESSION['cart'] = array_values($_SESSION['cart']);
 
      // Chuyển hướng người dùng đến trang giỏ hàng hoặc trang khác tùy thuộc vào yêu cầu của bạn
-     header("Location: ../index.php?action=giohang");
+     echo "<script>window.history.back();</script>";
      exit(); // Đảm bảo dừng kịch bản sau khi chuyển hướng
 }
 

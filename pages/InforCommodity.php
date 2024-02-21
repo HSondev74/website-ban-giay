@@ -1,4 +1,4 @@
-<main>
+<main id="main">
      <div class="attach" style="margin: 0 auto; width: 70%; padding: 20px 0px">
           <span style="font-size: 12px; color: #777777; font-weight: bold">Trang Chủ /
                <text style="color: #000000c0">Tra Cứu Đơn Hàng</text></span>

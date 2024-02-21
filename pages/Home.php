@@ -43,7 +43,7 @@
                ?>
 
                          <div class="product" onmouseover="changeImage('<?php echo $second_image; ?>', '<?php echo $product['sanpham_id']; ?>')" onmouseout="changeImage('<?php echo $first_image; ?>', '<?php echo $product['sanpham_id']; ?>')" data-id="<?php echo $product['sanpham_id']; ?>">
-                              <a href="/pages/cart.php?action=chitietsanpham&id=<?php echo $product['sanpham_id']; ?>">
+                              <a href="index.php?action=chitietsanpham&id=<?php echo $product['sanpham_id']; ?>">
 
                                    <div class="discount"> -20% </div>
                                    <div class="product-image">
@@ -109,7 +109,7 @@
                          }
                ?>
                          <div class="product" onmouseover="changeImage('<?php echo $second_image; ?>', '<?php echo $product['sanpham_id']; ?>')" onmouseout="changeImage('<?php echo $first_image; ?>', '<?php echo $product['sanpham_id']; ?>')" data-id="<?php echo $product['sanpham_id']; ?>">
-                              <a href="/pages/cart.php?action=chitietsanpham&id=<?php echo $product['sanpham_id']; ?>">
+                              <a href="index.php?action=chitietsanpham&id=<?php echo $product['sanpham_id']; ?>">
                                    <div class="discount"> -20% </div>
                                    <div class="product-image">
                                         <img src="<?php echo $first_image; ?>" alt="">
@@ -127,7 +127,16 @@
           </div>
      </div>
      <div class="see-more" style="display: flex; justify-content:center;">
-          <a class="btn-payment" href="index.php?action=cuahang">Xem Thêm Sản Phẩm</a href="index.php?action=cuahang">
+          <a style="border-radius: 7px;
+    border: none;
+    padding: 10px;
+    background: #dc323c;
+    border: 1px solid rgba(60, 60, 60, 0.115);
+    color: #FFF;
+    font-weight: 900;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all .2s linear;" class="btn-payment" href="index.php?action=cuahang">Xem Thêm Sản Phẩm</a href="index.php?action=cuahang">
      </div>
 
 </main>
