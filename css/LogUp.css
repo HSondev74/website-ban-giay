@@ -1,10 +1,9 @@
-.container {
+/* .container {
     width: min(100%);
     margin-inline: auto;
-    /* margin: 0 auto; */
     padding-top: 20px;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
+} */
 .form {
     width: 20%;
     border-collapse: separate;
@@ -12,26 +11,31 @@
     margin: 0 auto;
     text-align: center;
 }
-.form > img {
+
+.form>img {
     width: 350px;
     height: 80px;
 }
+
 .form-logup {
     margin-top: 50px;
     border-top: 3px solid #2c2a2a;
     border-radius: 5px;
 }
-.form-logup > h2 {
+
+.form-logup>h2 {
     margin-top: 10px;
     color: #2b2626;
     font-size: 28px;
     font-weight: 600;
 }
-.form-logup > p {
+
+.form-logup>p {
     font-size: 18px;
     margin-top: -20px;
     color: #969696;
 }
+
 .ip-logup {
     text-align: left;
     border: 1px solid #d6d3d3;
@@ -39,6 +43,7 @@
     border-radius: 8px;
     margin-top: 20px;
 }
+
 .input-group-text {
     padding: 7px 6px 7px 10px;
     border-right: 1px solid #d6d3d3;
@@ -51,11 +56,13 @@
     font-size: 16px;
     width: 80%;
 }
+
 input:focus {
-    outline: none; /* Loại bỏ border khi input được focus */
+    outline: none;
+    /* Loại bỏ border khi input được focus */
 }
 
-.btn-logup > .button {
+.btn-logup>.button {
     width: 100%;
     height: 40px;
     font-size: 16px;
@@ -65,21 +72,26 @@ input:focus {
     border-radius: 8px;
     margin-top: 30px;
 }
+
 .button:hover {
     background-color: #000000;
     cursor: pointer;
 }
+
 .ask {
     color: #8a8a8a;
 }
-.ask > a {
+
+.ask>a {
     text-decoration: none;
     color: rgb(65, 65, 222);
 }
+
 .ask2 {
     margin-top: 50px;
 }
-.ask2 > a {
+
+.ask2>a {
     color: rgb(182, 10, 10);
     font-weight: 650;
 }
@@ -94,9 +106,11 @@ input:focus {
     .form {
         width: 90%;
     }
-    .form > img {
+
+    .form>img {
         width: 100%;
     }
+
     .form-control {
         width: 70%;
     }
