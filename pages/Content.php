@@ -25,6 +25,8 @@ if ($khoitao == 'chitietsanpham') {
   include('./pages/Login.php');
 } elseif ($khoitao == 'logup') {
   include('./pages/LogUp.php');
+} elseif ($khoitao == 'gioithieu') {
+  include('./pages/recruitment.php');
 } else {
   include('Home.php');
 }
