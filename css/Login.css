@@ -1,10 +1,9 @@
-.container {
+/* .container {
     width: min(100%);
     margin-inline: auto;
-    /* margin: 0 auto; */
     padding-top: 20px;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
+} */
 
 .form {
     width: 20%;
