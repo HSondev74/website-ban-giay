@@ -1125,6 +1125,98 @@ i {
     color: #fff;
     border-radius: 5px;
   }
+
+
+  /* recruitment  */
+  .recruitment-container {
+    width: 1170px;
+    margin: 0 auto;
+  }
+  
+  .top-title{
+    margin-top: 40px;
+  }
+  
+  .recruitment-nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .recruitment-nav li a {
+    /* padding: 10px 10px 10px 0; */
+    margin: 10px 10px 10px 0;
+    text-decoration: none;
+    font-size: 14px;
+    color: #777777;
+  }
+  
+  .recruitment-name {
+    font-weight: bold;
+  }
+  
+  .recruitment-title{
+      padding: 20px 0;
+      border-bottom: 1px solid rgb(221, 221, 221);
+  }
+  
+  .recruitment-banner{
+      width: 100%;
+  }
+  
+  .recruitment-banner img{
+      width: 100%;
+  }
+  
+  .recruitment-content{
+    margin: 20px 0 0 0;
+  }
+  
+  .recruitment-content p{
+    margin-bottom: 15px;
+  }
+  
+  hr{
+    margin: 50px 0;
+    width: 400px;
+  }
+  
+  .recruitment-form h2{
+    margin: 30px 0;
+  }
+  
+  
+  .input-form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .in{
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+  }
+  
+  .coment{
+    width: 100%;
+    resize: none;
+    outline: none;
+    padding: 10px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 10px;
+    margin: 30px 0;
+  }
+  
+  .send-comment{
+    display: inline-block;
+    padding: 10px 40px;
+    color: #fff;
+    background-color: orangered;
+    border-radius: 20px;
+    margin: 10px 0;
+  }
   
   
 
