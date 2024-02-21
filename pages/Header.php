@@ -9,7 +9,7 @@
                <div class="nav-space"></div>
                <ul class="navbar__links flex v-center">
                     <li>
-                         <a style=" color: white;" href="">Địa Chỉ Cửa Hàng</a>
+                         <a style=" color: white;" class="address-google-map" href="">Địa Chỉ Cửa Hàng</a>
                     </li>
                     <li>
                          <a style=" color: white;" href="https://i.ghtk.vn/">Vấn Đề Vận Chuyển</a>
@@ -20,6 +20,22 @@
                </ul>
           </div>
      </div>
+
+     <div class="map">
+          <div class="show-map">
+               <div class="address-show">
+                    <h3>Địa chỉ cửa hàng</h3>
+                    <div class="close-map">x</div>
+               </div>
+               <div class="img-map">
+                    <iframe
+                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.70066492663!2d105.7470029747149!3d21.04465988723339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454edcdbc166f%3A0xa9f96e0cf23b6dc4!2zTmcuIDE3NyDEkC4gQ-G6p3UgRGnhu4VuLCBLaeG7gXUgTWFpLCBQaMO6YyBEaeG7hW4sIELhuq9jIFThu6sgTGnDqm0sIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1708398620880!5m2!1svi!2s"
+                         width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                         referrerpolicy="no-referrer-when-downgrade"></iframe>
+               </div>
+          </div>
+     </div>
+
      <div class="line"></div>
      <!-- header-search-wrapper -->
      <div class="container-wrapper header-search-wrapper">

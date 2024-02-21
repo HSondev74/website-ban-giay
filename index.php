@@ -45,6 +45,7 @@ session_start();
 </body>
 <script src="./JS/scrollTop.js"></script>
 <script src="./JS/carasouel.js"></script>
+<<<<<<< HEAD
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script type="text/javascript">
      (function() {
@@ -73,6 +74,10 @@ session_start();
      }
 </script>
 <script src="./JS/map.js"></script>
+=======
+<!-- <script src="./JS/map.js"></script> -->
+<script src="./JS/slideShowDetail.js"></script>
+>>>>>>> origin/hieu
 <script>
      function changeImage(imageSrc, productId) {
           const product = document.querySelector(`.product[data-id="${productId}"]`);

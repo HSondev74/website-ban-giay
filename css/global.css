@@ -867,6 +867,7 @@ i {
 }
 
 .map {
+    z-index: 999;
     display: none;
     width: 100%;
     height: 100vh;
@@ -899,6 +900,106 @@ i {
 
 .img-map {
     width: 100%;
+}
+
+/* DETAIL */
+.nav-detail {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-detail li a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #777777;
+}
+
+.name-detail {
+    font-weight: 500;
+}
+
+
+/* .container {
+  margin: 50px auto;
+  width: 70%;
+  box-shadow: 0 0 10px #bbb;
+} */
+
+.container-detail {
+    width: 1400px;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.all-detail {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.gallery {
+    height: 85%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+}
+
+.gallery-inner {
+    overflow: hidden;
+    width: 100%;
+    height: 500px;
+}
+
+.gallery-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.prev {
+    left: 15px;
+    font-size: 30px;
+}
+
+.next {
+    right: 15px;
+    font-size: 30px;
+}
+
+.list div {
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.list div .active {
+    border: 1px solid red;
+}
+
+.product-price {
+    color: #dc323c;
+    font-weight: 600;
 }
 
 @media screen and (max-width: 1280px) {
