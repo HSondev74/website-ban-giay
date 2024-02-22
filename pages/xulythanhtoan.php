@@ -5,6 +5,24 @@ session_start(); // Khởi động phiên session
 if (isset($_SESSION['cart']) && !empty($_SESSION['dangnhap'])) {
      if (isset($_SESSION['dangnhap']) && !empty($_SESSION['dangnhap'])) {
 
+          $phi_van_chuyen = 0;
+          // Xử lý POST Data
+          if (isset($_POST['tinh_thanh'])) {
+               $tinh_thanh = $_POST['tinh_thanh'];
+
+               // Truy vấn cơ sở dữ liệu để lấy phí vận chuyển tương ứng
+               $sql = "SELECT phi FROM phivanchuyen WHERE thanhpho = '$tinh_thanh'";
+               $result = mysqli_query($conn, $sql);
+
+               if ($result && mysqli_num_rows($result) > 0) {
+                    $row = mysqli_fetch_assoc($result);
+                    $phi_van_chuyen = $row['phi'];
+               } else {
+                    $phi_van_chuyen = 0; // Hoặc bất kỳ giá trị mặc định nào bạn muốn nếu không tìm thấy phí vận chuyển
+               }
+          }
+
+
 
           // Xử lý POST Data khi form được submit
           if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -44,11 +62,18 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['dangnhap'])) {
                foreach ($_SESSION['cart'] as $index => $product) {
                     $sanpham_id = $product['id'];
                     $gia = $product['gia'];
+                    $phi_van_chuyen_number = floatval($phi_van_chuyen);
+                    $gia_number = floatval($gia);
+
+                    // Tính tổng
+                    $tongGia = $phi_van_chuyen_number + $gia_number;
+                    echo $tongGia;
+                    die;
                     $size = $product['size'];
                     $soluong = $product['soluong'];
 
                     $sql = "INSERT INTO donhang (ten, email, diachi, sanpham_id, gia, size, phuongthucthanhtoan, soluong, ngaydat) 
-                  VALUES ('$ten', '$email', '$diachi', '$sanpham_id', '$gia', '$size', '$phuong_thuc_thanh_toan', '$soluong', '$ngaydat')";
+                  VALUES ('$ten', '$email', '$diachi', '$sanpham_id', '$tongGia', '$size', '$phuong_thuc_thanh_toan', '$soluong', '$ngaydat')";
 
                     if (mysqli_query($conn, $sql)) {
                          echo  "<script>alert('Đơn hàng của bạn đã được đặt thành công!')</script>";
@@ -60,7 +85,7 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['dangnhap'])) {
                }
           }
      } else {
-          header('location: ../index.php?action=login');
+          // header('location: ../index.php?action=login');
      }
 } else {
      header('location: ../index.php?action=cuahang');
