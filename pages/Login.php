@@ -13,8 +13,8 @@ if (isset($_POST['login'])) {
                $_SESSION['dangnhap'] = $row;
 
                echo "<script>alert('Đăng nhập thành công!')
-          window.location.href='index.php?action=thanhtoan'
-          </script>";
+               window.history.back()
+               </script>";
           }
      } else {
           echo "<script>alert('Tài khoản mật khẩu không đúng!')

@@ -1,5 +1,5 @@
 <header class="umine-top">
-     <div class="navbar-wrapper contaner-wrapper container" style="background-color: #333; color: white;">
+     <div class="navbar-wrapper contaner-wrapper" style="background-color: #333; color: white;">
           <div class="container navbar" style="padding-bottom: 5px;">
                <p class="navbar-left" style=" color: white;">
                     Bạn là một Học Sinh hay Sinh Viên GIẢM GIÁ NGAY 20% ! <a href="index.php?action=cuahang"
@@ -179,7 +179,7 @@
                </ul> -->
           </li>
           <li><a href="index.php?action=lienhe">Liên Hệ </a></li>
-          <li><a href="index.php?action=gioithieu">Giới Thiệu </a></li>
+          <li><a href="index.php?action=gioithieu">Tuyển Dụng </a></li>
           <li><a href="index.php?action=kiemtradonhang">Kiểm tra đơn hàng </a></li>
           <li><a href="" class="strong">Mua ngay với những sản phẩm giảm lên đến 50%</a></li>
      </ul>
