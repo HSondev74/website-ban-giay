@@ -132,7 +132,7 @@ if (isset($_POST['tinh_thanh'])) {
                <br />
                <hr class="hr" />
                <div class="return-to-cart">
-                    <a href="#" class=""><i style="margin-right: 5px" class="icon fa-solid fa-angle-left"></i>Quay về
+                    <a href="index.php?action=giohang" class=""><i style="margin-right: 5px" class="icon fa-solid fa-angle-left"></i>Quay về
                          giỏ
                          hàng
                     </a>

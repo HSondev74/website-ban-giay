@@ -182,6 +182,7 @@ header {
     border-radius: 0 5px 5px 0;
 }
 
+
 .account-icon img {
     object-fit: cover;
     width: 100%;
@@ -215,14 +216,27 @@ i {
     font-weight: 700;
 }
 
+.account-title{
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-price{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
 .account-title-login,
 .cart-price p {
     font-size: 12px;
+    margin: 0;
 }
 
 .account-title-acc {
     color: var(--nc-text-primary-o);
     font-weight: 500;
+    margin: 0;
 }
 
 .header-cart {
@@ -401,7 +415,7 @@ i {
     content: "";
     display: block;
     width: 100px;
-    height: 1px;
+    height: 2px;
     background-color: var(--nc-text-primary);
     position: absolute;
     right: 32%;
@@ -486,7 +500,8 @@ i {
 }
 
 .block-title {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
+    margin: 0 0 20px 0;
     position: relative;
 }
 
@@ -496,6 +511,7 @@ i {
     padding-right: 20px;
     display: inline-block;
     z-index: 1;
+    margin: 0;
 }
 
 .block-title::after {
@@ -930,6 +946,7 @@ i {
 .img-map {
     width: 100%;
 }
+
 
 /* DETAIL */
 .nav-detail {
