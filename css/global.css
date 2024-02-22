@@ -765,6 +765,11 @@ i {
     margin-left: -3px;
 }
 
+.inp-pay{
+    resize: none;
+    outline: none;
+}
+
 .footer-top h2 {
     font-weight: 700;
     font-size: 19px;
