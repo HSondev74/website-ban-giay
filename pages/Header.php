@@ -2,8 +2,7 @@
      <div class="navbar-wrapper contaner-wrapper" style="background-color: #333; color: white;">
           <div class="container navbar" style="padding-bottom: 5px;">
                <p class="navbar-left" style=" color: white;">
-                    Bạn là một Học Sinh hay Sinh Viên GIẢM GIÁ NGAY 20% ! <a href="index.php?action=cuahang"
-                         class="underline" style=" color: white;">xem
+                    Bạn là một Học Sinh hay Sinh Viên GIẢM GIÁ NGAY 20% ! <a href="index.php?action=cuahang" class="underline" style=" color: white;">xem
                          thêm</a>
                </p>
                <div class="nav-space"></div>
@@ -11,9 +10,9 @@
                     <li>
                          <a style=" color: white;" class="address-google-map" href="">Địa Chỉ Cửa Hàng</a>
                     </li>
-                    <li>
+                    <!-- <li>
                          <a style=" color: white;" href="https://i.ghtk.vn/">Vấn Đề Vận Chuyển</a>
-                    </li>
+                    </li> -->
                     <!-- <li>
                          <a href="">FAQs</a>
                     </li> -->
@@ -28,10 +27,7 @@
                     <div class="close-map">x</div>
                </div>
                <div class="img-map">
-                    <iframe
-                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.70066492663!2d105.7470029747149!3d21.04465988723339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454edcdbc166f%3A0xa9f96e0cf23b6dc4!2zTmcuIDE3NyDEkC4gQ-G6p3UgRGnhu4VuLCBLaeG7gXUgTWFpLCBQaMO6YyBEaeG7hW4sIELhuq9jIFThu6sgTGnDqm0sIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1708398620880!5m2!1svi!2s"
-                         width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"
-                         referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.70066492663!2d105.7470029747149!3d21.04465988723339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454edcdbc166f%3A0xa9f96e0cf23b6dc4!2zTmcuIDE3NyDEkC4gQ-G6p3UgRGnhu4VuLCBLaeG7gXUgTWFpLCBQaMO6YyBEaeG7hW4sIELhuq9jIFThu6sgTGnDqm0sIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1708398620880!5m2!1svi!2s" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                </div>
           </div>
      </div>
@@ -46,8 +42,7 @@
                     </div>
                </a>
                <div class="header-search__input-section">
-                    <form role="search" autocomplete="off" action="index.php?action=search" method="POST"
-                         class="umine-searchbar">
+                    <form role="search" autocomplete="off" action="index.php?action=search" method="POST" class="umine-searchbar">
                          <div class="umine-select-categories">
                               <select name="Categories">
                                    <option value="" selected>Toàn Bộ Hãng</option>
@@ -61,8 +56,8 @@
                                         // Duyệt qua từng danh mục và tạo các tùy chọn cho trường select
                                         while ($category = mysqli_fetch_assoc($result_categories)) {
                                    ?>
-                                   <option value="<?php echo $category['danhmuc_id']; ?>">
-                                        <?php echo $category['tendanhmuc']; ?></option>
+                                             <option value="<?php echo $category['danhmuc_id']; ?>">
+                                                  <?php echo $category['tendanhmuc']; ?></option>
                                    <?php
                                         }
                                    }
@@ -71,12 +66,9 @@
                          </div>
                          <div class="h-line-searchbar"></div>
                          <div class="umine-searchbar__main">
-                              <div class="umine-searchbar-input"><input class="umine-searchbar-input__input"
-                                        maxlength="128" placeholder="Tìm kiếm hơn 200+ sản phẩm..." autocomplete="off"
-                                        aria-expanded="false" role="combobox" value="" name="keyword">
+                              <div class="umine-searchbar-input"><input class="umine-searchbar-input__input" maxlength="128" placeholder="Tìm kiếm hơn 200+ sản phẩm..." autocomplete="off" aria-expanded="false" role="combobox" value="" name="keyword">
                               </div>
-                         </div><button type="submit" name="searchHeader" class="umine-searchbar-button"
-                              style="cursor: pointer;">
+                         </div><button type="submit" name="searchHeader" class="umine-searchbar-button" style="cursor: pointer;">
                               Tìm Kiếm
                          </button>
                     </form>
@@ -84,24 +76,24 @@
                <div class="header-search-cart flex v-center">
                     <div class="header-search-cart-account flex">
                          <?php if (isset($_SESSION['dangnhap']) && !empty($_SESSION['dangnhap'])) : ?>
-                         <div class="account-icon" style="display: flex;">
-                              <a class="info-login" href="/bangiay/pages/logout.php">
-                                   <i class='bx bx-user'></i>
-                                   <p>Đăng xuất</p>
-                              </a>
-                              <nav>
-                                   <p><?php echo $_SESSION['dangnhap']['ten']; ?></p>
-                                   <p><?php echo $_SESSION['dangnhap']['email']; ?></p>
-                              </nav>
-                         </div>
+                              <div class="account-icon" style="display: flex;">
+                                   <a class="info-login" href="/bangiay/pages/logout.php">
+                                        <i class='bx bx-user'></i>
+                                        <p>Đăng xuất</p>
+                                   </a>
+                                   <nav>
+                                        <p><?php echo $_SESSION['dangnhap']['ten']; ?></p>
+                                        <p><?php echo $_SESSION['dangnhap']['email']; ?></p>
+                                   </nav>
+                              </div>
                          <?php else : ?>
-                         <div class="account-icon">
-                              <a href="index.php?action=login"><i class='bx bx-user'></i></a>
-                         </div>
-                         <div class="account-title">
-                              <a class="account-title-login" href="index.php?action=login">Đăng nhập</a>
-                              <p class="account-title-acc">Tài khoản</p>
-                         </div>
+                              <div class="account-icon">
+                                   <a href="index.php?action=login"><i class='bx bx-user'></i></a>
+                              </div>
+                              <div class="account-title">
+                                   <a class="account-title-login" href="index.php?action=login">Đăng nhập</a>
+                                   <p class="account-title-acc">Tài khoản</p>
+                              </div>
                          <?php endif; ?>
                     </div>
 
@@ -121,18 +113,18 @@
                                    $totalItems = count($_SESSION['cart']);
                                    // Tính tổng số lượng các mục trong session
                          ?>
-                         <div class="carts">
-                              <span class="cart"><?php echo $totalItems; ?></span>
-                              <i class='bx bx-cart'></i>
-                         </div>
-                         <?php
+                                   <div class="carts">
+                                        <span class="cart"><?php echo $totalItems; ?></span>
+                                        <i class='bx bx-cart'></i>
+                                   </div>
+                              <?php
                               } else {
                               ?>
-                         <div class="carts">
-                              <span class="cart">0</span>
-                              <i class='bx bx-cart'></i>
-                         </div>
-                         <?php
+                                   <div class="carts">
+                                        <span class="cart">0</span>
+                                        <i class='bx bx-cart'></i>
+                                   </div>
+                              <?php
                               }
 
                               $totalPrice = 0;
@@ -140,21 +132,21 @@
                                    $totalPrice += $item['gia'] * $item['soluong'];
                               }
                               ?>
-                         <div class="cart-price">
-                              <p>Your Cart</p>
-                              <strong><?php echo number_format($totalPrice) . " VNĐ" ?></strong>
-                         </div>
+                              <div class="cart-price">
+                                   <p>Your Cart</p>
+                                   <strong><?php echo number_format($totalPrice) . " VNĐ" ?></strong>
+                              </div>
                          <?php
                          } else {
                          ?>
-                         <div class="carts">
-                              <span class="cart">0</span>
-                              <i class='bx bx-cart'></i>
-                         </div>
-                         <div class="cart-price">
-                              <p>Your Cart</p>
-                              <strong>0 VNĐ</strong>
-                         </div>
+                              <div class="carts">
+                                   <span class="cart">0</span>
+                                   <i class='bx bx-cart'></i>
+                              </div>
+                              <div class="cart-price">
+                                   <p>Your Cart</p>
+                                   <strong>0 VNĐ</strong>
+                              </div>
                          <?php
                          }
                          ?>
@@ -180,7 +172,9 @@
           </li>
           <li><a href="index.php?action=lienhe">Liên Hệ </a></li>
           <li><a href="index.php?action=gioithieu">Tuyển Dụng </a></li>
-          <li><a href="index.php?action=kiemtradonhang">Kiểm tra đơn hàng </a></li>
+          <li>
+               <a href="index.php?action=giohang">Giỏ Hàng</a>
+          </li>
           <li><a href="" class="strong">Mua ngay với những sản phẩm giảm lên đến 50%</a></li>
      </ul>
 

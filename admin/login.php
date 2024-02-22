@@ -40,8 +40,10 @@ if (isset($_POST['login'])) {
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
      </script>
      <title>Đăng Nhập Dashboard</title>
 </head>
@@ -55,7 +57,8 @@ if (isset($_POST['login'])) {
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
           <div class="container py-5 h-100">
                <div class="row d-flex align-items-center justify-content-center h-100">
-                    <div style="width:50%; height:100%; background-image:url('./images/bgr-formlogin.jpg'); background-size: cover; background-position:center center; border-radius: 10px; ">
+                    <div
+                         style="width:50%; height:100%; background-image:url('./images/bgr-formlogin.jpg'); background-size: cover; background-position:center center; border-radius: 10px; ">
                     </div>
                     <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
                          <h1>Đăng nhập</h1>
@@ -69,13 +72,15 @@ if (isset($_POST['login'])) {
                               <!-- Password input -->
                               <div class="form-outline mb-4">
                                    <label class="form-label" for="form1Example23">Mật khẩu</label>
-                                   <input type="password" id="password" class="form-control form-control-lg" name="password" />
+                                   <input type="password" id="password" class="form-control form-control-lg"
+                                        name="password" />
                               </div>
 
                               <div class="d-flex justify-content-around align-items-center mb-4">
                                    <!-- Checkbox -->
                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="remember" id="form1Example3" />
+                                        <input class="form-check-input" type="checkbox" name="remember"
+                                             id="form1Example3" />
                                         <label class="form-check-label" for="form1Example3">Ghi nhớ mật khẩu!</label>
                                    </div>
                                    <a href="/BanGiay/admin/forgot.php">Quên mật khẩu?</a>
@@ -85,10 +90,10 @@ if (isset($_POST['login'])) {
                               <button type="submit" class="btn btn-primary btn-lg btn-block" name="login">Đăng
                                    nhập</button>
 
-                              <span class="text-center fw-bold mx-3 mb-0 text-muted">OR</span>
+                              <!-- <span class="text-center fw-bold mx-3 mb-0 text-muted">OR</span> -->
 
-                              <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="/BanGiay/admin/register.php" role="button">
-                                   <i class="fab fa-twitter me-2"></i>Đăng kí ngay </a>
+                              <!-- <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="/BanGiay/admin/register.php" role="button">
+                                   <i class="fab fa-twitter me-2"></i>Đăng kí ngay </a> -->
 
                          </form>
                     </div>
@@ -97,40 +102,40 @@ if (isset($_POST['login'])) {
      </section>
 </body>
 <script>
-     document
-          .querySelector(".form-check-input")
-          .addEventListener("change", function() {
-               if (this.checked) {
-                    var email = document.getElementById("email");
-                    var password = document.getElementById("password");
+document
+     .querySelector(".form-check-input")
+     .addEventListener("change", function() {
+          if (this.checked) {
+               var email = document.getElementById("email");
+               var password = document.getElementById("password");
 
-                    function getCookie(name) {
-                         const cookies = decodeURIComponent(document.cookie).split(';');
-                         for (let i = 0; i < cookies.length; i++) {
-                              const cookie = cookies[i].trim();
-                              if (cookie.startsWith(name + '=')) {
-                                   return cookie.substring(name.length + 1);
-                              }
+               function getCookie(name) {
+                    const cookies = decodeURIComponent(document.cookie).split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                         const cookie = cookies[i].trim();
+                         if (cookie.startsWith(name + '=')) {
+                              return cookie.substring(name.length + 1);
                          }
-                         return null;
                     }
-
-                    const rememberEmail = getCookie("email");
-                    const rememberPassword = getCookie("pass");
-
-                    if (rememberEmail && rememberPassword) {
-                         email.value = rememberEmail
-                         password.value = rememberPassword;
-                    }
-
-
-               } else {
-                    document.cookie =
-                         "remember_email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-                    document.cookie =
-                         "remember_password=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                    return null;
                }
-          });
+
+               const rememberEmail = getCookie("email");
+               const rememberPassword = getCookie("pass");
+
+               if (rememberEmail && rememberPassword) {
+                    email.value = rememberEmail
+                    password.value = rememberPassword;
+               }
+
+
+          } else {
+               document.cookie =
+                    "remember_email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+               document.cookie =
+                    "remember_password=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+          }
+     });
 </script>
 
 </html>
