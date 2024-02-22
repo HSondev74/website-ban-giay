@@ -160,7 +160,7 @@
      </div>
      <div class="line"></div>
 
-     <ul class="container search-list-select">
+     <ul class="container search-list-select sticky">
           <li><a href="index.php">Trang Chủ</a></li>
           <li><a href="index.php?action=cuahang">Cửa Hàng</a>
                <!-- <i class='bx bx-chevron-down'></i> -->
