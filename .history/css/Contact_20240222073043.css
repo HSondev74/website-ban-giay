@@ -41,7 +41,9 @@ p {
     /* align-items: center; */
     /* box-shadow: 2px 1px 72px 17px rgba(150, 150, 150, 0.26); */
 }
-
+.cnt-in4 > p {
+    color: #de2626;
+}
 .ct-in4-r1 {
     display: flex;
     justify-content: space-around;
