@@ -26,7 +26,7 @@
      </div>
 
      <div class="product-hot">
-          <h1 class="title-hot">Sản Phẩm Hot</h1>
+          <div class="title-hot"><h1>Sản Phẩm Hot</h1></div>
           <div class="content-products">
                <?php
                $sql = "SELECT * FROM sanpham ORDER BY RAND() LIMIT 30";

@@ -40,10 +40,10 @@ if (isset($_POST['tinh_thanh'])) {
                               <a href=""><i style="margin-right: 8px" class='bx bx-user-circle'></i>Đăng Nhập</a>
                          </div>
                          <div class="form-in4-pay">
-                              <input type="email" name="email" placeholder="Email (tùy chọn)" class="inp-pay" /><br />
-                              <input type="text" name="ten" placeholder="Họ tên" class="inp-pay" /><br />
+                              <input type="email" name="email" placeholder="Email (tùy chọn)" class="inp-pay" required/><br />
+                              <input type="text" name="ten" placeholder="Họ tên" class="inp-pay" required/><br />
                               <div class="tel-pay">
-                                   <input type="tel" name="sodth" placeholder="Số điện thoại" class="inp-pay inp-tel" />
+                                   <input type="tel" name="sodth" placeholder="Số điện thoại" class="inp-pay inp-tel" required />
                                    <div class="con">
                                         <select>
                                              <option value="vn">VN+84</option>
@@ -51,11 +51,11 @@ if (isset($_POST['tinh_thanh'])) {
                                    </div>
                               </div>
 
-                              <input type="text" name="tinh_thanh" placeholder="Tỉnh Thành" class="inp-pay" />
+                              <input type="text" name="tinh_thanh" placeholder="Tỉnh Thành" class="inp-pay" required/>
                               <br />
-                              <input type="text" name="quan_huyen" placeholder="Quận Huyện" class="inp-pay" /><br />
-                              <input type="text" name="phuong_xa" placeholder="Phường Xã" class="inp-pay" />
-                              <textarea class="inp-pay" name="ghi_chu" placeholder="Ghi chú" style="width: 100%; height: 100px"></textarea>
+                              <input type="text" name="quan_huyen" placeholder="Quận Huyện" class="inp-pay" required/><br/>
+                              <input type="text" name="phuong_xa" placeholder="Phường Xã" class="inp-pay" required/>
+                              <textarea class="inp-pay" name="ghi_chu" placeholder="Ghi chú" style="width: 100%; height: 100px" ></textarea>
                          </div>
                     </div>
                     <div class="shipping-in4">
@@ -123,7 +123,6 @@ if (isset($_POST['tinh_thanh'])) {
                <hr class="hr" />
                <div class="provisional-fee">
                     <p>Tạm Tính: <span><?php echo number_format($total_price); ?> đ</span></p>
-                    <p>Phí Vận Chuyển: <span><?php echo $phi_van_chuyen; ?></span></p>
                </div>
                <br />
                <hr class="hr" />
@@ -133,7 +132,7 @@ if (isset($_POST['tinh_thanh'])) {
                <br />
                <hr class="hr" />
                <div class="return-to-cart">
-                    <a href="#" class=""><i style="margin-right: 5px" class="icon fa-solid fa-angle-left"></i>Quay về
+                    <a href="index.php?action=giohang" class=""><i style="margin-right: 5px" class="icon fa-solid fa-angle-left"></i>Quay về
                          giỏ
                          hàng
                     </a>

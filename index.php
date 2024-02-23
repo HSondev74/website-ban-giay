@@ -121,6 +121,8 @@ function sendMail() {
 </script>
 <script src="./JS/map.js"></script>
 <script src="./JS/slideShowDetail.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="./JS/scrollHeader.js"></script>
 
 <script>
 function changeImage(imageSrc, productId) {

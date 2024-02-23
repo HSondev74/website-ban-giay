@@ -66,7 +66,7 @@ if (isset($_GET['category'])) {
      <div class="ctn-store">
           <div class="hd-search-in4-item">
                <div class="hidden-search-item-prd">
-                    <label for="">Sắp xếp theo</label>
+                    <div >Sắp xếp theo</div>
                     <form method="POST" action="index.php?action=cuahang">
                          <select name="sort" id="sort-select" class="search-in4-item">
                               <option value="">Mặc định</option>
@@ -76,7 +76,7 @@ if (isset($_GET['category'])) {
                               <option value="price_asc">Giá tăng dần</option>
                               <option value="price_desc">Giá giảm dần</option>
                          </select>
-                         <input type="submit" value="Sắp xếp" />
+                         <!-- <input type="submit" value="Sắp xếp" /> -->
                     </form>
                </div>
 
