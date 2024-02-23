@@ -2,8 +2,8 @@
     <div class="navbar-wrapper contaner-wrapper" style="background-color: #333; color: white;">
         <div class="container navbar" style="padding-bottom: 5px;">
             <p class="navbar-left" style=" color: white;">
-                Bạn là một Học Sinh hay Sinh Viên <span style="color: red">GIẢM GIÁ NGAY 20%</span> ! <a
-                    href="index.php?action=cuahang" class="underline" style=" color: white;">xem
+                Bạn là một Học Sinh hay Sinh Viên GIẢM GIÁ NGAY 20% ! <a href="index.php?action=cuahang"
+                    class="underline" style=" color: white;">xem
                     thêm</a>
             </p>
             <div class="nav-space"></div>
@@ -153,7 +153,7 @@
                     </div>
                     <div class="cart-price">
                         <p>Your Cart</p>
-                        <strong style="margin-left: 15px;">0 VNĐ</strong>
+                        <strong style="margin-right: 10px;">0 VNĐ</strong>
                     </div>
                     <?php
                          }

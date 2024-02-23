@@ -2,7 +2,7 @@
     <div class="navbar-wrapper contaner-wrapper" style="background-color: #333; color: white;">
         <div class="container navbar" style="padding-bottom: 5px;">
             <p class="navbar-left" style=" color: white;">
-                Bạn là một Học Sinh hay Sinh Viên <span style="color: red">GIẢM GIÁ NGAY 20%</span> ! <a
+                Bạn là một Học Sinh hay Sinh Viên <span style="color: #ff1e2d">GIẢM GIÁ NGAY 20%</span> ! <a
                     href="index.php?action=cuahang" class="underline" style=" color: white;">xem
                     thêm</a>
             </p>
