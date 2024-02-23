@@ -27,7 +27,7 @@ if (isset($_POST['login'])) {
 <main>
      <div class="container">
           <div class="form">
-               <img src="./images/img-header/logo-brand.png" alt="" />
+               <!-- <img src="./images/img-header/logo-brand.png" alt="" /> -->
                <form action="" method="POST" class="form-logup">
                     <h2>Đăng Nhập</h2>
                     <p>Chào mừng bạn quay lại</p>

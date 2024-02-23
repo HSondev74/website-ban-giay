@@ -91,7 +91,8 @@
                               <a class="info-login" style="display: grid; justify-content: center; "
                                    href="/bangiay/pages/logout.php">
                                    <p><?php echo $_SESSION['dangnhap']['ten']; ?></p>
-                                   <p style="color: #000; font-weight: 700;">Đăng xuất</p>
+                                   <a href="pages/logout.php" style="display:block;color: #000; font-weight: 700;">Đăng
+                                        xuất</a>
                               </a>
 
                          </div>
