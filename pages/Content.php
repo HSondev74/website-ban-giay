@@ -20,7 +20,11 @@ if ($khoitao == 'chitietsanpham') {
 } elseif ($khoitao == 'kiemtradonhang') {
   include('./pages/InforCommodity.php');
 } elseif ($khoitao == 'thanhtoan') {
-  include('./pages/Payment.php');
+  if (isset($_SESSION['dangnhap']) && !empty($_SESSION['dangnhap'])) {
+    include('./pages/Payment.php');
+  } else {
+    echo "<script>window.history.back();</script>";
+  }
 } elseif ($khoitao == 'login') {
   include('./pages/Login.php');
 } elseif ($khoitao == 'logup') {

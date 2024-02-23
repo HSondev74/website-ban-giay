@@ -110,7 +110,7 @@
 
 .atm,
 .cod {
-    width: 100%;
+    /* width: 100%;
     height: auto;
     padding: 10px 20px;
     font-size: 15px;
@@ -118,7 +118,7 @@
     border-radius: 4px;
     border-style: solid;
     border-width: 1px;
-    margin: 20px 0px;
+    margin: 20px 0px; */
     display: flex;
     align-items: center;
 }
