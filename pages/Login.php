@@ -24,7 +24,7 @@ if (isset($_POST['login'])) {
 }
 
 ?>
-<main>
+<main id="main">
      <div class="container">
           <div class="form">
                <!-- <img src="./images/img-header/logo-brand.png" alt="" /> -->
