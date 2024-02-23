@@ -42,6 +42,9 @@ p {
     /* box-shadow: 2px 1px 72px 17px rgba(150, 150, 150, 0.26); */
 }
 
+p {
+    color: #4b4b4b;
+}
 .ct-in4-r1 {
     display: flex;
     justify-content: space-around;

@@ -1,19 +1,19 @@
 <header class="umine-top">
      <div class="navbar-wrapper contaner-wrapper" style="background-color: #333; color: white;">
           <div class="container navbar" style="padding-bottom: 5px;">
-               <p class="navbar-left" style="color: white;">
-                    Bạn là một Học Sinh hay Bạn là một Học Sinh hay Sinh Viên <span style="color: red">GIẢM GIÁ NGAY
-                         20%</span> ! <a href="index.php?action=cuahang" class="underline" style="color: white;">xem
+               <p class="navbar-left" style=" color: white;">
+                    Bạn là một Học Sinh hay Sinh Viên GIẢM GIÁ NGAY 20% ! <a href="index.php?action=cuahang"
+                         class="underline" style=" color: white;">xem
                          thêm</a>
                </p>
                <div class="nav-space"></div>
                <ul class="navbar__links flex v-center">
                     <li>
-                         <a style="color: white;" class="address-google-map" href="">Địa Chỉ Cửa Hàng</a>
+                         <a style=" color: white;" class="address-google-map" href="">Địa Chỉ Cửa Hàng</a>
                     </li>
-                    <!-- <li>
+                    <li>
                          <a style=" color: white;" href="https://i.ghtk.vn/">Vấn Đề Vận Chuyển</a>
-                    </li> -->
+                    </li>
                     <!-- <li>
                          <a href="">FAQs</a>
                     </li> -->
@@ -104,6 +104,8 @@
                          </div>
                          <?php endif; ?>
                     </div>
+
+
                     <div class="header-favorites">
                          <span class="favorite">0</span>
                          <i class='bx bx-heart'></i>
@@ -151,16 +153,21 @@
                          </div>
                          <div class="cart-price">
                               <p>Your Cart</p>
-                              <strong style="margin-left: 15px;">0 VNĐ</strong>
+                              <strong>0 VNĐ</strong>
                          </div>
                          <?php
                          }
                          ?>
                     </a>
+
+
                </div>
           </div>
+
+
      </div>
      <div class="line"></div>
+
      <ul class="container search-list-select">
           <li><a href="index.php">Trang Chủ</a></li>
           <li><a href="index.php?action=cuahang">Cửa Hàng</a>
@@ -173,10 +180,9 @@
           </li>
           <li><a href="index.php?action=lienhe">Liên Hệ </a></li>
           <li><a href="index.php?action=gioithieu">Tuyển Dụng </a></li>
-          <li>
-               <a href="index.php?action=giohang">Giỏ Hàng</a>
-          </li>
+          <li><a href="index.php?action=kiemtradonhang">Kiểm tra đơn hàng </a></li>
           <li><a href="" class="strong">Mua ngay với những sản phẩm giảm lên đến 50%</a></li>
      </ul>
+
      <div class="line"></div>
 </header>

@@ -7,7 +7,7 @@
         <div class="contact-in4">
             <div class="cnt-in4">
                 <h2>Bạn cần hỗ trợ?</h2>
-                <p style="color: #4b4b4b;">
+                <p style="color: black;">
                     VIBESNEAK.vn rất hân hạnh được hỗ trợ bạn, hãy để lại
                     thông tin cho chúng tôi nhé. Yêu cầu của bạn sẽ được xử
                     lý và phản hồi trong thời gian sớm nhất.
