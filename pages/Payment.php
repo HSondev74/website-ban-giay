@@ -37,13 +37,18 @@ if (isset($_POST['tinh_thanh'])) {
                     <div class="receiving-in4">
                          <div class="title-receiving">
                               <h2>Thông tin nhận hàng</h2>
-                              <a href=""><i style="margin-right: 8px" class='bx bx-user-circle'></i>Đăng Nhập</a>
+                              <!-- <a href=""><i style="margin-right: 8px" class='bx bx-user-circle'></i>Đăng Nhập</a> -->
+                              <span style="display:flex; color: red; font-size: 20px; font-weight: 600;"><i
+                                        style="margin-right: 3px"
+                                        class='bx bx-user-circle'></i><?php echo $_SESSION['dangnhap']['ten']; ?></span>
                          </div>
                          <div class="form-in4-pay">
-                              <input type="email" name="email" placeholder="Email (tùy chọn)" class="inp-pay" required/><br />
-                              <input type="text" name="ten" placeholder="Họ tên" class="inp-pay" required/><br />
+                              <input type="email" name="email" placeholder="Email (tùy chọn)" class="inp-pay"
+                                   required /><br />
+                              <input type="text" name="ten" placeholder="Họ tên" class="inp-pay" required /><br />
                               <div class="tel-pay">
-                                   <input type="tel" name="sodth" placeholder="Số điện thoại" class="inp-pay inp-tel" required />
+                                   <input type="tel" name="sodth" placeholder="Số điện thoại" class="inp-pay inp-tel"
+                                        required />
                                    <div class="con">
                                         <select>
                                              <option value="vn">VN+84</option>
@@ -51,11 +56,13 @@ if (isset($_POST['tinh_thanh'])) {
                                    </div>
                               </div>
 
-                              <input type="text" name="tinh_thanh" placeholder="Tỉnh Thành" class="inp-pay" required/>
+                              <input type="text" name="tinh_thanh" placeholder="Tỉnh Thành" class="inp-pay" required />
                               <br />
-                              <input type="text" name="quan_huyen" placeholder="Quận Huyện" class="inp-pay" required/><br/>
-                              <input type="text" name="phuong_xa" placeholder="Phường Xã" class="inp-pay" required/>
-                              <textarea class="inp-pay" name="ghi_chu" placeholder="Ghi chú" style="width: 100%; height: 100px" ></textarea>
+                              <input type="text" name="quan_huyen" placeholder="Quận Huyện" class="inp-pay"
+                                   required /><br />
+                              <input type="text" name="phuong_xa" placeholder="Phường Xã" class="inp-pay" required />
+                              <textarea class="inp-pay" name="ghi_chu" placeholder="Ghi chú"
+                                   style="width: 100%; height: 100px"></textarea>
                          </div>
                     </div>
                     <div class="shipping-in4">
@@ -68,13 +75,17 @@ if (isset($_POST['tinh_thanh'])) {
                          <br /><br />
                          <div class="payment-methods">
                               <h2>Phương Thức Thanh Toán</h2>
-                              <div class="atm">
-                                   <input type="radio" id="bank-transfer" name="payment-method" value="chuyển khoản" />
-                                   <label for="bank-transfer">Chuyển khoản qua ngân hàng</label>
-                                   <i style=" color: rgb(114, 114, 114);" class='bx bx-credit-card'></i>
+                              <div>
+                                   <div class="atm">
+                                        <input type="radio" id="bank-transfer" name="payment-method"
+                                             value="chuyển khoản" />
+                                        <label for="bank-transfer">Chuyển khoản qua ngân hàng</label>
+                                        <i style=" color: rgb(114, 114, 114);" class='bx bx-credit-card'></i>
+                                   </div>
                               </div>
                               <div class="cod">
-                                   <input type="radio" id="cash-on-delivery" name="payment-method" value="thanh toán tiền mặt" />
+                                   <input type="radio" id="cash-on-delivery" name="payment-method"
+                                        value="thanh toán tiền mặt" />
                                    <label for="cash-on-delivery">Thanh toán khi nhận hàng</label>
                                    <i style=" color: rgb(114, 114, 114);" class='bx bx-money'></i>
                               </div>
@@ -89,50 +100,51 @@ if (isset($_POST['tinh_thanh'])) {
                     foreach ($_SESSION['cart'] as $product) {
                          // Lặp qua mỗi sản phẩm trong session cart và hiển thị chúng
                ?>
-                         <div class="box-prd-pay">
-                              <div class="img-prd-pay">
-                                   <img src="<?php echo $product['hinhanh']; ?>" alt="" />
-                                   <div class="number-prd-pay">
-                                        <span><?php echo $product['soluong']; ?></span>
-                                   </div>
-                              </div>
-                              <div class="name-prd-pay">
-                                   <span><?php echo $product['tensp']; ?></span>
-                                   <br />
-                              </div>
-                              <div class="price-prd-pay">
-                                   <span><?php echo number_format($product['gia'], 0, ',', '.'); ?>đ</span>
-                              </div>
+               <div class="box-prd-pay">
+                    <div class="img-prd-pay">
+                         <img src="<?php echo $product['hinhanh']; ?>" alt="" />
+                         <div class="number-prd-pay">
+                              <span><?php echo $product['soluong']; ?></span>
                          </div>
-                    <?php
+                    </div>
+                    <div class="name-prd-pay">
+                         <span><?php echo $product['tensp']; ?></span>
+                         <br />
+                    </div>
+                    <div class="price-prd-pay">
+                         <span><?php echo number_format($product['gia'], 0, ',', '.'); ?>đ</span>
+                    </div>
+               </div>
+               <?php
                     }
                } else {
                     // Nếu không có sản phẩm trong giỏ hàng, hiển thị thông báo
                     ?>
-                    <h2>Đơn Hàng (0 sản phẩm)</h2>
-                    <p>Giỏ hàng của bạn đang trống.</p>
+               <h2>Đơn Hàng (0 sản phẩm)</h2>
+               <p>Giỏ hàng của bạn đang trống.</p>
                <?php
                }
                ?>
                <hr class="hr" />
-               <div class="discount-pay">
+               <!-- <div class="discount-pay">
                     <input type="text" placeholder="Mã giảm giá (nếu có)" />
                     <button>ÁP DỤNG</button>
                </div>
                <br />
-               <hr class="hr" />
-               <div class="provisional-fee">
+               <hr class="hr" /> -->
+               <!-- <div class="provisional-fee">
                     <p>Tạm Tính: <span><?php echo number_format($total_price); ?> đ</span></p>
                </div>
                <br />
-               <hr class="hr" />
+               <hr class="hr" /> -->
                <div class="total-payment">
                     <p>Tổng Cộng: <span><?php echo number_format($total_price + $phi_van_chuyen); ?> đ</span></p>
                </div>
                <br />
                <hr class="hr" />
                <div class="return-to-cart">
-                    <a href="index.php?action=giohang" class=""><i style="margin-right: 5px" class="icon fa-solid fa-angle-left"></i>Quay về
+                    <a href="index.php?action=giohang" class=""><i style="margin-right: 5px"
+                              class="icon fa-solid fa-angle-left"></i>Quay về
                          giỏ
                          hàng
                     </a>
