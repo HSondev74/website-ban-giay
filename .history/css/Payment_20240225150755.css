@@ -1,0 +1,393 @@
+.page-payment {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    /* background-color: rgb(190, 140, 75); */
+}
+
+.column-left-pay {
+    width: 65%;
+    /* background-color: #b10b0b; */
+}
+
+.center-img {
+    text-align: center;
+    padding: 28px 28px 0px;
+}
+
+.center-img > img {
+    width: 200px;
+    height: 40px;
+}
+
+.in4-payment {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.receiving-in4 {
+    width: 50%;
+    /* background-color: antiquewhite; */
+}
+
+.title-receiving {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.title-receiving > a {
+    font-size: 16px;
+    margin-top: 5px;
+    color: rgba(0, 0, 0, 0.736);
+}
+
+.title-receiving > a > i {
+    font-size: 18px;
+}
+
+.form-in4-pay {
+}
+
+.inp-pay {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-color: #cfcfcf;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    margin: 11px 0px;
+    /* box-shadow: #c8bcbc 0px 0px 0px 1px; */
+}
+
+.tel-pay {
+    position: relative;
+}
+
+.inp-tel {
+    position: relative;
+}
+
+.con {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 11.5px;
+}
+
+.con > select {
+    margin: 2px;
+    height: 44px;
+    border: none;
+    border-left: 1px solid #ccc;
+    outline: none;
+    color: rgb(121, 121, 120);
+}
+
+.shipping-in4 {
+    width: 40%;
+}
+
+.ship > h2 {
+    font-size: 19px;
+}
+
+.span-ship {
+    width: 100%;
+    border: none;
+    background-color: #d1ecf1;
+}
+
+.payment-methods > h2 {
+    font-size: 19px;
+}
+
+.pay-icon {
+    float: right;
+}
+
+.atm,
+.cod {
+    /* width: 100%;
+    height: auto;
+    padding: 10px 20px;
+    font-size: 15px;
+    border-color: #cfcfcf;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    margin: 20px 0px; */
+    display: flex;
+    align-items: center;
+}
+
+.atm > i,
+.cod > i {
+    font-size: 22px;
+}
+
+.atm-banking-in4 {
+    display: none; /* ban đầu ẩn */
+}
+
+.atm input[type="radio"]:checked > .atm-banking-in4 {
+    display: block; /* hiển thị khi nút radio được chọn */
+}
+
+.column-right-pay {
+    width: 35%;
+    border-left: 1px solid rgb(196, 196, 196);
+    /* background-color: aqua; */
+}
+
+.column-right-pay > h2 {
+    font-size: 19px;
+    padding: 20px;
+    border-bottom: 1px solid rgb(196, 196, 196);
+}
+
+.box-prd-pay {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    margin: 20px;
+}
+
+.box-prd-pay > .img-prd-pay {
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    position: relative;
+}
+
+.number-prd-pay {
+    position: absolute;
+    bottom: 42px;
+    left: 40px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.828);
+    height: 20px;
+    width: 15px;
+    line-height: 20px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.box-prd-pay > .img-prd-pay > img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.name-prd-pay {
+    font-size: 14px;
+}
+
+.price-prd-pay {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.size-prd-pay,
+.price-prd-pay {
+    color: #919191;
+}
+
+.hr {
+    margin: 0px 0px 0px 20px;
+}
+
+.discount-pay {
+    margin: 20px 0px 0px 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.ds-pay-ip > input {
+    width: 250px;
+    height: 40px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    border: 1px solid #c6c6c6;
+    border-radius: 8px;
+}
+
+.ds-pay-btn > button {
+    width: 100px;
+    height: 38px;
+    background-color: #787878;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.discount-pay > button:hover {
+    border: solid 1px #333;
+    background-color: #333;
+}
+
+.provisional-fee {
+    margin: 20px 0px 0px 20px;
+}
+
+.provisional-fee > p {
+    padding: 10px 0px;
+    color: #717171;
+    font-size: 14px;
+}
+
+.provisional-fee > p > span {
+    float: right;
+}
+
+.total-payment {
+    margin: 20px 0px 0px 20px;
+}
+
+.total-payment > p {
+    padding: 10px 0px;
+    color: #2e2e2e;
+    font-size: 18px;
+}
+
+.total-payment > p > span {
+    float: right;
+    font-weight: 600;
+}
+
+.return-to-cart {
+    margin: 20px 0px 0px 20px;
+    align-items: center;
+}
+
+.return-to-cart > a {
+    color: #333;
+    font-size: 16px;
+}
+
+.icon {
+    font-size: 16px;
+}
+
+.return-to-cart > a:hover {
+    color: rgb(11, 11, 188);
+}
+
+.return-to-cart > button {
+    float: right;
+    width: 150px;
+    height: 40px;
+    border: none;
+    background-color: #343433;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.return-to-cart > button:hover {
+    background-color: black;
+}
+
+@media screen and (max-width: 900px) {
+    .page-payment {
+        display: block;
+        width: 90%;
+    }
+
+    .column-left-pay {
+        margin: 0 auto;
+        width: 100%;
+        /* background-color: #b10b0b; */
+    }
+
+    .column-right-pay {
+        width: 95%;
+        margin: 0 auto;
+        border: none;
+        margin-bottom: 100px;
+    }
+
+    .discount-pay > input {
+        width: 76%;
+    }
+
+    .discount-pay > button {
+        width: 21%;
+    }
+
+    .atm > i,
+    .cod > i {
+        display: none;
+    }
+
+    .center-img > img {
+        width: 250px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .in4-payment {
+        display: block;
+    }
+
+    .receiving-in4 {
+        width: 100%;
+    }
+
+    .shipping-in4 {
+        width: 100%;
+    }
+
+    .atm,
+    .cod {
+        display: flex;
+    }
+
+    .atm > i,
+    .cod > i {
+        display: block;
+        margin-left: 10px !important;
+    }
+
+    .discount-pay > input {
+        width: 70%;
+    }
+
+    .discount-pay > button {
+        width: 25%;
+    }
+
+    .column-right-pay {
+        width: 100%;
+    }
+
+    .box-prd-pay {
+        margin: 20px 0px;
+    }
+
+    .hr {
+        margin: 0px 0px;
+    }
+
+    .discount-pay,
+    .provisional-fee,
+    .total-payment,
+    .return-to-cart {
+        margin: 18px 0px 0px 0px;
+    }
+
+    .center-img > img {
+        width: 250px;
+        height: 60px;
+    }
+}
