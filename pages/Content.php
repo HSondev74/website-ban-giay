@@ -23,7 +23,10 @@ if ($khoitao == 'chitietsanpham') {
   if (isset($_SESSION['dangnhap']) && !empty($_SESSION['dangnhap'])) {
     include('./pages/Payment.php');
   } else {
-    echo "<script>window.history.back();</script>";
+    echo "<script>
+    alert('Bạn phải đăng nhập để mua hàng !');
+    window.history.back();
+    </script>";
   }
 } elseif ($khoitao == 'login') {
   include('./pages/Login.php');

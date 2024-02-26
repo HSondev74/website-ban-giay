@@ -13,7 +13,7 @@
                     lý và phản hồi trong thời gian sớm nhất.
                 </p>
                 <div class="ct-in4-r1">
-                    <div class="ct-in4-r1-l">
+                    <div class="ct-in4-r1-l" >
                         <label for="">Họ Tên *</label><br />
                         <br />
                         <input type="text" placeholder="Nhập  Họ Và Tên Đầy Đủ" id="name" required />

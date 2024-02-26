@@ -121,7 +121,7 @@ if ($result->num_rows > 0) {
 
               <div class="detail-pay">
                 <a href="pages/addProduct.php?idsp=<?php echo $product['sanpham_id'] ?>" class="detail-add-pay">Thêm vào giỏ hàng</a>
-                <div class="detail-buy">Mua Ngay</div>
+                <a href="pages/addProduct.php?idsp=<?php echo $product['sanpham_id'] ?>&muangay" class="detail-buy">Mua Ngay</a href="">
               </div>
 
               <div class="detail-contact">

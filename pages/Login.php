@@ -25,7 +25,7 @@ if (isset($_POST['login'])) {
 
 ?>
 <main id="main">
-     <div class="container">
+     <div class="container" >
           <div class="form">
                <!-- <img src="./images/img-header/logo-brand.png" alt="" /> -->
                <form action="" method="POST" class="form-logup">

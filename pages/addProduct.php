@@ -77,8 +77,43 @@ if (isset($_SESSION['cart']) && isset($_GET['xoa'])) {
 }
 
 // them san pham
-
-if (isset($_GET['idsp'])) {
+if(isset($_GET['idsp'])&&isset($_GET['muangay'])) {
+     $id = $_GET['idsp'];
+     $soluong = 1;
+     $sql = "SELECT * FROM sanpham WHERE sanpham_id = '$id' ";
+     $query = mysqli_query($conn, $sql);
+     $row = mysqli_fetch_array($query);
+     if ($row) {
+          $new_product = array(
+               'tensp' => $row['tensanpham'],
+               'soluong' => $soluong,
+               // 'size' => $row['size'],
+               'id' => $id,
+               'gia' => $row['gia'],
+               'hinhanh' => $row['hinhanh']
+          );
+          if (isset($_SESSION['cart'])) {
+               $found = false;
+               foreach ($_SESSION['cart'] as &$cart_item) {
+                    if ($cart_item['id'] == $id) {
+                         // Nếu sản phẩm đã có trong giỏ hàng, tăng số lượng
+                         $cart_item['soluong'] += $soluong;
+                         $found = true;
+                         break;
+                    }
+               }
+               if (!$found) {
+                    // Nếu sản phẩm không có trong giỏ hàng, thêm sản phẩm mới vào giỏ hàng
+                    $_SESSION['cart'][] = $new_product;
+               }
+          } else {
+               // Nếu giỏ hàng không tồn tại, tạo giỏ hàng mới và thêm sản phẩm vào
+               $_SESSION['cart'][] = $new_product;
+          }
+     }
+    
+     echo "<script>window.location.href = '../index.php?action=giohang';</script>";
+}else if(isset($_GET['idsp'])){
      $id = $_GET['idsp'];
      $soluong = 1;
      $sql = "SELECT * FROM sanpham WHERE sanpham_id = '$id' ";
@@ -116,3 +151,5 @@ if (isset($_GET['idsp'])) {
      echo "<script>alert('Sản phẩm đã được thêm vào giỏ hàng');</script>";
      echo "<script>window.history.back();</script>";
 }
+
+
