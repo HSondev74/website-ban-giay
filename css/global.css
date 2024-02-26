@@ -51,7 +51,12 @@ select {
     margin-top: 170px;
 }
 
-
+.grid-header{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    gap: 25px;
+}
 
 header {
     position: fixed;
@@ -68,7 +73,8 @@ header {
     z-index: 2;
     background: transparent;
     position: relative;
-    padding: 6px 0;
+    padding: 10px 0;
+    align-items: center;
 }
 
 .container-wrapper {
@@ -202,7 +208,7 @@ i {
 }
 
 .header-search-cart {
-    gap: 15px;
+    gap: 10px;
 }
 
 .header-favorites,
@@ -227,6 +233,7 @@ i {
     right: -7px;
     top: -7px;
     font-weight: 700;
+    align-items: center;
 }
 
 .account-title {
@@ -292,14 +299,18 @@ i {
 }
 
 .search-list-select {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 50px;
     background-color: white;
-    padding: 8px 0;
+    padding: 10px 0;
     transition: background-color 0.3s ease;
+    border-top: 1px solid #cbcbcb;
+    margin-top: 10px;
 }
+
 
 .search-list-select li a {
     transition: all .5s linear;
@@ -382,6 +393,8 @@ i {
 }
 
 /* main */
+
+
 .umine-center-top {
     /* display: grid; */
     /* height: 490px; */
@@ -1232,6 +1245,7 @@ img {
 }
 
 .detail-buy {
+    display: block;
     padding: 10px 40px;
     /* border: 1px solid black; */
     background-color: red;
