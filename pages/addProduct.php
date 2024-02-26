@@ -119,11 +119,32 @@ if(isset($_GET['idsp'])&&isset($_GET['muangay'])) {
      $sql = "SELECT * FROM sanpham WHERE sanpham_id = '$id' ";
      $query = mysqli_query($conn, $sql);
      $row = mysqli_fetch_array($query);
+     $checkoutSize = '<script>
+     var lis = document.querySelectorAll(".size li");
+     var selectedSize = null;
+
+        lis.forEach(function (li) {
+            if (li.classList.contains("selected")) {
+                selectedSize = li.textContent;
+            }
+        });
+
+        if (selectedSize) {
+            // Bạn có thể sử dụng biến selectedSize ở đây
+            console.log("Selected Size: " + selectedSize);
+        } else {
+            console.log("No size selected.");
+        }
+     </script>';
+
+     echo $checkoutSize;
+
+
      if ($row) {
           $new_product = array(
                'tensp' => $row['tensanpham'],
                'soluong' => $soluong,
-               // 'size' => $row['size'],
+               // 'size' => ,
                'id' => $id,
                'gia' => $row['gia'],
                'hinhanh' => $row['hinhanh']

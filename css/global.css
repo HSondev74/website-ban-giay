@@ -1148,11 +1148,16 @@ img {
     transition: 0.2s;
     cursor: pointer;
 }
-
+/* 
 .size li:hover {
     border: 2px solid orange;
     color: orange;
-}
+} */
+
+.size li.selected {
+    border-color: red;
+    color: red;
+  }
 
 .parameter-detail {
     padding: 0;
