@@ -25,36 +25,45 @@ if (isset($_POST['login'])) {
 
 ?>
 <main id="main">
+<<<<<<< HEAD
      <div class="container" >
           <div class="form">
                <!-- <img src="./images/img-header/logo-brand.png" alt="" /> -->
                <form action="" method="POST" class="form-logup">
                     <h2>Đăng Nhập</h2>
                     <p>Chào mừng bạn quay lại</p>
+=======
+    <div class="container">
+        <div class="form" style="width: 30%; margin-top:50px">
+            <!-- <img src="./images/img-header/logo-brand.png" alt="" /> -->
+            <form action="" method="POST" class="form-logup">
+                <h2>Đăng Nhập</h2>
+                <p>Chào mừng bạn quay lại</p>
+>>>>>>> origin/Dat
 
-                    <div class="ip-logup">
-                         <span class="input-group-text">
-                              <i class="fa fa-user"></i>
-                         </span>
-                         <input type="email" name="email" class="form-control" placeholder="vd: vibesneak@gmail.com" />
-                    </div>
+                <div class="ip-logup">
+                    <span class="input-group-text">
+                        <i class="fa fa-user"></i>
+                    </span>
+                    <input type="email" name="email" class="form-control" placeholder="vd: vibesneak@gmail.com" />
+                </div>
 
-                    <div class="ip-logup">
-                         <span class="input-group-text">
-                              <i class="fa fa-lock"></i>
-                         </span>
-                         <input type="text" name="password" class="form-control" placeholder="Password" />
-                    </div>
+                <div class="ip-logup">
+                    <span class="input-group-text">
+                        <i class="fa fa-lock"></i>
+                    </span>
+                    <input type="text" name="password" class="form-control" placeholder="Password" />
+                </div>
 
-                    <div class="btn-logup">
-                         <input type="submit" name="login" value="Đăng Nhập" class="button" />
+                <div class="btn-logup">
+                    <input type="submit" name="login" value="Đăng Nhập" class="button" />
 
-                         <p class="ask2 ask">
-                              Bạn chưa có tài khoản.
-                              <a href="index.php?action=logup">Đăng Ký Ngay !</a>
-                         </p>
-                    </div>
-               </form>
-          </div>
-     </div>
+                    <p class="ask2 ask">
+                        Bạn chưa có tài khoản.
+                        <a href="index.php?action=logup">Đăng Ký Ngay !</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
 </main>

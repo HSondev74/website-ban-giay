@@ -51,6 +51,7 @@ select {
     margin-top: 170px;
 }
 
+<<<<<<< HEAD
 .grid-header{
     display: grid;
     grid-template-columns: auto auto auto;
@@ -58,16 +59,18 @@ select {
     gap: 25px;
 }
 
+=======
+>>>>>>> origin/Dat
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     /* margin-bottom: 100px; */
 }
-
 
 .navbar-wrapper {
     z-index: 2;
@@ -197,7 +200,6 @@ header {
     border-radius: 0 5px 5px 0;
 }
 
-
 .account-icon img {
     object-fit: cover;
     width: 100%;
@@ -313,7 +315,7 @@ i {
 
 
 .search-list-select li a {
-    transition: all .5s linear;
+    transition: all 0.5s linear;
 }
 
 .search-list-select li a:hover {
@@ -346,7 +348,7 @@ i {
     position: relative;
 }
 
-.search-list-select .dropmenu li>a {
+.search-list-select .dropmenu li > a {
     color: #ffffff;
     font-weight: bold;
 }
@@ -401,8 +403,6 @@ i {
     margin-top: 30px;
     /* grid-template-columns: 20% 80%; */
 }
-
-
 
 .umine-center-top .umine-center {
     margin-bottom: 120px;
@@ -809,9 +809,9 @@ i {
     padding: 42px 0;
 }
 
-.links>h2,
-.info>h2,
-.signup>h2 {
+.links > h2,
+.info > h2,
+.signup > h2 {
     margin-left: -3px;
 }
 
@@ -980,7 +980,6 @@ i {
 .img-map {
     width: 100%;
 }
-
 
 /* DETAIL */
 .nav-detail {
