@@ -1,11 +1,12 @@
-/* .container {
+.container {
     width: min(100%);
     margin-inline: auto;
     padding-top: 20px;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-} */
+}
 
 .form {
+    margin: 0 auto;
     width: 20%;
     border-collapse: separate;
     border-spacing: 0;

@@ -51,7 +51,6 @@ select {
     margin-top: 170px;
 }
 
-<<<<<<< HEAD
 .grid-header{
     display: grid;
     grid-template-columns: auto auto auto;
@@ -59,8 +58,6 @@ select {
     gap: 25px;
 }
 
-=======
->>>>>>> origin/Dat
 header {
     position: fixed;
     top: 0;
@@ -130,8 +127,6 @@ header {
 }
 
 .header-search-wrapper {
-    display: flex;
-    box-sizing: border-box;
 }
 
 .header-search__input-section {
@@ -1158,6 +1153,7 @@ img {
     border-color: red;
     color: red;
   }
+
 
 .parameter-detail {
     padding: 0;

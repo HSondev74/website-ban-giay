@@ -38,7 +38,7 @@
 
     <!-- header-search-wrapper -->
     <div class="container-wrapper header-search-wrapper" style="margin-top: 8px;">
-        <div class="container flex-between v-center">
+        <div class="container grid-header v-center">
             <a href="" class="header-search__logo-section">
                 <div class="header-search__logo-wrapper">
                     <img src="./images/logo-brand.png" alt="logo">

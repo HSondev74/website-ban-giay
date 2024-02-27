@@ -1,8 +1,9 @@
 <?php
-
+if(isset($_GET['id']))
+{ 
+$selectedSize = $_GET['size'];
 $idsp = $_GET['id'];
 $sql = "SELECT * FROM sanpham where sanpham_id = '" . $idsp . "'";
-
 $result = mysqli_query($conn, $sql);
 
 if ($result->num_rows > 0) {
@@ -74,7 +75,8 @@ if ($result->num_rows > 0) {
               <ul class="size">
                 <?php foreach ($sizes as $size) {
                 ?>
-                  <li><?php echo $size ?></li>
+                  <li><a href="index.php?action=chitietsanpham&id=<?php echo $product['sanpham_id'] ?>&size=<?php echo $size ?>"><?php echo $size ?></a></li>
+
                 <?php } ?>
               </ul>
 
@@ -120,7 +122,7 @@ if ($result->num_rows > 0) {
               </div>
 
               <div class="detail-pay">
-                <a href="pages/addProduct.php?idsp=<?php echo $product['sanpham_id'] ?>" class="detail-add-pay">Thêm vào giỏ hàng</a>
+                <a href="pages/addProduct.php?idsp=<?php echo $product['sanpham_id'] ?>&size=<?php  echo $selectedSize ?>" class="detail-add-pay">Thêm vào giỏ hàng</a>
                 <a href="pages/addProduct.php?idsp=<?php echo $product['sanpham_id'] ?>&muangay" class="detail-buy">Mua Ngay</a href="">
               </div>
 
@@ -136,4 +138,4 @@ if ($result->num_rows > 0) {
       </div>
     </main>
 <?php }
-} ?>
+} }?>

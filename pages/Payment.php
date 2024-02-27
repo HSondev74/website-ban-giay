@@ -8,6 +8,8 @@ if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) { // Kiểm tra gi
      }
 }
 
+
+
 $phi_van_chuyen = 0;
 // Xử lý POST Data
 if (isset($_POST['tinh_thanh'])) {
@@ -25,10 +27,28 @@ if (isset($_POST['tinh_thanh'])) {
      }
 }
 
+$selected_thongtinnguoidung = "select * from nguoidung where email = '".$_SESSION['dangnhap']['email']."' ";
+
+$kq = mysqli_query($conn, $selected_thongtinnguoidung);
+
+$cot = mysqli_fetch_assoc($kq) ;
+
+
+
+$diachi = $cot['diachi'];
+
+$dia_chi_parts = explode(', ', $diachi);
+
+$tinh_thanh = $dia_chi_parts[0]; 
+$quan_huyen = $dia_chi_parts[1]; 
+$phuong_xa = $dia_chi_parts[2]; 
+
+
+
 
 ?>
 <main id="main">
-    <form action="pages/xulythanhtoan.php" method="POST" class="page-payment">
+    <form action="pages/xulythanhtoan.php" method="POST" class="page-payment" style="width: 80%;">
         <div class="column-left-pay">
             <div class="center-img">
                 <img src="./images/logo-brand.png" alt="" />
@@ -44,11 +64,11 @@ if (isset($_POST['tinh_thanh'])) {
                     </div>
                     <div class="form-in4-pay">
                         <input type="email" name="email" placeholder="Email (tùy chọn)" class="inp-pay"
-                            required /><br />
-                        <input type="text" name="ten" placeholder="Họ tên" class="inp-pay" required /><br />
+                            required value="<?php echo $cot['email'] ?>"/><br />
+                        <input type="text" name="ten" placeholder="Họ tên" class="inp-pay" required value="<?php echo $cot['ten'] ?>" /><br />
                         <div class="tel-pay">
                             <input type="tel" name="sodth" placeholder="Số điện thoại" class="inp-pay inp-tel"
-                                required />
+                                required value="<?php echo $cot['dienthoai'] ?>" />
                             <div class="con">
                                 <select>
                                     <option value="vn">VN+84</option>
@@ -56,10 +76,10 @@ if (isset($_POST['tinh_thanh'])) {
                             </div>
                         </div>
 
-                        <input type="text" name="tinh_thanh" placeholder="Tỉnh Thành" class="inp-pay" required />
+                        <input type="text" name="tinh_thanh" placeholder="Tỉnh Thành" class="inp-pay" required value="<?php echo $tinh_thanh ?>"/>
                         <br />
-                        <input type="text" name="quan_huyen" placeholder="Quận Huyện" class="inp-pay" required /><br />
-                        <input type="text" name="phuong_xa" placeholder="Phường Xã" class="inp-pay" required />
+                        <input type="text" name="quan_huyen" placeholder="Quận Huyện" class="inp-pay" required value="<?php echo $quan_huyen ?>"/><br />
+                        <input type="text" name="phuong_xa" placeholder="Phường Xã" class="inp-pay" required value="<?php echo $phuong_xa ?>"/>
                         <textarea class="inp-pay" name="ghi_chu" placeholder="Ghi chú"
                             style="width: 100%; height: 100px"></textarea>
                     </div>
@@ -123,6 +143,7 @@ if (isset($_POST['tinh_thanh'])) {
                 </div>
                 <div class="name-prd-pay">
                     <span><?php echo $product['tensp']; ?></span>
+                    <span class="">(<?php echo $product['size']; ?>)</span>
                     <br />
                 </div>
                 <div class="price-prd-pay">

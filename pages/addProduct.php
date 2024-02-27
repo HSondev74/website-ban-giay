@@ -113,64 +113,65 @@ if(isset($_GET['idsp'])&&isset($_GET['muangay'])) {
      }
     
      echo "<script>window.location.href = '../index.php?action=giohang';</script>";
-}else if(isset($_GET['idsp'])){
+}else if(isset($_GET['idsp']) && isset($_GET['size'])){
+     $checkoutSize = $_GET['size'];
      $id = $_GET['idsp'];
      $soluong = 1;
      $sql = "SELECT * FROM sanpham WHERE sanpham_id = '$id' ";
      $query = mysqli_query($conn, $sql);
      $row = mysqli_fetch_array($query);
-     $checkoutSize = '<script>
-     var lis = document.querySelectorAll(".size li");
-     var selectedSize = null;
-
-        lis.forEach(function (li) {
-            if (li.classList.contains("selected")) {
-                selectedSize = li.textContent;
-            }
-        });
-
-        if (selectedSize) {
-            // Bạn có thể sử dụng biến selectedSize ở đây
-            console.log("Selected Size: " + selectedSize);
-        } else {
-            console.log("No size selected.");
-        }
-     </script>';
-
-     echo $checkoutSize;
-
-
+ 
      if ($row) {
-          $new_product = array(
-               'tensp' => $row['tensanpham'],
-               'soluong' => $soluong,
-               // 'size' => ,
-               'id' => $id,
-               'gia' => $row['gia'],
-               'hinhanh' => $row['hinhanh']
-          );
-          if (isset($_SESSION['cart'])) {
-               $found = false;
-               foreach ($_SESSION['cart'] as &$cart_item) {
-                    if ($cart_item['id'] == $id) {
-                         // Nếu sản phẩm đã có trong giỏ hàng, tăng số lượng
-                         $cart_item['soluong'] += $soluong;
-                         $found = true;
-                         break;
-                    }
-               }
-               if (!$found) {
-                    // Nếu sản phẩm không có trong giỏ hàng, thêm sản phẩm mới vào giỏ hàng
-                    $_SESSION['cart'][] = $new_product;
-               }
-          } else {
-               // Nếu giỏ hàng không tồn tại, tạo giỏ hàng mới và thêm sản phẩm vào
-               $_SESSION['cart'][] = $new_product;
-          }
+         $found = false;
+ 
+         // Duyệt qua mảng giỏ hàng
+         foreach ($_SESSION['cart'] as &$cart_item) {
+             // Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
+             if ($cart_item['id'] == $id) {
+                 // Nếu sản phẩm đã có trong giỏ hàng
+                 if ($cart_item['size'] == $checkoutSize) {
+                     // Nếu có cùng kích thước, tăng số lượng
+                     $cart_item['soluong'] += $soluong;
+                     $found = true;
+                     break;
+                 } else {
+                     // Nếu có kích thước khác, thêm sản phẩm mới vào giỏ hàng
+                     $new_product = array(
+                         'tensp' => $row['tensanpham'],
+                         'soluong' => $soluong,
+                         'size' => $checkoutSize,
+                         'id' => $id,
+                         'gia' => $row['gia'],
+                         'hinhanh' => $row['hinhanh']
+                     );
+                     $_SESSION['cart'][] = $new_product;
+                     $found = true;
+                     break;
+                 }
+             }
+         }
+ 
+         if (!$found) {
+             // Nếu sản phẩm không có trong giỏ hàng, thêm sản phẩm mới vào giỏ hàng
+             $new_product = array(
+                 'tensp' => $row['tensanpham'],
+                 'soluong' => $soluong,
+                 'size' => $checkoutSize,
+                 'id' => $id,
+                 'gia' => $row['gia'],
+                 'hinhanh' => $row['hinhanh']
+             );
+             $_SESSION['cart'][] = $new_product;
+         }
+ 
+         // Hiển thị thông báo thông qua JavaScript và quay lại trang trước đó
+         echo "<script>alert('Sản phẩm đã được thêm vào giỏ hàng');</script>";
+         echo "<script>window.history.back();</script>";
      }
-     // Hiển thị thông báo thông qua JavaScript
-     echo "<script>alert('Sản phẩm đã được thêm vào giỏ hàng');</script>";
-     echo "<script>window.history.back();</script>";
-}
+ }
+ 
+ 
+ 
+
 
 
