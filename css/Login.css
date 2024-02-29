@@ -1,7 +1,6 @@
 .container {
-    width: min(100%);
     margin-inline: auto;
-    padding-top: 20px;
+    /* padding-top: 20px; */
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 

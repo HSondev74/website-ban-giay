@@ -60,7 +60,12 @@
     border-style: solid;
     border-width: 1px;
     margin: 11px 0px;
+
     /* box-shadow: #c8bcbc 0px 0px 0px 1px; */
+}
+
+.node{
+    height: 400px;
 }
 
 .tel-pay {

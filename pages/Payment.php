@@ -80,18 +80,18 @@ $phuong_xa = $dia_chi_parts[2];
                         <br />
                         <input type="text" name="quan_huyen" placeholder="Quận Huyện" class="inp-pay" required value="<?php echo $quan_huyen ?>"/><br />
                         <input type="text" name="phuong_xa" placeholder="Phường Xã" class="inp-pay" required value="<?php echo $phuong_xa ?>"/>
-                        <textarea class="inp-pay" name="ghi_chu" placeholder="Ghi chú"
-                            style="width: 100%; height: 100px"></textarea>
+                        <textarea class="inp-pay node" name="ghi_chu" placeholder="Ghi chú"
+                            style="width: 100%; height: 155px"></textarea>
                     </div>
                 </div>
                 <div class="shipping-in4">
-                    <div class="ship">
+                    <!-- <div class="ship">
                         <h2>Vận Chuyển</h2>
                         <p class="inp-pay span-ship">
                             Vui lòng nhập thông tin giao hàng
                         </p>
                     </div>
-                    <br /><br />
+                    <br /><br /> -->
                     <div class="payment-methods">
                         <h2>Phương Thức Thanh Toán</h2>
                         <div class="cod inp-pay" style="gap:10px;">

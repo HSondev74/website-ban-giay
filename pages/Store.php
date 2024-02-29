@@ -96,24 +96,6 @@ if (isset($_GET['category'])) {
           <div class="show-product">
                <div class="in4-prd">
                     <br />
-                    <br />
-                    <div class="search-prd">
-                         <div class="search-box-prd">
-                              <div class="search-field-prd">
-                                   <input placeholder="Search..." class="input-prd" type="text" />
-                                   <div class="search-box-icon-prd">
-                                        <button class="btn-icon-content-prd">
-                                             <i class="search-icon-prd">
-                                                  <svg xmlns="://www.w3.org/2000/svg" version="1.1" viewBox="0 0 512 512">
-                                                       <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" fill="#"></path>
-                                                  </svg>
-                                             </i>
-                                        </button>
-                                   </div>
-                              </div>
-                         </div>
-                    </div>
-                    <br />
                     <h4>THƯƠNG HIỆU</h4>
                     <br />
                     <div class="name-prd">
@@ -147,14 +129,6 @@ if (isset($_GET['category'])) {
                     </div>
                     <br />
                     <!-- <hr /> -->
-                    <div class="size-prd">
-                         <h4 style="margin-bottom: 10px">Lọc theo size</h4>
-                         <input type="checkbox" /><label for="scales">Size S</label><br />
-                         <input type="checkbox" /><label for="scales">Size M</label><br />
-                         <input type="checkbox" /><label for="scales">Size L</label><br />
-                         <input type="checkbox" /><label for="scales">Size XL</label><br />
-                         <input type="checkbox" /><label for="scales">Size XXL</label>
-                    </div>
                </div>
                <div class="in4-items">
                     <?php
