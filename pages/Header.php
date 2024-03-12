@@ -204,4 +204,36 @@
         <li><a href="" class="strong">Mua ngay với những sản phẩm giảm lên đến 50%</a></li>
     </ul>
     </div>
+
+    <div>
+    <?php
+// Lấy tên trang hiện tại từ URL
+$current_page = basename($_SERVER['PHP_SELF']);
+$action = isset($_GET['action']) ? $_GET['action'] : '';
+
+// Mảng chứa các thông tin breadcrumb
+$breadcrumbs = array(
+    'index.php' => 'Trang Chủ',
+    'index.php?action=cuahang' => 'Cửa Hàng',
+    'index.php?action=lienhe' => 'Liên Hệ',
+    'index.php?action=gioithieu' => 'Tuyển Dụng',
+    'index.php?action=giohang' => 'Giỏ Hàng',
+);
+
+// Kiểm tra xem trang hiện tại có trong mảng breadcrumb không
+if (array_key_exists($current_page, $breadcrumbs)) {
+    echo '<div id="breadcrumb">';
+    echo $breadcrumbs[$current_page];
+
+    // Nếu có tham số action, thêm breadcrumb cho tham số đó
+    if ($action && array_key_exists("index.php?action=$action", $breadcrumbs)) {
+        echo ' &gt; ' . $breadcrumbs["index.php?action=$action"];
+    }
+
+    echo '</div>';
+}
+?>
+
+</div>
 </header>
+

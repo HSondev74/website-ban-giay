@@ -3,11 +3,11 @@
           <div class="slider">
                <div class="list-show">
                     <div class="list-image">
-                         <img src="//bizweb.dktcdn.net/100/453/330/themes/859403/assets/slider_1.jpg?1705683863776" alt="" />
+                         <img src="//bizweb.dktcdn.net/100/453/330/themes/859403/assets/slider_4.jpg?1705683863776" alt="" />
                          <img src="//bizweb.dktcdn.net/100/453/330/themes/859403/assets/slider_2.jpg?1705683863776" />
                          <img src="//bizweb.dktcdn.net/100/453/330/themes/859403/assets/slider_3.jpg?1705683863776" alt="" />
-                         <img src="//bizweb.dktcdn.net/100/453/330/themes/859403/assets/slider_4.jpg?1705683863776" alt="" />
-                         <img src="//bizweb.dktcdn.net/100/453/330/themes/859403/assets/slider_5.jpg?1705683863776" alt="" />
+                         <!-- <img src="//bizweb.dktcdn.net/100/453/330/themes/859403/assets/slider_4.jpg?1705683863776" alt="" />
+                         <img src="//bizweb.dktcdn.net/100/453/330/themes/859403/assets/slider_5.jpg?1705683863776" alt="" /> -->
                     </div>
 
                     <div class="btns">
@@ -18,8 +18,8 @@
                          <div class="index-item index-item-0 active"></div>
                          <div class="index-item index-item-1"></div>
                          <div class="index-item index-item-2"></div>
-                         <div class="index-item index-item-3"></div>
-                         <div class="index-item index-item-4"></div>
+                         <!-- <div class="index-item index-item-3"></div>
+                         <div class="index-item index-item-4"></div> -->
                     </div>
                </div>
           </div>

@@ -1,8 +1,9 @@
 <main id="main">
-    <div class="attach" style="margin: 0 auto; width: 70%; padding: 20px 0px">
+    <!-- <div class="attach" style="margin: 0 auto; width: 70%; padding: 20px 0px">
         <span style="font-size: 12px; color: #777777; font-weight: bold">Trang Chủ / <text style="color: #000000c0">Liên
                 Hệ</text></span>
-    </div>
+    </div> -->
+    
     <div class="contact-img">
         <div class="contact-in4">
             <div class="cnt-in4">

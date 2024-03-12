@@ -1,6 +1,6 @@
 <main id="main" class="space">
     <div class="recruitment-container">
-        <div class="top-title">
+        <!-- <div class="top-title">
             <ul class="recruitment-nav">
                 <li><a class="recruitment-home" href="">Trang chủ</a></li>
                 <li><a class="recruitment-now" href="">Tin tức</a></li>
@@ -9,7 +9,7 @@
                         Footart Vietnam "TÌM ĐỒNG ĐỘI"</a>
                 </li>
             </ul>
-        </div>
+        </div> -->
 
         <h2 class="recruitment-title">Footart Vietnam "TÌM ĐỒNG ĐỘI"</h2>
 
