@@ -237,3 +237,4 @@ if (array_key_exists($current_page, $breadcrumbs)) {
 </div>
 </header>
 
+</header>
