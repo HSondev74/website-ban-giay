@@ -2,7 +2,7 @@
     <div class="navbar-wrapper container-wrapper" style="background-color: #333; color: white;">
         <div class="container navbar" style="padding-bottom: 5px;">
             <p class="navbar-left" style="color: white;">
-                Bạn là một Học Sinh hay Bạn là một Học Sinh hay Sinh Viên <span style="color: red">GIẢM GIÁ NGAY
+                Bạn là Học Sinh hay Sinh Viên được <span style="color: red">GIẢM GIÁ NGAY
                     20%</span> ! <a href="index.php?action=cuahang" class="underline" style="color: white;">xem
                     thêm</a>
             </p>
@@ -37,12 +37,13 @@
     </div>
 
     <!-- header-search-wrapper -->
-    <div class="container-wrapper header-search-wrapper" style="margin-top: 8px;">
-        <div class="container grid-header v-center">
-            <a href="" class="header-search__logo-section">
-                <div class="header-search__logo-wrapper">
-                    <img src="./images/logo-brand.png" alt="logo">
-                </div>
+    <div class="container-wrapper header-search-wrapper">
+        <div class="container flex-header v-center">
+            <i class="fa-solid fa-bars"></i>
+            <a href="index.php" class="header-search__logo-section">
+                    <div class="header-search__logo-wrapper">
+                        <img src="./images/logo-brand.png" alt="logo">
+                    </div>
             </a>
             <div class="header-search__input-section">
                 <form role="search" autocomplete="off" action="index.php?action=search" method="POST"
@@ -70,27 +71,29 @@
                     </div>
                     <div class="h-line-searchbar"></div>
                     <div class="umine-searchbar__main">
-                        <div class="umine-searchbar-input"><input class="umine-searchbar-input__input" maxlength="128"
+                        <div class="umine-searchbar-input">
+                            <input class="umine-searchbar-input__input" maxlength="128"
                                 placeholder="Tìm kiếm hơn 200+ sản phẩm..." autocomplete="off" aria-expanded="false"
                                 role="combobox" value="" name="keyword">
                         </div>
-                    </div><button type="submit" name="searchHeader" class="umine-searchbar-button"
-                        style="cursor: pointer;">
-                        Tìm Kiếm
+                    </div>
+                    <button type="submit" name="searchHeader" class="umine-searchbar-button">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <!-- Tìm Kiếm -->
                     </button>
                 </form>
             </div>
             <div class="header-search-cart flex v-center">
                 <div class="header-search-cart-account flex">
                     <?php if (isset($_SESSION['dangnhap']) && !empty($_SESSION['dangnhap'])) : ?>
-                    <div class="account-icon" style="display: flex;">
+                    <div class="account-icon" style="display: flex; gap: 10px;">
                         <nav>
                             <p><i class='bx bx-user' style="font-size: 30px; margin-top:5px" ;></i></p>
                         </nav>
                         <div class="accc" style="display: flex; flex-direction: column;">
                             <a class="info-login" href="/bangiay/pages/logout.php">
                                 <p><?php echo $_SESSION['dangnhap']['ten']; ?></p>
-                                <a href="pages/logout.php" style="color: #000; font-weight: 700; margin-left:15px">Đăng
+                                <a href="pages/logout.php" style="color: #000; font-weight: 700; ">Đăng
                                     xuất</a>
                         </div>
                         </a>
@@ -153,7 +156,7 @@
                     </div>
                     <div class="cart-price">
                         <p>Your Cart</p>
-                        <strong style="margin-left: 15px;">0 VNĐ</strong>
+                        <strong >0 VNĐ</strong>
                     </div>
                     <?php
                          }
@@ -180,4 +183,58 @@
         </li>
         <li><a href="" class="strong">Mua ngay với những sản phẩm giảm lên đến 50%</a></li>
     </ul>
+
+    <div class="drop-down">
+    <div class="close-drop-down-menu"><i class="fa-solid fa-x"></i></div>
+    <ul class="drop-down-menu">
+        <li><a href="index.php">Trang Chủ</a></li>
+        <li><a href="index.php?action=cuahang">Cửa Hàng</a>
+            <!-- <i class='bx bx-chevron-down'></i> -->
+            <!-- <ul class="dropmenu">
+                    <li><a href="">ADIDAS</a></li>
+                    <li><a href="">NIKE</a></li>
+                    <li><a href="">NEW BALANCE</a></li>
+               </ul> -->
+        </li>
+        <li><a href="index.php?action=lienhe">Liên Hệ </a></li>
+        <li><a href="index.php?action=gioithieu">Tuyển Dụng </a></li>
+        <li>
+            <a href="index.php?action=giohang">Giỏ Hàng</a>
+        </li>
+        <li><a href="" class="strong">Mua ngay với những sản phẩm giảm lên đến 50%</a></li>
+    </ul>
+    </div>
+
+    <!-- <div>
+    <?php
+// Lấy tên trang hiện tại từ URL
+$current_page = basename($_SERVER['PHP_SELF']);
+$action = isset($_GET['action']) ? $_GET['action'] : '';
+
+// Mảng chứa các thông tin breadcrumb
+$breadcrumbs = array(
+    'index.php' => 'Trang Chủ',
+    'index.php?action=cuahang' => 'Cửa Hàng',
+    'index.php?action=lienhe' => 'Liên Hệ',
+    'index.php?action=gioithieu' => 'Tuyển Dụng',
+    'index.php?action=giohang' => 'Giỏ Hàng',
+);
+
+// Kiểm tra xem trang hiện tại có trong mảng breadcrumb không
+if (array_key_exists($current_page, $breadcrumbs)) {
+    echo '<div id="breadcrumb">';
+    echo $breadcrumbs[$current_page];
+
+    // Nếu có tham số action, thêm breadcrumb cho tham số đó
+    if ($action && array_key_exists("index.php?action=$action", $breadcrumbs)) {
+        echo ' &gt; ' . $breadcrumbs["index.php?action=$action"];
+    }
+
+    echo '</div>';
+}
+?>
+
+</div> -->
+</header>
+
 </header>

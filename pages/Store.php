@@ -57,11 +57,15 @@ if (isset($_GET['category'])) {
      $result = mysqli_query($conn, $sql);
 }
 
+
 ?>
 <main id="main">
      <div class="attach" style="margin: 0 auto; width: 70%; padding: 20px 0px">
-          <span style="font-size: 12px; color: #777777; font-weight: bold">Trang Chủ /
-               <text style="color: #000000c0">Cửa Hàng</text></span>
+          <!-- <span style="font-size: 12px; color: #777777; font-weight: bold">Trang Chủ /
+          <text style="color: #000000c0">Cửa Hàng</text></span> -->
+          <ul>
+
+          </ul>
      </div>
      <div class="ctn-store">
           <div class="hd-search-in4-item">
@@ -126,6 +130,7 @@ if (isset($_GET['category'])) {
                                         href="index.php?action=cuahang&category=<?php echo $category['danhmuc_id']; ?>"><?php echo $category['tendanhmuc']; ?></a>
                               </li>
                               <?php endforeach; ?>
+                              <!-- check de sua -->
                          </ul>
                     </div>
                     <br />
@@ -156,14 +161,6 @@ if (isset($_GET['category'])) {
                     </div>
                     <br />
                     <!-- <hr /> -->
-                    <div class="size-prd">
-                         <h4 style="margin-bottom: 10px">Lọc theo size</h4>
-                         <input type="checkbox" /><label for="scales">Size S</label><br />
-                         <input type="checkbox" /><label for="scales">Size M</label><br />
-                         <input type="checkbox" /><label for="scales">Size L</label><br />
-                         <input type="checkbox" /><label for="scales">Size XL</label><br />
-                         <input type="checkbox" /><label for="scales">Size XXL</label>
-                    </div>
                </div>
                <div class="in4-items">
                     <?php

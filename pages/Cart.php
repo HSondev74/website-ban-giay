@@ -9,8 +9,7 @@ if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) { // Kiểm tra gi
 ?>
 
 <main id="main">
-     <div class="attach" style="margin: 0 auto; width: 70%; padding: 20px 0px">
-          <span style="font-size: 12px; color: #777777; font-weight: bold">Trang Chủ / <text style="color: #000000c0">Giỏ Hàng</text></span>
+     <div class="attach" style="margin: 0 auto; width: 1400px; padding: 20px 0px">
           <br />
           <br /><br />
           <span class="title-frame">Giỏ Hàng Của Bạn</span>

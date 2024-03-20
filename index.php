@@ -73,6 +73,8 @@ session_start();
                     echo "Vibesneak: Trang chủ";
                     break;
           }
+
+
           ?>
      </title>
 </head>
@@ -123,6 +125,7 @@ function sendMail() {
 <script src="./JS/slideShowDetail.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="./JS/scrollHeader.js"></script>
+<script src="./JS/chung.js"></script>
 
 <script>
 function changeImage(imageSrc, productId) {
@@ -202,6 +205,9 @@ function formatCurrency(value) {
           currency: 'VND'
      }).format(value);
 }
+
+var headerHeight = document.querySelector('header').offsetHeight;  
+document.getElementById('main').style.marginTop = headerHeight + 10 + 'px';
 </script>
 
 
