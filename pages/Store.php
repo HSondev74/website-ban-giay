@@ -109,6 +109,7 @@ if (isset($_GET['category'])) {
                                    <li><a href="index.php?action=cuahang&category=<?php echo $category['tendanhmuc']; ?>"><?php echo $category['tendanhmuc']; ?></a>
                                    </li>
                               <?php endforeach; ?>
+                              <!-- check de sua -->
                          </ul>
                     </div>
                     <br />

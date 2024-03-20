@@ -1,4 +1,4 @@
-<main id="main" class="umine-center container">
+<main id="main" class="umine-center container" style="margin: 50px auto;">
      <div class="umine-center-top">
           <div class="slider">
                <div class="list-show">
@@ -29,7 +29,11 @@
           <div class="title-hot"><h1>Sản Phẩm Hot</h1></div>
           <div class="content-products">
                <?php
-               $sql = "SELECT * FROM sanpham ORDER BY RAND() LIMIT 30";
+               $products_per_page = 10;
+               $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
+               $start_index = ($current_page - 1) * $products_per_page;
+
+               $sql = "SELECT * FROM sanpham ORDER BY RAND() LIMIT $start_index, $products_per_page";
 
                $result = mysqli_query($conn, $sql);
 
@@ -61,6 +65,19 @@
                } ?>
           </div>
      </div>
+
+     <div class="pagination">
+    <?php
+    $sql_count = "SELECT COUNT(*) AS total FROM sanpham";
+    $result_count = mysqli_query($conn, $sql_count);
+    $row_count = mysqli_fetch_assoc($result_count);
+    $total_pages = ceil($row_count['total'] / $products_per_page);
+
+    for ($i = 1; $i <= $total_pages; $i++) {
+        echo "<a href='index.php?page=$i'>$i</a>";
+    }
+    ?>
+</div>
 
      <div class="banner-product ">
           <div class="text-pr">

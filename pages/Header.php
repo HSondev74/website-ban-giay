@@ -41,9 +41,9 @@
         <div class="container flex-header v-center">
             <i class="fa-solid fa-bars"></i>
             <a href="index.php" class="header-search__logo-section">
-                <div class="header-search__logo-wrapper">
-                    <img src="./images/logo-brand.png" alt="logo">
-                </div>
+                    <div class="header-search__logo-wrapper">
+                        <img src="./images/logo-brand.png" alt="logo">
+                    </div>
             </a>
             <div class="header-search__input-section">
                 <form role="search" autocomplete="off" action="index.php?action=search" method="POST"
@@ -77,8 +77,8 @@
                                 role="combobox" value="" name="keyword">
                         </div>
                     </div>
-                    <i class="fa-solid fa-magnifying-glass"></i>
                     <button type="submit" name="searchHeader" class="umine-searchbar-button">
+                        <i class="fa-solid fa-magnifying-glass"></i>
                         <!-- Tìm Kiếm -->
                     </button>
                 </form>
@@ -205,7 +205,7 @@
     </ul>
     </div>
 
-    <div>
+    <!-- <div>
     <?php
 // Lấy tên trang hiện tại từ URL
 $current_page = basename($_SERVER['PHP_SELF']);
@@ -234,7 +234,7 @@ if (array_key_exists($current_page, $breadcrumbs)) {
 }
 ?>
 
-</div>
+</div> -->
 </header>
 
 </header>

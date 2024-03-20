@@ -205,6 +205,9 @@ function formatCurrency(value) {
           currency: 'VND'
      }).format(value);
 }
+
+var headerHeight = document.querySelector('header').offsetHeight;  
+document.getElementById('main').style.marginTop = headerHeight + 10 + 'px';
 </script>
 
 
