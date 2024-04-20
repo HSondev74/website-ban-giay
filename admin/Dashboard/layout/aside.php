@@ -97,7 +97,7 @@ $conn->close();
      </ul>
 
 
-     <div class="table-data">
+     <!-- <div class="table-data">
           <div class="order">
                <div class="head">
                     <h3>Các Đơn Hàng</h3>
@@ -213,6 +213,6 @@ $conn->close();
                     </li>
                </ul>
           </div>
-     </div>
+     </div> -->
 </main>
 <!-- MAIN -->

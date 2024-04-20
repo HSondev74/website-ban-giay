@@ -1,4 +1,4 @@
-var add = document.querySelector('.address-google-map')
+var add = document.querySelector('.header-location')
 var map = document.querySelector('.map')
 var closes = document.querySelector('.close-map')
 add.addEventListener('click', (e)=>{

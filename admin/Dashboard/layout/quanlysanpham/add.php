@@ -3,10 +3,10 @@ $sql_lietke = "SELECT * FROM danhmuc ORDER BY danhmuc_id DESC";
 $row_lietke = mysqli_query($conn, $sql_lietke);
 
 ?>
-<h1 style="font-size: 36px;
+<!-- <h1 style="font-size: 36px;
      font-weight: 600;
      margin: 10px 30px;
-     color: var(--dark);">Sản phẩm</h1>
+     color: var(--dark);">Thêm sản phẩm</h1> -->
 <ul class="breadcrumb" style="display: flex;
      align-items: center;
      grid-gap: 16px;
@@ -17,10 +17,10 @@ $row_lietke = mysqli_query($conn, $sql_lietke);
      <li><i class='bx bx-chevron-right'></i></li>
      <li>
           <a class="active" href="" style="pointer-events: none;
-color: var(--blue);">Sản phẩm</a>
+color: var(--blue);">Thêm</a>
      </li>
 </ul>
-<div style="width: 80%;
+<div class="board" style="width: 80%;
             margin: 20px auto;
             background-color: #fff;
             padding: 20px;
@@ -53,8 +53,9 @@ color: var(--blue);">Sản phẩm</a>
                <input type="text" id="gia" name="gia" required>
           </div>
           <div class="form-group">
+               <div id="image-preview"></div>
                <label for="hinhanh">Hình Ảnh</label>
-               <input type="text" id="hinhanh" name="hinhanh" multiple required>
+               <input type="file" id="hinhanh" name="hinhanh[]" multiple >
           </div>
           <div class="form-group">
                <label for="tonkho">Số Lượng</label>
@@ -85,3 +86,4 @@ color: var(--blue);">Sản phẩm</a>
           </div>
      </form>
 </div>
+

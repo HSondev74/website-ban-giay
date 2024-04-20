@@ -35,16 +35,7 @@
           <tbody>
                <?php
                // Kết nối đến cơ sở dữ liệu
-               $servername = "localhost";
-               $username = "root";
-               $password = "";
-               $database = "websitebangiay";
-               $conn = mysqli_connect($servername, $username, $password, $database);
-
-               // Kiểm tra kết nối
-               if (!$conn) {
-                    die("Connection failed: " . mysqli_connect_error());
-               }
+             
 
                // Truy vấn SQL để lấy thông tin của tất cả người đặt hàng, sản phẩm và size
                $sql = "SELECT nguoidung.*, donhang.*, sanpham.*, donhang.size AS donhang_size

@@ -19,7 +19,7 @@ const updateSlide = () => {
      let width = imgs[0].offsetWidth;
      listImage.style.transform = `translateX(${width * -1 * current}px)`;
 
-     document.querySelector(".active").classList.remove("active");
+     document.querySelector(".active")?.classList.remove("active");
      indexItems[current].classList.add("active");
 };
 

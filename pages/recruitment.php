@@ -1,15 +1,6 @@
-<main id="main" class="space">
+<div id="main" class="container">
     <div class="recruitment-container">
-        <!-- <div class="top-title">
-            <ul class="recruitment-nav">
-                <li><a class="recruitment-home" href="">Trang chủ</a></li>
-                <li><a class="recruitment-now" href="">Tin tức</a></li>
-                <li>
-                    <a class="recruitment-name" href="">
-                        Footart Vietnam "TÌM ĐỒNG ĐỘI"</a>
-                </li>
-            </ul>
-        </div> -->
+       
 
         <h2 class="recruitment-title">Footart Vietnam "TÌM ĐỒNG ĐỘI"</h2>
 
@@ -61,4 +52,4 @@
             <div class="send-comment">Gửi bình luận</div>
         </div>
     </div>
-</main>
+</div>

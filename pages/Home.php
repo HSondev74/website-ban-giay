@@ -1,4 +1,5 @@
-<main id="main" class="umine-center container" style="margin: 50px auto;">
+
+<main id="main" class="umine-center container">
      <div class="umine-center-top">
           <div class="slider">
                <div class="list-show">
@@ -26,35 +27,38 @@
      </div>
 
      <div class="product-hot">
-          <div class="title-hot"><h1>Sản Phẩm Hot</h1></div>
+          <div class="title-hot"><h1>Sản phẩm hot</h1></div>
           <div class="content-products">
                <?php
                $products_per_page = 10;
                $current_page = isset($_GET['page']) ? $_GET['page'] : 1;
                $start_index = ($current_page - 1) * $products_per_page;
 
-               $sql = "SELECT * FROM sanpham ORDER BY RAND() LIMIT $start_index, $products_per_page";
+               $sql = "SELECT * FROM sanpham LIMIT $start_index, $products_per_page";
 
                $result = mysqli_query($conn, $sql);
 
                if ($result->num_rows > 0) {
                     while ($product = $result->fetch_assoc()) {
                          $images = explode(',', $product['hinhanh']);
+                         $sizes = explode(',', $product['size']);
+                         $first_size = $sizes[0];
+
                          if (!empty($images)) {
                               $first_image = $images[0];
                               $second_image = isset($images[1]) ? $images[1] : $images[0];
                          }
                ?>
 
-                         <div class="product" onmouseover="changeImage('<?php echo $second_image; ?>', '<?php echo $product['sanpham_id']; ?>')" onmouseout="changeImage('<?php echo $first_image; ?>', '<?php echo $product['sanpham_id']; ?>')" data-id="<?php echo $product['sanpham_id']; ?>">
-                              <a href="index.php?action=chitietsanpham&id=<?php echo $product['sanpham_id']; ?>">
+                         <div class="product" onmouseover="changeImage('admin/Dashboard/layout/quanlysanpham/uploads/<?php echo $second_image; ?>', '<?php echo $product['sanpham_id']; ?>')" onmouseout="changeImage('admin/Dashboard/layout/quanlysanpham/uploads/<?php echo $first_image; ?>', '<?php echo $product['sanpham_id']; ?>')" data-id="<?php echo $product['sanpham_id']; ?>">
+                              <a href="index.php?action=chitietsanpham&id=<?php echo $product['sanpham_id']; ?>&size=<?php echo $first_size?>">
 
-                                   <div class="discount"> -20% </div>
+                                   <!-- <div class="discount"> -20% </div> -->
                                    <div class="product-image">
-                                        <img src="<?php echo $first_image; ?>" alt="">
-                                        <a href="pages/addProduct.php?idsp=<?php echo $product['sanpham_id'] ?>" class="cart-popup" name="addProduct"><i class='bx bx-cart-add'></i></a>
+                                        <img src="admin/Dashboard/layout/quanlysanpham/uploads/<?php echo $first_image; ?>" alt="">
+                                        <!-- <a href="pages/addProduct.php?idsp=<?php echo $product['sanpham_id'] ?>" class="cart-popup" name="addProduct"><i class='bx bx-cart-add'></i></a> -->
                                    </div>
-                                   <span class="heart-product" onclick="changeFavorites(this,<?php echo $product['sanpham_id']; ?>)" data-id="<?php echo $product['sanpham_id']; ?> "><i class='bx bxs-heart'></i></span>
+                                   <!-- <span class="heart-product" onclick="changeFavorites(this,<?php echo $product['sanpham_id']; ?>)" data-id="<?php echo $product['sanpham_id']; ?> "><i class='bx bxs-heart'></i></span> -->
                                    <p class=" product-title"><?php echo $product['tensanpham'] ?></p>
                                    <p class="product-price"><?php echo number_format($product['gia'], 0, ',', '.') . ' VNĐ'; ?>
                                    </p>
@@ -66,19 +70,7 @@
           </div>
      </div>
 
-     <div class="pagination">
-    <?php
-    $sql_count = "SELECT COUNT(*) AS total FROM sanpham";
-    $result_count = mysqli_query($conn, $sql_count);
-    $row_count = mysqli_fetch_assoc($result_count);
-    $total_pages = ceil($row_count['total'] / $products_per_page);
-
-    for ($i = 1; $i <= $total_pages; $i++) {
-        echo "<a href='index.php?page=$i'>$i</a>";
-    }
-    ?>
-</div>
-
+     
      <div class="banner-product ">
           <div class="text-pr">
                <h3>ƯU ĐÃI QUÀ TẶNG HẤP DẪN</h3>
@@ -109,7 +101,7 @@
 
      <div class="best-selling">
           <div class="title-selling">
-               <h1>Sản Phẩm Bán Chạy</h1>
+               <h1>Sản phẩm bán chạy</h1>
           </div>
           <div class="content-products">
                <?php
@@ -125,14 +117,14 @@
                               $second_image = isset($images[1]) ? $images[1] : $images[0];
                          }
                ?>
-                         <div class="product" onmouseover="changeImage('<?php echo $second_image; ?>', '<?php echo $product['sanpham_id']; ?>')" onmouseout="changeImage('<?php echo $first_image; ?>', '<?php echo $product['sanpham_id']; ?>')" data-id="<?php echo $product['sanpham_id']; ?>">
-                              <a href="index.php?action=chitietsanpham&id=<?php echo $product['sanpham_id']; ?>">
-                                   <div class="discount"> -20% </div>
+                         <div class="product" onmouseover="changeImage('admin/Dashboard/layout/quanlysanpham/uploads/<?php echo $second_image; ?>', '<?php echo $product['sanpham_id']; ?>')" onmouseout="changeImage('admin/Dashboard/layout/quanlysanpham/uploads/<?php echo $first_image; ?>', '<?php echo $product['sanpham_id']; ?>')" data-id="<?php echo $product['sanpham_id']; ?>">
+                              <a href="index.php?action=chitietsanpham&id=<?php echo $product['sanpham_id']; ?>&size=<?php echo $first_size?>">
+                                   <!-- <div class="discount"> -20% </div> -->
                                    <div class="product-image">
-                                        <img src="<?php echo $first_image; ?>" alt="">
-                                        <a href="pages/addProduct.php?idsp=<?php echo $product['sanpham_id'] ?>" class="cart-popup" name="addProduct"><i class='bx bx-cart-add'></i></a>
+                                        <img src="admin/Dashboard/layout/quanlysanpham/uploads/<?php echo $first_image; ?>" alt="">
+                                        <!-- <a href="pages/addProduct.php?idsp=<?php echo $product['sanpham_id'] ?>" class="cart-popup" name="addProduct"><i class='bx bx-cart-add'></i></a> -->
                                    </div>
-                                   <span class="heart-product" onclick="changeFavorites(this,<?php echo $product['sanpham_id']; ?>)" data-id="<?php echo $product['sanpham_id']; ?> "><i class='bx bxs-heart'></i></span>
+                                   <!-- <span class="heart-product" onclick="changeFavorites(this,<?php echo $product['sanpham_id']; ?>)" data-id="<?php echo $product['sanpham_id']; ?> "><i class='bx bxs-heart'></i></span> -->
                                    <p class=" product-title"><?php echo $product['tensanpham'] ?></p>
                                    <p class="product-price"><?php echo number_format($product['gia'], 0, ',', '.') . ' VNĐ'; ?>
                                    </p>
@@ -153,7 +145,7 @@
     font-weight: 900;
     cursor: pointer;
     margin-top: 20px;
-    transition: all .2s linear;" class="btn-payment" href="index.php?action=cuahang">Xem Thêm Sản Phẩm</a href="index.php?action=cuahang">
+    transition: all .2s linear;" class="btn-payment" href="index.php?action=cuahang">Xem thêm sản phẩm</a href="index.php?action=cuahang">
      </div>
 
 </main>

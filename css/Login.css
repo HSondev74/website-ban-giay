@@ -6,7 +6,6 @@
 }
 
 .form {
-  padding: 30px 0;
   margin: 0 auto;
   width: 20%;
   border-collapse: separate;
@@ -21,7 +20,6 @@
 }
 
 .form-logup {
-  margin-top: 50px;
   border-top: 3px solid #2c2a2a;
   border-radius: 5px;
 }

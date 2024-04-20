@@ -8,6 +8,7 @@
     width: 60%;
 }
 
+
 .imga > img {
     width: 100%;
     height: 700px;
@@ -24,12 +25,19 @@
         #a5a1a0
     );
     color: #333333;
+    position: relative;
+}
+
+.ct-name{
+    font-size: 18px;
+    padding: 10px 0;
 }
 
 .cnt-in4 {
     position: absolute;
-    top: 4%;
-    left: 10%;
+    top: 50%;
+    left: 30%; /* Đặt vị trí bắt đầu từ trung tâm của phần tử cha */
+    transform: translatey( -50%); /* Di chuyển phần tử ngược lại 50% chiều rộng và 50% chiều cao của nó */
     font-size: 20px;
     width: 595px;
     height: auto;
@@ -37,33 +45,53 @@
     /* box-shadow: 2px 1px 72px 17px rgba(150, 150, 150, 0.26); */
 }
 
+.form-contact{
+    margin-top: 10px;
+}
+
 .ct-in4-r1 {
-    display: flex;
+    /* display: flex;
     justify-content: space-around;
-    margin-top: 40px;
+    margin-top: 40px; */
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 30px;
 }
 
 .ct-in4-r1-l > input,
 .ct-in4-r1-r > input {
-    width: 260px;
-    height: 40px;
+    /* width: 260px; */
+    /* height: 40px; */
+    padding: 10px;
+    margin: 10px 0;
     border-radius: 5px;
-    border: 2px solid #333;
+    border: 1px solid #333;
     background-color: white;
     color: #333;
+}
+
+#name{
+    width: 100%;
+}
+
+#email{
+    width: 100%;
 }
 
 .ct-in4-r2 {
     border-radius: 5px;
     border: none;
-    margin: 30px 0px 0px 15px;
+    margin: 30px 0px 0px 0;
 }
 
 .input01 {
     border-radius: 5px;
-    border: 2px solid #333;
-    width: 560px;
+    border: 1px solid #333;
+    /* width: 560px; */
+    width: 100%;
     padding: 10px;
+    outline: none;
+    margin-top: 10px;
 }
 
 .btn-cnt {

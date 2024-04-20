@@ -28,6 +28,8 @@ session_start();
      <link rel="stylesheet" href="./css/Payment.css" />
      <link rel="stylesheet" href="./css/LogUp.css" />
      <link rel="stylesheet" href="./css/Login.css" />
+     <link rel="stylesheet" href="./css/donhang.css" />
+     <link rel="stylesheet" href="./css/user_page.css" />
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
           integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -84,6 +86,7 @@ session_start();
      <div>
           <?php
           include('pages/Header.php');
+          // include('pages/breadcumb.php');
           include('pages/Content.php');
           include('pages/Footer.php');
           ?>
@@ -154,7 +157,7 @@ function changeFavorites(element, productId) {
           localStorage.setItem('favorites', JSON.stringify(listFavorites));
           updateFavoritesCount();
           alert("Đã thêm '" + productName + "' vào danh sách yêu thích.");
-     } else {
+     } else {  
           const index = listFavorites.indexOf(productId);
           if (index !== -1) {
                listFavorites.splice(index, 1);
@@ -206,9 +209,36 @@ function formatCurrency(value) {
      }).format(value);
 }
 
-var headerHeight = document.querySelector('header').offsetHeight;  
-document.getElementById('main').style.marginTop = headerHeight + 10 + 'px';
+// var headerHeight = document.querySelector('header').offsetHeight;  
+// document.getElementById('breadcrumb').style.marginTop = headerHeight + 30 + 'px';
+// document.getElementById('breadcrumb').style.marginBottom = '30px';
+// // document.getElementById('main').style.marginTop = headerHeight + 10 + 'px';
+
+
+
+
+
+var headerSearchCartAccount = document.querySelector('.header-search-cart-account');
+
+headerSearchCartAccount.addEventListener("click", function(event) {
+    var boxShowAcc = document.querySelector('.box-show-acc');
+    
+    if (event.target.closest('.header-search-cart-account')) {
+        // Kiểm tra xem box--acc đang được hiển thị hay không
+        if (boxShowAcc.style.display === "none" || boxShowAcc.style.display === "") {
+            boxShowAcc.style.display = "block";
+        } else {
+            boxShowAcc.style.display = "none";
+        }
+    } else {
+        boxShowAcc.style.display = "none";
+    }
+});
+
+
+
 </script>
+
 
 
 </html>

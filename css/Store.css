@@ -3,7 +3,6 @@
 }
 
 .ctn-store {
-    width: 70%;
     margin: 0 auto;
 }
 
@@ -25,8 +24,13 @@
 }
 
 .hidden-search-item-prd{
+    justify-content: end;
     display: flex;
     /* flex-direction: column; */
+    padding: 10px 0;
+    border-top: 1px solid rgb(191, 191, 191) ;
+    border-bottom: 1px solid rgb(191, 191, 191);
+    margin-bottom: 15px;
 }
 
 /* .hd-search-in4-item>.hidden-search-item-prd,
@@ -40,20 +44,22 @@
 
 .show-product {
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    gap: 20px;
 }
 
 .in4-prd {
-    width: 25%;
+    width: 100%;
     /* background-color: blanchedalmond; */
 }
 
 .in4-items {
     /* background-color: rgb(14, 202, 202); */
-    width: 80%;
+    width: 100%;
 }
 
-.search-prd {
+/* .search-prd {
     --input-line: #cccccc;
     --input-text-color: #808080;
     --input-text-hover-color: transparent;
@@ -64,7 +70,7 @@
     --search-min-width: 150px;
     --border-radius: 5px;
     --transition-cubic-bezier: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+} */
 
 .search-box-prd {
     max-width: var(--search-max-width);
@@ -177,7 +183,7 @@
 .name-prd {
     font-size: 18px;
     height: 300px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 .name-prd-ul>li>a {
@@ -195,7 +201,7 @@
 }
 
 .card-conteiner-prd {
-    cursor: default;
+    cursor: pointer;
     --color-primary: #275efe;
     --color-headline: #3f4656;
     --color-text: #99a3ba;
@@ -293,16 +299,10 @@
 }
 
 .btn-prd-price {
-    width: 80px;
-    height: 30px;
-    font-size: 14px;
-    border-radius: 5px;
-    background-color: #333333;
+    background-color: black;
     color: #fff;
-    font-weight: bold;
-    float: right;
-    margin-top: 20px;
-    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 .price-search-prd {
@@ -491,6 +491,38 @@ del {
 .card:hover {
     transform: scale(1.03);
 }
+
+.flex-store{
+    display: grid;
+    grid-template-columns: 23% 77%;
+    gap: 10px;
+}
+
+.filter-input{
+    border: 1px solid black ;
+    width: 100%;
+    padding: 10px;  
+    margin: 10px 0;
+}
+
+.filter-product{
+    height: 100vh;
+}
+
+.contents-products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Chia đều thành 3 cột */
+    gap: 30px; /* Khoảng cách giữa các cột */
+    align-items: start;
+    overflow: hidden;
+}
+
+.brand-name{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
 
 @keyframes bouncing {
 

@@ -4,10 +4,10 @@ $sql_sua = "SELECT * FROM sanpham WHERE sanpham_id = '$id' LIMIT 1";
 $row_sua = mysqli_query($conn, $sql_sua);
 
 ?>
-<h1 style="font-size: 36px;
+<!-- <h1 style="font-size: 36px;
      font-weight: 600;
      margin: 10px 30px;
-     color: var(--dark);">Sửa sản phẩm</h1>
+     color: var(--dark);">Sửa sản phẩm</h1> -->
 <ul class="breadcrumb" style="display: flex;
      align-items: center;
      grid-gap: 16px;
@@ -46,7 +46,7 @@ color: var(--blue);">Sửa sản phẩm</a>
           <!-- size -->
           <select id="size" name="size[]"
                style="width: 100%; padding: 8px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;"
-               required multiple>
+                multiple>
                <?php
             $sizes = array("35", "36", "37", "38", "39", "40", "41", "42", "43", "44");
             foreach ($sizes as $size) {
@@ -64,18 +64,27 @@ color: var(--blue);">Sửa sản phẩm</a>
             margin-bottom: 20px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            box-sizing: border-box;" type="text" id="gia" name="gia" required value="<?php echo $gia_co_dau; ?>">
+            box-sizing: border-box;" type="text" id="gia" name="gia" required value="<?php echo $gia_co_dau; ?>đ">
 
           <label for="hinhanh" style="display: block;
             margin-bottom: 10px;">Hình Ảnh:</label><br>
-          <img src="http://localhost/BanGiay/admin/Dashboard/layout/quanlysanpham/uploads/<?php echo $row['hinhanh']; ?>"
-               alt="Product Image" class="product-image"><br>
-          <input style=" width: 100%;
+          <!-- <?php
+          // Chuyển chuỗi thành mảng bằng cách tách nó bằng dấu phẩy hoặc dấu cách
+          $imageURLs = explode(',', $row['hinhanh']);
+                    
+          // Lặp qua mỗi URL hình ảnh và hiển thị nó
+          foreach ($imageURLs as $imageURL) {
+            echo '<img src="Dashboard/layout/quanlysanpham/uploads/' . trim($imageURL) . '" alt="Product Image" class="product-image">';
+          }
+          ?> -->
+          <br>
+               <input style="width: 100%;
             padding: 8px;
             margin-bottom: 20px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            box-sizing: border-box;" type="file" id="hinhanh" name="hinhanh">
+            box-sizing: border-box;" type="file" id="hinhanh" name="hinhanh[]" multiple>
+
 
           <label for="tonkho" style="display: block;
             margin-bottom: 10px;">Tồn Kho:</label>
@@ -105,12 +114,12 @@ color: var(--blue);">Sửa sản phẩm</a>
             box-sizing: border-box;resize: none;" required><?php echo $row['mota']; ?></textarea>
 
           <div>
-               <button name="editsp" style="background-color: var(--blue);
+               <input type="submit" name="editsp" style="background-color: var(--blue);
                  color: white;
                  padding: 10px 40px;
                  border: none;
                  border-radius: 4px;
-                 cursor: pointer;">Lưu</button>
+                 cursor: pointer;" value="luu">
           </div>
 
           <?php } ?>

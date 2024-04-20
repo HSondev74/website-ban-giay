@@ -1,39 +1,31 @@
 <main id="main">
-    <!-- <div class="attach" style="margin: 0 auto; width: 70%; padding: 20px 0px">
-        <span style="font-size: 12px; color: #777777; font-weight: bold">Trang Chủ / <text style="color: #000000c0">Liên
-                Hệ</text></span>
-    </div> -->
-    
     <div class="contact-img">
         <div class="contact-in4">
             <div class="cnt-in4">
-                <h2>Bạn cần hỗ trợ?</h2>
-                <p style="color: #4b4b4b;">
+                <h3>Bạn cần hỗ trợ?</h3>
+                <p style="color: #4b4b4b; margin-top: 10px; font-size: 15px;">
                     VIBESNEAK.vn rất hân hạnh được hỗ trợ bạn, hãy để lại
                     thông tin cho chúng tôi nhé. Yêu cầu của bạn sẽ được xử
                     lý và phản hồi trong thời gian sớm nhất.
                 </p>
+                <form action="" method="post" class="form-contact">
                 <div class="ct-in4-r1">
                     <div class="ct-in4-r1-l" >
-                        <label for="">Họ Tên *</label><br />
-                        <br />
-                        <input type="text" placeholder="Nhập  Họ Và Tên Đầy Đủ" id="name" required />
+                        <label class="ct-name" for="">Họ Tên *</label><br />
+                        <input class="" type="text" placeholder="Nhập  Họ Và Tên Đầy Đủ" id="name" required />
                     </div>
                     <div class="ct-in4-r1-r">
-                        <label for="">Email *</label><br />
-                        <br />
+                        <label class="ct-name" for="">Email *</label><br />
                         <input type="email" placeholder="Địa Chỉ Email" id="email" required />
                     </div>
                 </div>
                 <div class="ct-in4-r2">
-                    <label>
-                        Tin Nhắn *<br /><br />
-
-                        <textarea required="" rows="10" placeholder="Đừng Ngại Hỏi Về Đơn Hàng Của Bạn" id="message"
+                    <label class="ct-name" >Tin Nhắn *</label>
+                    <textarea required="" rows="10" placeholder="Đừng Ngại Hỏi Về Đơn Hàng Của Bạn" id="message"
                             class="input01"></textarea>
-                    </label>
                     <button class="btn-cnt" onclick="sendMail()">Gửi</button>
                 </div>
+                </form>
             </div>
         </div>
         <div class="imga">

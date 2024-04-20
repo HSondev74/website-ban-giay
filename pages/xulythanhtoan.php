@@ -1,92 +1,63 @@
 <?php
 include('../includes/config.php');
+session_start();
 
-session_start(); // Khởi động phiên session
-if (isset($_SESSION['cart']) && !empty($_SESSION['dangnhap'])) {
-     if (isset($_SESSION['dangnhap']) && !empty($_SESSION['dangnhap'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $ten = $_POST['ten'];
+    $sodienthoai = $_POST['sodth'];
+    // $tinh_thanh = $_POST['tinh_thanh'];
+    // $quan_huyen = $_POST['quan_huyen'];
+    // $phuong_xa = $_POST['phuong_xa'];
+    $diachi = $_POST['address'];
+    $note = $_POST['ghi_chu'];
+    $phi_van_chuyen = 0;
+    $total_price = 0;
+    $ngaydat = date('Y-m-d'); // Lấy ngày hiện tại
+    $user_id = null; // Mặc định user_id là null
+    $thanhtoan = $_POST['payment-method'];
 
-          $phi_van_chuyen = 0;
-          // Xử lý POST Data
-          if (isset($_POST['tinh_thanh'])) {
-               $tinh_thanh = $_POST['tinh_thanh'];
+    if (isset($_SESSION['dangnhap']) && !empty($_SESSION['dangnhap'])) {
+        $sql_user = "SELECT * FROM nguoidung WHERE ten = '{$_SESSION['dangnhap']}'";
+        $result_user = mysqli_query($conn, $sql_user);
+        $row_user = mysqli_fetch_assoc($result_user);
 
-               // Truy vấn cơ sở dữ liệu để lấy phí vận chuyển tương ứng
-               $sql = "SELECT phi FROM phivanchuyen WHERE thanhpho = '$tinh_thanh'";
-               $result = mysqli_query($conn, $sql);
+        $user_id = $row_user['user_id']; // Lấy user_id nếu user đã đăng nhập
+    }
 
-               if ($result && mysqli_num_rows($result) > 0) {
-                    $row = mysqli_fetch_assoc($result);
-                    $phi_van_chuyen = $row['phi'];
-               } else {
-                    $phi_van_chuyen = 0; // Hoặc bất kỳ giá trị mặc định nào bạn muốn nếu không tìm thấy phí vận chuyển
-               }
-          }
+    if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
+        foreach ($_SESSION['cart'] as $product) {
+            $total_price += $product['gia'] * $product['soluong'];
+            $id = $product['id'];
+            $sanpham_id[] = $id;
+            $soluong[] = $product['soluong'];
+            $tien[] = $product['gia'] * $product['soluong'];
+            $size[] = $product['size'];
+        }
+    }
 
+    if ($user_id) {
+        $sql_insert = "INSERT INTO donhang (id_donhang, user_id, ten, diachi, sodienthoai, note, tongtien, ngaydat, hinhthucthanhtoan) 
+                      VALUES (null, '$user_id', '$ten', '$diachi', '$sodienthoai', '$note', '$total_price', '$ngaydat', '$thanhtoan')";
+    } else {
+        $sql_insert = "INSERT INTO donhang (id_donhang, ten, diachi, sodienthoai, note, tongtien, ngaydat, hinhthucthanhtoan) 
+                      VALUES (null, '$ten', '$diachi', '$sodienthoai', '$note', '$total_price', '$ngaydat', '$thanhtoan')";
+    }
 
+    if (mysqli_query($conn, $sql_insert)) {
+        $last_id = mysqli_insert_id($conn);
 
-          // Xử lý POST Data khi form được submit
-          if ($_SERVER["REQUEST_METHOD"] == "POST") {
-               $email = $_POST['email'];
-               $ten = $_POST['ten'];
-               $sodth = $_POST['sodth'];
-               $tinh_thanh = $_POST['tinh_thanh'];
-               $quan_huyen = $_POST['quan_huyen'];
-               $phuong_xa = $_POST['phuong_xa'];
-               $ghi_chu = $_POST['ghi_chu'];
-               $phuong_thuc_thanh_toan = isset($_POST['payment-method']) ? $_POST['payment-method'] : '';
+        // Lặp qua mảng sản phẩm và số lượng để thêm vào bảng chitietdonhang
+        for ($i = 0; $i < count($sanpham_id); $i++) {
+            $sql = "INSERT INTO chitietdonhang (id_donhang, sanpham_id, soluong, tongtien, ngaydat, size) 
+                    VALUES ('$last_id', '{$sanpham_id[$i]}', '{$soluong[$i]}', '{$tien[$i]}', '$ngaydat', '{$size[$i]}')";
+            mysqli_query($conn, $sql);
+        }
 
-               // Kiểm tra và khởi tạo giỏ hàng
-               if (!isset($_SESSION['cart'])) {
-                    $_SESSION['cart'] = array(); // Tạo một giỏ hàng mới nếu chưa tồn tại
-               }
-
-               // Lấy thông tin sản phẩm từ giỏ hàng
-               $sanpham_id = array();
-               $gia = array();
-               $size = array();
-               $soluong = array();
-
-               if (!empty($_SESSION['cart'])) {
-                    foreach ($_SESSION['cart'] as $product) {
-                         $sanpham_id[] = $product['id'];
-                         $gia[] = $product['gia'];
-                         $size[] = $product['size'];
-                         $soluong[] = $product['soluong'];
-                    }
-               }
-
-               // Chèn dữ liệu vào bảng đơn hàng với mỗi sản phẩm là một dòng
-               $ngaydat = date('Y-m-d'); // Lấy ngày hiện tại
-               $diachi = "$tinh_thanh - $quan_huyen - $phuong_xa";
-
-               foreach ($_SESSION['cart'] as $index => $product) {
-                    $sanpham_id = $product['id'];
-                    $gia = $product['gia'];
-                    $phi_van_chuyen_number = floatval($phi_van_chuyen);
-                    $gia_number = floatval($gia);
-
-                    // Tính tổng
-                    $tongGia = $phi_van_chuyen_number + $gia_number;
-                    echo $tongGia;
-                    die;
-                    $size = $product['size'];
-                    $soluong = $product['soluong'];
-
-                    $sql = "INSERT INTO donhang (ten, email, diachi, sanpham_id, gia, size, phuongthucthanhtoan, soluong, ngaydat) 
-                  VALUES ('$ten', '$email', '$diachi', '$sanpham_id', '$tongGia', '$size', '$phuong_thuc_thanh_toan', '$soluong', '$ngaydat')";
-
-                    if (mysqli_query($conn, $sql)) {
-                         echo  "<script>alert('Đơn hàng của bạn đã được đặt thành công!')</script>";
-                         echo "<script>window.location.href = '../index.php?action=giohang';</script>";
-                         unset($_SESSION['cart'][$index]);
-                    } else {
-                         echo "Đơn hàng của sản phẩm $sanpham_id không thể được đặt!<br>";
-                    }
-               }
-          }
-     } else {
-          // header('location: ../index.php?action=login');
-     }
-} else {
-     header('location: ../index.php?action=cuahang');
+        echo "<script>
+        alert('Đặt hàng thành công');
+        window.location.href = '../index.php?action=donhang&id_donhang=$last_id';</script>";
+        unset($_SESSION['cart']);
+    } else {
+        echo "Đơn hàng không thể được đặt!<br>";
+    }
 }

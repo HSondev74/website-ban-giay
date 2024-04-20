@@ -18,7 +18,7 @@ if (isset($_POST['btnSave'])) {
 
    if (mysqli_query($conn, $sql)) {
       echo "<script>alert('Bạn đã thêm thành công!')
-      window.location.href='../../../index.php?action=danhmuc&query=them'
+      window.location.href='../../../index.php?action=danhmuc'
       </script>";
       exit;
    }
@@ -28,7 +28,7 @@ if (isset($_POST['btnSave'])) {
    $sql_sua = "UPDATE danhmuc set tendanhmuc ='" . $tendanhmuc . "',danhmuc_id='" . $id . "' WHERE danhmuc_id='$_GET[id]' ";
    mysqli_query($conn, $sql_sua);
    echo "<script>alert('Bạn đã lưu thành công!')
-      window.location.href='../../../index.php?action=danhmuc&query=them'
+      window.location.href='../../../index.php?action=danhmuc'
       </script>";
 } else {
    $id = $_GET['id'];
@@ -59,6 +59,6 @@ if (isset($_POST['btnSave'])) {
    mysqli_query($conn, $sql_xoa);
 
    echo "<script>alert('Bạn đã xóa thành công!')
-      window.location.href='../../../index.php?action=danhmuc&query=them'
+      window.location.href='../../../index.php?action=danhmuc'
       </script>";
 }

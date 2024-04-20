@@ -44,14 +44,4 @@ prev.addEventListener("click", () => {
   }
 });
 
-document.querySelector(".size").addEventListener("click", function (event) {
-  if (event.target.tagName === "LI") {
-    var lis = document.querySelectorAll(".size li");
-    lis.forEach(function (li) {
-      li.classList.remove("selected");
-    });
-
-    event.target.classList.add("selected");
-  }
-});
 

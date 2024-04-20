@@ -12,94 +12,132 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-$tensp = $_POST['tensanpham'];
-$gia = $_POST['gia'];
-$gia_bien_doi = str_replace(".", "", $gia);
-$tonkho = $_POST['tonkho'];
-$mota = $_POST['mota'];
-$size = $_POST['size'];
-// Chuỗi chứa tất cả các kích thước, phân tách bằng dấu phẩy
-$all_sizes = implode(',', $_POST['size']);
-$danhmuc_id = $_POST['danhmuc_id'];
-// xử lý hình ảnh
-$hinhanh = $_POST['hinhanh'];
-// $hinhanh = $_FILES['hinhanh']['name'];
-// $hinhanh_tmp = $_FILES['hinhanh']['tmp_name'];
-// $hinhanh = time() . '_' . $hinhanh;
-// Xử lý dữ liệu từ form
-if (isset($_POST['addSanpham'])) {
-  // Làm sạch dữ liệu trước khi chèn vào câu truy vấn SQL
-  $tensp_cleaned = mysqli_real_escape_string($conn, $tensp);
-  $size_cleaned = mysqli_real_escape_string($conn, $all_sizes);
-  $mota_cleaned = mysqli_real_escape_string($conn, $mota);
-
-  // Sử dụng htmlspecialchars để mã hóa dữ liệu nhập vào
-  $tensp_safe = htmlspecialchars($tensp_cleaned);
-  $size_safe = htmlspecialchars($size_cleaned);
-  $mota_safe = htmlspecialchars($mota_cleaned);
-
-  // Câu truy vấn INSERT với dữ liệu đã làm sạch và mã hóa
-  $sql = " INSERT INTO sanpham (tensanpham, size, gia, hinhanh, tonkho, danhmuc_id, mota) VALUES ('$tensp_safe', '$size_safe', '$gia_bien_doi', '$hinhanh', '$tonkho', '$danhmuc_id', '$mota_safe')";
-
-  // Thực thi câu truy vấn SQL
-  mysqli_query($conn, $sql);
-
-  // Xử lý và lưu trữ tệp
-  // move_uploaded_file($hinhanh_tmp, 'uploads/' . $hinhanh);
-
-  // Thông báo thành công và chuyển hướng
-  echo "<script>alert('Bạn đã thêm thành công!');
-      window.location.href='../../../index.php?action=sanpham&query=them';
-      </script>";
-} elseif (isset($_POST['editsp'])) {
-  // Xử lý hình ảnh
-  // if ($_FILES['hinhanh']['name']) {
-  //   $hinhanh = time() . '_' . $_FILES['hinhanh']['name'];
-  //   $hinhanh_tmp = $_FILES['hinhanh']['tmp_name'];
-  //   move_uploaded_file($hinhanh_tmp, 'uploads/' . $hinhanh);
-  // }
-  $hinhanh = $_POST['hinhanh'];
-  // Xử lý dữ liệu trường size[] từ form
-  $size_safe = '';
-  if (!empty($_POST['size'])) {
-    $size_safe = implode(',', $_POST['size']);
+    if (isset($_POST['addSanpham'])) {
+        $tensp = mysqli_real_escape_string($conn, $_POST['tensanpham']);
+        $gia = str_replace(".", "", $_POST['gia']);
+        $tonkho = mysqli_real_escape_string($conn, $_POST['tonkho']);
+        $mota = mysqli_real_escape_string($conn, $_POST['mota']);
+        $all_sizes = implode(',', $_POST['size']);
+        $danhmuc_id = mysqli_real_escape_string($conn, $_POST['danhmuc_id']);
+        $targetDir = "uploads/";
+        
+        // Khởi tạo mảng để lưu trữ tên các tệp hình ảnh
+        $uploadedImages = array();
+        
+        // Lặp qua từng tệp
+        for ($i = 0; $i < count($_FILES['hinhanh']['name']); $i++) {
+            $fileName = basename($_FILES['hinhanh']['name'][$i]);
+            $targetFilePath = $targetDir . $fileName;
+            $fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
+        
+            // Kiểm tra xem tệp có hợp lệ không
+            if (!empty($fileName)) {
+                $allowTypes = array('jpg', 'jpeg', 'png', 'gif', 'webp');
+            
+                if (in_array($fileType, $allowTypes)) {
+                    // Di chuyển tệp vào thư mục uploads
+                    if (move_uploaded_file($_FILES['hinhanh']['tmp_name'][$i], $targetFilePath)) {
+                        // Thêm tên tệp vào mảng
+                        $uploadedImages[] = $fileName;
+                    } 
+                } else {
+                    echo "Chỉ được phép tải lên các tệp JPG, JPEG, PNG, GIF, WebP.<br>";
+                }
+            } 
+        }
+  
+        // Chuyển mảng tên hình ảnh thành chuỗi để lưu vào cơ sở dữ liệu
+        $hinhanh = implode(',', $uploadedImages);
+        
+        // Tạo câu truy vấn thêm mới sản phẩm
+        $sql = "INSERT INTO sanpham (tensanpham, size, gia, hinhanh, tonkho, danhmuc_id, mota) 
+                VALUES ('$tensp', '$all_sizes', '$gia', '$hinhanh', '$tonkho', '$danhmuc_id', '$mota')";
+    
+        // Thực thi câu truy vấn
+        mysqli_query($conn, $sql);
+        
+          // Hiển thị thông báo và chuyển hướng
+        echo "<script>alert('Bạn đã thêm thành công!');
+        window.location.href='../../../index.php?action=sanpham;
+        </script>";
+        exit();
+        
+        exit();
   }
+  
 
-  // Tạo câu truy vấn để cập nhật sản phẩm
-  $sql_sua = "UPDATE sanpham 
-                SET tensanpham = '$tensp',
-                    size = '$size_safe',
-                    gia = '$gia_bien_doi',
-                    tonkho = '$tonkho',
-                    danhmuc_id = '$danhmuc_id',
-                    mota = '$mota'";
 
-  // Nếu có hình ảnh từ form, thêm cập nhật cột hinhanh vào câu truy vấn
-  if ($_POST['hinhanh']) {
-    $sql_sua .= ", hinhanh = '$hinhanh'";
-  }
+  if (isset($_POST['editsp'])) {
+    $size_safe = '';
+    if (!empty($_POST['size'])) {
+        $size_safe = implode(',', $_POST['size']);
+    }
 
-  // Thêm điều kiện WHERE cho câu truy vấn
-  $sql_sua .= " WHERE sanpham_id = '" . $_GET['id'] . "'";
+    // Tạo câu truy vấn để cập nhật sản phẩm
+    $sql_sua = "UPDATE sanpham 
+                SET tensanpham = '" . mysqli_real_escape_string($conn, $_POST['tensanpham']) . "',
+                    gia = '" . str_replace(".", "", $_POST['gia']) . "',
+                    tonkho = '" . mysqli_real_escape_string($conn, $_POST['tonkho']) . "',
+                    danhmuc_id = '" . mysqli_real_escape_string($conn, $_POST['danhmuc_id']) . "',
+                    mota = '" . mysqli_real_escape_string($conn, $_POST['mota']) . "'";
 
-  // Thực thi câu truy vấn
-  mysqli_query($conn, $sql_sua);
+    // Kiểm tra xem có hình ảnh mới được tải lên không
 
-  // Hiển thị thông báo và chuyển hướng
-  echo "<script>alert('Bạn đã sửa thành công!');
-      window.location.href='../../../index.php?action=sanpham&query=them'
-      </script>";
-  exit;
-} else {
-  $id = $_GET['id'];
-  $sql = "select * from sanpham where sanpham_id = '$id' Limit 1";
-  $query = mysqli_query($conn, $sql);
-  while ($row = mysqli_fetch_array($query)) {
-    unlink('uploads/' . $row['hinhanh']);
-  }
-  $sql_xoa = " Delete from sanpham where sanpham_id = '" . $id . "' ";
-  mysqli_query($conn, $sql_xoa);
-  echo "<script>alert('Bạn đã xóa thành công!')
-      window.location.href='../../../index.php?action=sanpham&query=them'
-      </script>";
+    if(!empty($size_safe))
+    {
+        $sql_sua .= ", size = '$size_safe'";
+    }
+
+    if (!empty($_FILES['hinhanh']['name'][0])) {
+        $targetDir = "uploads/";
+        $uploadedImages = array();
+
+        // Lặp qua từng tệp
+        for ($i = 0; $i < count($_FILES['hinhanh']['name']); $i++) {
+            $fileName = basename($_FILES['hinhanh']['name'][$i]);
+            $targetFilePath = $targetDir . $fileName;
+            $fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
+
+            // Kiểm tra xem tệp có hợp lệ không
+            if (!empty($fileName)) {
+                $allowTypes = array('jpg', 'jpeg', 'png', 'gif', 'webp');
+
+                if (in_array($fileType, $allowTypes)) {
+                    // Di chuyển tệp vào thư mục uploads
+                    if (move_uploaded_file($_FILES['hinhanh']['tmp_name'][$i], $targetFilePath)) {
+                        // Thêm tên tệp vào mảng
+                        $uploadedImages[] = $fileName;
+                    }
+                } else {
+                    echo "Chỉ được phép tải lên các tệp JPG, JPEG, PNG, GIF, WebP.<br>";
+                }
+            }
+        }
+
+        // Nếu có hình ảnh mới, cập nhật danh sách hình ảnh
+        if (!empty($uploadedImages)) {
+            // $all_images = array_merge($existing_images, $uploadedImages);
+            $hinhanh = implode(',', $uploadedImages);
+            $sql_sua .= ", hinhanh = '$hinhanh'";
+        }
+    }
+
+    $sql_sua .= " WHERE sanpham_id = '" . $_GET['id'] . "'";
+
+    mysqli_query($conn, $sql_sua);
+
+    echo "<script>alert('Bạn đã sửa thành công!');
+        window.location.href='../../../index.php?action=sanpham';
+        </script>";
+    exit();
 }
+
+
+
+
+
+
+
+
+
+
