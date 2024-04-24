@@ -10,16 +10,16 @@ if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) { // Kiểm tra gi
 
 
 <main id="main" class="container">
-     <span class="title-frame">Giỏ Hàng Của Bạn</span>
+     <span class="title-frame">Giỏ hàng của bạn</span>
      <?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) : ?>
           <!-- Kiểm tra nếu giỏ hàng không rỗng -->
           <div class="frame-prd-cart">
                <table>
                     <tr>
-                         <th align="left">Sản Phẩm</th>
-                         <th align="left">Đơn Giá</th>
-                         <th align="left">Số Lượng</th>
-                         <th align="left">Thành Tiền</th>
+                         <th align="left">Sản phẩm</th>
+                         <th align="left">Đơn giá</th>
+                         <th align="left">Số lượng</th>
+                         <th align="left">Thành tiền</th>
                     </tr>
                     <?php foreach ($_SESSION['cart'] as $item) {
                          $images = explode(',', $item['hinhanh']);
@@ -76,6 +76,9 @@ if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) { // Kiểm tra gi
           </div>
      <?php else : ?>
           <!-- Hiển thị thông báo khi giỏ hàng trống -->
-          <h3 style="text-align:center;">Không có sản phẩm nào trong giỏ hàng!</h3>
+          <div style="text-align: center; margin-top: 20px;">
+               <i style="font-size: 40px; margin: 20px;" class='bx bx-cart'></i>
+               <h3 style="text-align:center; font-size: 20px;">Không có sản phẩm nào trong giỏ hàng!</h3>
+          </div>
      <?php endif; ?>
 </main>

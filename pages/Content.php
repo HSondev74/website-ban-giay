@@ -19,7 +19,7 @@ if ($khoitao == 'chitietsanpham') {
 } elseif ($khoitao == 'lienhe') {
   include('pages/breadcumb.php');
   include('./pages/Contact.php');
-} elseif ($khoitao == 'cuahang') {
+} elseif ($khoitao == 'sanpham') {
   include('pages/breadcumb.php');
   include('./pages/Store.php');
 } elseif ($khoitao == 'kiemtradonhang') {

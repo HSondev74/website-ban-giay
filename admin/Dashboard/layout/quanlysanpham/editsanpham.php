@@ -22,7 +22,7 @@ color: var(--blue);">Sửa sản phẩm</a>
      </li>
 </ul>
 
-<div class="container" style=" width: 80%;
+<div class="container" style=" width: 90%;
             margin: 20px auto;
             background-color: #fff;
             padding: 20px;

@@ -20,10 +20,16 @@
                $query = null;
           }
 
-          if($khoitao == 'sanpham' && !isset($query))
+
+          if($khoitao == null)
           {
                include("quanlysanpham/lietkesanpham.php");
           }
+          elseif($khoitao == 'sanpham' && !isset($query))
+          {
+               include("quanlysanpham/lietkesanpham.php");
+          }
+          
           elseif($khoitao == 'sanpham' && $query == 'them')
           {
                include("quanlysanpham/add.php");

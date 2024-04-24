@@ -5,7 +5,8 @@ $row_lietke = mysqli_query($conn, $sql_lietke);
 
 ?>
 
-<div class="wrapper" style="width: 80%;
+
+<div class="wrapper" style="width: 90%;
             margin: 20px auto;
             background-color: #fff;
             padding: 20px;
@@ -42,10 +43,11 @@ $row_lietke = mysqli_query($conn, $sql_lietke);
                     padding: 10px 20px;
                     border: none;
                     border-radius: 4px;
-                    cursor: pointer;" href="Dashboard/layout/quanlydanhmuc/xuly.php?id=<?php echo $row['danhmuc_id'] ?>">Xóa</a>
+                    cursor: pointer;" href="Dashboard/layout/quanlydanhmuc/xoa.php?id=<?php echo $row['danhmuc_id'] ?>">Xóa</a>
                          </td>
                     </tr>
                <?php } ?>
           </tbody>
      </table>
+     <!-- <a class="add-product" href="index.php?action=danhmuc&query=them">thêm</a> -->
 </div>

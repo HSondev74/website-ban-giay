@@ -53,7 +53,7 @@ if (isset($_POST['login'])) {
                     <span class="input-group-text">
                         <i class="fa fa-lock"></i>
                     </span>
-                    <input type="text" name="password" class="form-control" placeholder="Password" autocomplete="off" />
+                    <input type="password" name="password" class="form-control" placeholder="Password" autocomplete="off" />
                 </div>
 
                 <div class="btn-logup">

@@ -36,11 +36,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if ($user_id) {
-        $sql_insert = "INSERT INTO donhang (id_donhang, user_id, ten, diachi, sodienthoai, note, tongtien, ngaydat, hinhthucthanhtoan) 
-                      VALUES (null, '$user_id', '$ten', '$diachi', '$sodienthoai', '$note', '$total_price', '$ngaydat', '$thanhtoan')";
+        $sql_insert = "INSERT INTO donhang (id_donhang, user_id, ten, diachi, sodienthoai, note, tongtien, ngaydat, hinhthucthanhtoan, trangthai) 
+                      VALUES (null, '$user_id', '$ten', '$diachi', '$sodienthoai', '$note', '$total_price', '$ngaydat', '$thanhtoan', 'Chờ xác nhận')";
     } else {
-        $sql_insert = "INSERT INTO donhang (id_donhang, ten, diachi, sodienthoai, note, tongtien, ngaydat, hinhthucthanhtoan) 
-                      VALUES (null, '$ten', '$diachi', '$sodienthoai', '$note', '$total_price', '$ngaydat', '$thanhtoan')";
+        $sql_insert = "INSERT INTO donhang (id_donhang, ten, diachi, sodienthoai, note, tongtien, ngaydat, hinhthucthanhtoan, trangthai) 
+                      VALUES (null, '$ten', '$diachi', '$sodienthoai', '$note', '$total_price', '$ngaydat', '$thanhtoan', 'Chờ xác nhận')";
     }
 
     if (mysqli_query($conn, $sql_insert)) {

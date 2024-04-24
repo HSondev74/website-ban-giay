@@ -1,12 +1,12 @@
 <header class="umine-top">
         <div class="navbar" >
             <p class="navbar-left" style="color: white;">
-                Mọi đơn hàng khi mua đều được <span style="color: red">FreeShip</span> ! <a href="index.php?action=cuahang" class="underline" style="color: white;">xem
+                Mọi đơn hàng khi mua đều được <span style="color: red">FreeShip</span> ! <a href="index.php?action=sanpham" class="underline" style="color: white;">xem
                     thêm</a>
             </p>
             <!-- <p class="navbar-left" style="color: white;">
                 Bạn là Học Sinh hay Sinh Viên được <span style="color: red">GIẢM GIÁ NGAY
-                    20%</span> ! <a href="index.php?action=cuahang" class="underline" style="color: white;">xem
+                    20%</span> ! <a href="index.php?action=sanpham" class="underline" style="color: white;">xem
                     thêm</a>
             </p> -->
             <div class="nav-space"></div>
@@ -163,11 +163,11 @@
         </div>
     </div>
 
-    <ul class="container search-list-select ">
+    <ul class="search-list-select ">
         <li><a href="index.php">TRANG CHỦ</a></li>
-        <li><a href="index.php?action=cuahang">CỬA HÀNG</a>
+        <li><a href="index.php?action=sanpham">SẢN PHẨM</a>
             <ul class="sub-menu">
-            <li><a href="index.php?action=cuahang">Tất cả sản phẩm</a></li>
+            <li><a href="index.php?action=sanpham">Tất cả sản phẩm</a></li>
             <?php
             $sql_categories = "SELECT * FROM danhmuc";
             $result_categories = mysqli_query($conn, $sql_categories);
@@ -177,7 +177,7 @@
                 // Duyệt qua từng phần tử trong kết quả truy vấn và in ra
                 while($row = mysqli_fetch_assoc($result_categories)) {
                     ?>
-                    <li><a href="index.php?action=cuahang&category=<?php echo $row['danhmuc_id']; ?>"><?php echo $row['tendanhmuc']; ?></a></li>
+                    <li><a href="index.php?action=sanpham&category=<?php echo $row['danhmuc_id']; ?>"><?php echo $row['tendanhmuc']; ?></a></li>
                     <?php
                 }
             }
@@ -186,7 +186,7 @@
 
         </li>
         <li><a href="index.php?action=lienhe">LIÊN HỆ</a></li>
-        <li><a href="index.php?action=gioithieu">TUYỂN DỤNG</a></li>
+        <!-- <li><a href="index.php?action=gioithieu">TUYỂN DỤNG</a></li> -->
         <li>
             <a href="index.php?action=giohang">GIỎ HÀNG</a>
         </li>
@@ -197,7 +197,7 @@
     <div class="close-drop-down-menu"><i class="fa-solid fa-x"></i></div>
     <ul class="drop-down-menu">
         <li><a href="index.php">Trang Chủ</a></li>
-        <li><a href="index.php?action=cuahang">Cửa Hàng</a>
+        <li><a href="index.php?action=sanpham">Cửa Hàng</a>
             <!-- <i class='bx bx-chevron-down'></i> -->
             <!-- <ul class="dropmenu">
                     <li><a href="">ADIDAS</a></li>

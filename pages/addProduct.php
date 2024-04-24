@@ -58,6 +58,7 @@ if (isset($_GET['idsp']) && isset($_GET['muangay'])) {
     $query = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($query);
     if ($row) {
+
         $new_product = array(
             'id' => $id,
             'hinhanh' => $row['hinhanh'],
@@ -89,7 +90,6 @@ if (isset($_GET['idsp']) && isset($_GET['muangay'])) {
 
 
 
-
 // xoa san pham
 if (isset($_SESSION['cart']) && isset($_GET['xoa']) && isset($_GET['size'])) {
     $id_to_delete = $_GET['xoa'];
@@ -112,19 +112,24 @@ if (isset($_SESSION['cart']) && isset($_GET['xoa']) && isset($_GET['size'])) {
 
 //tang so luong san pham
 
-
 if (isset($_GET['increase']) && isset($_GET['size'])) {
-    $id_to_delete = $_GET['increase'];
-    $size_to_delete = $_GET['size'];
+    $id_to_increase = intval($_GET['increase']);
+    $size_to_increase = $_GET['size'];
+
+    $sql = "SELECT * FROM sanpham where sanpham_id = $id_to_increase";
+    $query = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($query);
+    $tonkho = $row['tonkho'];
 
     foreach ($_SESSION['cart'] as $key => &$cart_item) {
-        if ($cart_item['id'] == $id_to_delete && $cart_item['size'] == $size_to_delete) {
-            $cart_item['soluong']++;
-            $cart_itemp['gia'] = $cart_itemp['gia'] * $cart_item['soluong'];
+        if ($cart_item['id'] == $id_to_increase && $cart_item['size'] == $size_to_increase) {
+            if ($cart_item['soluong'] < $tonkho) {
+                $cart_item['soluong']++;
+            }
         }
     }
-    $_SESSION['cart'] = array_values($_SESSION['cart']);
-    header("Location: " . $_SERVER['HTTP_REFERER']);
+    $_SESSION['cart'] = array_values($_SESSION['cart']); // Reindex array
+    header("Location: " . $_SERVER['HTTP_REFERER']); // Redirect back
     exit();
 }
 //giam so luong san pham

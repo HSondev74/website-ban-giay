@@ -1,18 +1,17 @@
+<ul class="breadcrumb" style="display: flex;
+     align-items: center;
+     grid-gap: 16px;
+     margin: 20px 30px;">
+     <li>
+          <a href="index.php?action=sanpham" style="color: var(--dark-grey);">Dashboard</a>
+     </li>
+     <li><i class='bx bx-chevron-right'></i></li>
+     <li>
+          <a class="active" href="" style="pointer-events: none;
+color: var(--blue);">Khách hàng</a>
+     </li>
+</ul>
 <?php
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "websitebangiay";
-
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $database);
-
-// Check connection
-if (!$conn) {
-     die("Connection failed: " . mysqli_connect_error());
-}
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
      // Check if all necessary data is present
      if (isset($_POST['submit'], $_POST['username'], $_POST['email'], $_POST['user_id'])) {
@@ -62,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 
-<section class="container" style="width: 80%; margin: 20px auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+<section class="container" style="width: 90%; margin: 20px auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
      <?php
 
      $sql = "SELECT * FROM nguoidung WHERE kieunguoidung = 'customer'";
@@ -75,11 +74,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="hidden" name="user_id" value="<?php echo $row['user_id']; ?>">
                     <h1 style="font-size: x-large; margin: 20px auto; text-align: center;">ID Tài Khoản:
                          <?php echo $row['user_id'] ?> </h1>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                          <nav style="background-image:url('<?php echo $row['hinhanh'] ?>'); background-size: cover; background-position:center center; border-radius: 50%; height: 110px; width: 110px; border: 1px solid #3b5998; margin: 20px auto;">
                               <input type="file" style="opacity: 0; width:100%; height:100%; " name="image">
                          </nav>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                          <label class="form-label" for="email">Tên đăng nhập:</label>
                          <input type="text" class="form-control form-control-lg" name="username" id="email" value="<?php echo $row['ten'] ?>">
@@ -96,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                          <label class="form-label" for="password">Mật khẩu mới:</label>
                          <input type="password" class="form-control form-control-lg" name="new-password" id="new-password" value="" placeholder="nhập mật khẩu mới">
                     </div>
-                    <button type="submit" class="btn btn-primary" name="submit">Sửa tài khoản</button>
+                    <button style="padding: 5px 15px; background-color: blue; border-radius: 5px; color: #fff;" type="submit" class="btn btn-primary" name="submit">Sửa tài khoản</button>
                </form>
      <?php
           }

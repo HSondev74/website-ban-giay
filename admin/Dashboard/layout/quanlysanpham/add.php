@@ -20,7 +20,7 @@ $row_lietke = mysqli_query($conn, $sql_lietke);
 color: var(--blue);">Thêm</a>
      </li>
 </ul>
-<div class="board" style="width: 80%;
+<div class="board" style="width: 90%;
             margin: 20px auto;
             background-color: #fff;
             padding: 20px;
@@ -35,7 +35,7 @@ color: var(--blue);">Thêm</a>
           </div>
           <div class="form-group">
                <label for="size">Kích Thước</label>
-               <select id="size" name="size[]" required multiple>
+               <select style="outline: none;" id="size" name="size[]" required multiple>
                     <option value="35">35</option>
                     <option value="36">36</option>
                     <option value="37">37</option>
@@ -59,7 +59,7 @@ color: var(--blue);">Thêm</a>
           </div>
           <div class="form-group">
                <label for="tonkho">Số Lượng</label>
-               <input type="number" id="tonkho" name="tonkho" required>
+               <input style="outline: none;" type="number" id="tonkho" name="tonkho" required>
           </div>
           <div class="form-group">
                <label for="mota">Mô Tả</label>

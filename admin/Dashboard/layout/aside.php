@@ -55,8 +55,7 @@ $conn->close();
                <h1>Trang Chủ</h1>
                <ul class="breadcrumb" style="display: flex;
      align-items: center;
-     grid-gap: 16px;
-     margin: 20px 30px;">
+     grid-gap: 16px;">
                     <li>
                          <a href="#">Trang Chủ</a>
                     </li>

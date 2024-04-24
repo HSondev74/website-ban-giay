@@ -43,5 +43,3 @@ prev.addEventListener("click", () => {
     galleryInner.setAttribute("src", `${a}`);
   }
 });
-
-

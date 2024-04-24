@@ -24,12 +24,12 @@ $ref = (in_array($action, $active_actions)) ? $action : 'trangchu'; // Nếu kh�
           </span>
      </a>
      <ul class="side-menu top">
-          <li class="<?php echo ($ref == 'trangchu') ? 'active' : ''; ?>">
+          <!-- <li class="<?php echo ($ref == 'trangchu') ? 'active' : ''; ?>">
                <a href="index.php">
                     <i class='bx bxs-dashboard'></i>
                     <span class="text">Trang Chủ</span>
                </a>
-          </li>
+          </li> -->
           <li class="<?php echo ($ref == 'sanpham') ? 'active' : ''; ?>">
                <a href="index.php?action=sanpham">
                     <i class='bx bxs-shopping-bag-alt'></i>

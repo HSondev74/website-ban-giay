@@ -21,7 +21,7 @@ if (isset($_POST['login'])) {
                }
 
                echo "<script>alert('Đăng nhập thành công!')
-               window.location.href='index.php'
+               window.location.href='index.php?action=sanpham'
                </script>";
           }
      } else {

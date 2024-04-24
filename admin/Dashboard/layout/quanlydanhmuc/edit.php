@@ -21,7 +21,7 @@ $row_sua = mysqli_query($conn, $sql_sua);
 color: var(--blue);">Sửa danh mục</a>
      </li>
 </ul>
-<div style="width: 80%;
+<div style="width: 90%;
             margin: 20px auto;
             background-color: #fff;
             padding: 20px;

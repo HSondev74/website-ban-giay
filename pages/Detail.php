@@ -10,6 +10,7 @@ if (isset($_GET['id'])) {
       $images = explode(',', $product['hinhanh']);
       $sizes = explode(',', $product['size']);
       $first_size = $sizes[0];
+      $mota = $product['mota'];
 
       if (!empty($images)) {
         $first_image = $images[0];
@@ -100,20 +101,7 @@ if (isset($_GET['id'])) {
 
 
 
-                <!-- <form action="" method="post" class="size" id="sizeForm">
-    <?php
-      $first = true; // Biến để theo dõi label đầu tiên
-      foreach ($sizes as $size) {
-        $checked = $first ? 'checked' : ''; // Kiểm tra nếu là label đầu tiên
-    ?>
-        <input type="radio" name="size" value="<?php echo $size; ?>" id="<?php echo $size; ?>" style="display: none;" <?php echo $checked; ?>>
-        <label for="<?php echo $size; ?>" onclick="selectSize('<?php echo $size; ?>')"><?php echo $size; ?></label>
-    <?php
-        $first = false; // Đã qua label đầu tiên, đặt biến $first thành false
-      }
-    ?>
-    <button type="submit" >Submit</button>
-</form> -->
+
 
 
                 <div class="parameter-detail">
@@ -153,12 +141,13 @@ if (isset($_GET['id'])) {
                   <p>Yêu thích</p>
                 </div> -->
 
+                <?php $tonkho = $product['tonkho'] ?>
                 <form action="" method="post">
                   <div style="margin-top: 20px;">
                     <div class="up-and-downproduct">
-                      <div class="quantity-decrease" onclick="changeValue(-1)">-</div>
-                      <input class="up-and-downproduct-input" type="text" readonly id="value" name="value" min="1" value="1" onchange="updateLinks()">
-                      <div class="quantity-increase" onclick="changeValue(1)">+</div>
+                      <div class="quantity-decrease" onclick="changeValue(-1, <?php echo $tonkho ?>)">-</div>
+                      <input class="up-and-downproduct-input" type="text" readonly id="value" name="value" min="1" max="<?php echo $tonkho ?>" value="1" onchange="updateLinks()">
+                      <div class="quantity-increase" onclick="changeValue(1, <?php echo $tonkho ?>)">+</div>
                     </div>
                   </div>
 
@@ -170,17 +159,21 @@ if (isset($_GET['id'])) {
 
 
 
-                <div class="detail-contact">
+                <!-- <div class="detail-contact">
                   <div class="zalo">Liên hệ Zalo</div>
                   <div class="faebook">Liên hệ Fanpage Facebook</div>
                   <div class="insta">Liên hệ Instagam</div>
-                </div>
+                </div> -->
 
               </div>
             </div>
           </div>
         </div>
 
+        <div class="detail-pro">
+          <h2>CHI TIẾT SẢN PHẨM</h2>
+          <p style="margin-top: 10px;"><?php echo $mota ?></p>
+        </div>
 
         <!-- sanpham lien quan -->
         <div class="product-hot ">
@@ -210,14 +203,14 @@ if (isset($_GET['id'])) {
             ?>
 
                 <div class="product" onmouseover="changeImage('admin/Dashboard/layout/quanlysanpham/uploads/<?php echo $second_image; ?>', '<?php echo $product['sanpham_id']; ?>')" onmouseout="changeImage('admin/Dashboard/layout/quanlysanpham/uploads/<?php echo $first_image; ?>', '<?php echo $product['sanpham_id']; ?>')" data-id="<?php echo $product['sanpham_id']; ?>">
-                  <a href="index.php?action=chitietsanpham&id=<?php echo $product['sanpham_id']; ?>&size=<?php echo $first_size ?>">
+                  <a href="index.php?action=chitietsanpham&id=<?php echo $product['sanpham_id']; ?>">
 
                     <!-- <div class="discount"> -20% </div> -->
                     <div class="product-image">
                       <img src="admin/Dashboard/layout/quanlysanpham/uploads/<?php echo $first_image; ?>" alt="">
                       <!-- <a href="pages/addProduct.php?idsp=<?php echo $product['sanpham_id'] ?>" class="cart-popup" name="addProduct"><i class='bx bx-cart-add'></i></a> -->
                     </div>
-                    <span class="heart-product" onclick="changeFavorites(this,<?php echo $product['sanpham_id']; ?>)" data-id="<?php echo $product['sanpham_id']; ?> "><i class='bx bxs-heart'></i></span>
+                    <!-- <span class="heart-product" onclick="changeFavorites(this,<?php echo $product['sanpham_id']; ?>)" data-id="<?php echo $product['sanpham_id']; ?> "><i class='bx bxs-heart'></i></span> -->
                     <p class=" product-title"><?php echo $product['tensanpham'] ?></p>
                     <p class="product-price"><?php echo number_format($product['gia'], 0, ',', '.') . ' VNĐ'; ?>
                     </p>
@@ -255,18 +248,18 @@ if (isset($_GET['id'])) {
 ?>
 
 <script>
-  function changeValue(change) {
+  function changeValue(change, maxStock) {
     var valueElement = document.getElementById("value");
     var currentValue = parseInt(valueElement.value);
     var newValue = currentValue + change;
 
-    // Kiểm tra giới hạn cho giá trị số
-    newValue = Math.min(Math.max(newValue, 1), 100);
+    // Đảm bảo giá trị ở trong phạm vi hợp lệ
+    newValue = Math.max(1, Math.min(newValue, maxStock));
 
-    // Cập nhật giá trị mới trong ô input
+    // Cập nhật giá trị trong ô nhập liệu
     valueElement.value = newValue;
 
-    // Gọi hàm để cập nhật URL của các liên kết
+    // Cập nhật liên kết với giá trị mới
     updateLinks();
   }
 

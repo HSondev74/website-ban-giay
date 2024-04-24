@@ -51,7 +51,7 @@
                ?>
 
                          <div class="product" onmouseover="changeImage('admin/Dashboard/layout/quanlysanpham/uploads/<?php echo $second_image; ?>', '<?php echo $product['sanpham_id']; ?>')" onmouseout="changeImage('admin/Dashboard/layout/quanlysanpham/uploads/<?php echo $first_image; ?>', '<?php echo $product['sanpham_id']; ?>')" data-id="<?php echo $product['sanpham_id']; ?>">
-                              <a href="index.php?action=chitietsanpham&id=<?php echo $product['sanpham_id']; ?>&size=<?php echo $first_size?>">
+                              <a href="index.php?action=chitietsanpham&id=<?php echo $product['sanpham_id']; ?>">
 
                                    <!-- <div class="discount"> -20% </div> -->
                                    <div class="product-image">

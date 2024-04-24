@@ -27,17 +27,19 @@ if ($count > 0) {
      <form action="#">
           <div class="form-input">
                <input id="searchInput" type="search" placeholder='<?php echo date("d-m-Y"); ?>'>
-               <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+               <!-- <button type="submit" class="search-btn"><i class='bx bx-search'></i></button> -->
           </div>
      </form>
      <input type="checkbox" id="switch-mode" hidden>
-     <label for="switch-mode" class="switch-mode"></label>
-     <a href="#" class="notification">
+     <!-- <label for="switch-mode" class="switch-mode"></label> -->
+     <!-- <a href="#" class="notification">
           <i class='bx bxs-bell'></i>
           <span class="num">8</span>
-     </a>
-     <a href="#" class="profile">
-          <img src="<?php echo $row['hinhanh'] ?>">
-     </a>
+     </a> -->
+     <div style="background-color: black;; padding: 5px 10px; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;" class="profile">
+          <!-- Example profile image or icon -->
+          <i class='bx bxs-user' style="color: #fff; font-size: 20px;" ></i> <!-- Replace with an actual image or icon if needed -->
+     </div>
+
 </nav>
 <!-- end Header -->

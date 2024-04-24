@@ -553,8 +553,9 @@ i {
     padding: 15px;
     position: relative;
     cursor: pointer;
-    border: 0.1px solid rgb(225, 225, 225);
+    /* border: 0.1px solid rgb(225, 225, 225); */
     box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
 .discount {
@@ -580,6 +581,18 @@ i {
 .heart-product i {
     font-size: 25px;
     float: right;
+}
+
+.pagination .hover-page{
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 0 5px;
+    background-color: #ddd;
+    color: hsl(0, 0%, 100%);
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s;
 }
 
 .product-image img {
@@ -1186,7 +1199,7 @@ i {
 }
 
 .gallery-inner img {
-    object-fit: contain;
+    object-fit: cover;
     width: 100%;
 }
 

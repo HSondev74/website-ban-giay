@@ -494,8 +494,9 @@ del {
 
 .flex-store{
     display: grid;
-    grid-template-columns: 23% 77%;
-    gap: 10px;
+    grid-template-columns: 20% 80%;
+    gap: 20px;
+    
 }
 
 .filter-input{
@@ -512,9 +513,9 @@ del {
 .contents-products {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Chia đều thành 3 cột */
-    gap: 30px; /* Khoảng cách giữa các cột */
+    gap: 20px; /* Khoảng cách giữa các cột */
     align-items: start;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .brand-name{
